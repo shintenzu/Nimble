@@ -126,6 +126,7 @@
             changedesc_Btn.TextAlign = ContentAlignment.MiddleLeft;
             changedesc_Btn.TextImageRelation = TextImageRelation.ImageBeforeText;
             changedesc_Btn.UseVisualStyleBackColor = false;
+            changedesc_Btn.Click += changedesc_Btn_Click;
             // 
             // projectdesc_Label
             // 
@@ -186,6 +187,7 @@
             editreq_Btn.TextAlign = ContentAlignment.MiddleLeft;
             editreq_Btn.TextImageRelation = TextImageRelation.ImageBeforeText;
             editreq_Btn.UseVisualStyleBackColor = false;
+            editreq_Btn.Click += editreq_Btn_Click;
             // 
             // projectreq_Label
             // 
@@ -235,6 +237,7 @@
             editteam_Btn.TextAlign = ContentAlignment.MiddleLeft;
             editteam_Btn.TextImageRelation = TextImageRelation.ImageBeforeText;
             editteam_Btn.UseVisualStyleBackColor = false;
+            editteam_Btn.Click += editteam_Btn_Click;
             // 
             // team_DGV
             // 
@@ -264,6 +267,7 @@
             addteam_Btn.TextAlign = ContentAlignment.MiddleLeft;
             addteam_Btn.TextImageRelation = TextImageRelation.ImageBeforeText;
             addteam_Btn.UseVisualStyleBackColor = false;
+            addteam_Btn.Click += addteam_Btn_Click;
             // 
             // team_Label
             // 
@@ -313,6 +317,7 @@
             edittasks_Btn.TextAlign = ContentAlignment.MiddleLeft;
             edittasks_Btn.TextImageRelation = TextImageRelation.ImageBeforeText;
             edittasks_Btn.UseVisualStyleBackColor = false;
+            edittasks_Btn.Click += edittasks_Btn_Click;
             // 
             // task_DGV
             // 
@@ -342,6 +347,7 @@
             addtask_Btn.TextAlign = ContentAlignment.MiddleLeft;
             addtask_Btn.TextImageRelation = TextImageRelation.ImageBeforeText;
             addtask_Btn.UseVisualStyleBackColor = false;
+            addtask_Btn.Click += addtask_Btn_Click;
             // 
             // task_Label
             // 

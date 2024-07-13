@@ -31,6 +31,8 @@
             Submit_Btn = new Button();
             EditTeam_Label = new Label();
             Main_Panel = new Panel();
+            comboBox1 = new ComboBox();
+            label1 = new Label();
             Role_CB = new ComboBox();
             Role_Label = new Label();
             LastName_Label = new Label();
@@ -39,12 +41,10 @@
             FirstName_TB = new TextBox();
             Title_Panel = new Panel();
             SubmitButton_Panel = new Panel();
+            Cancel_Btn = new Button();
             Format_Panel = new Panel();
             ATNav_Panel = new Panel();
             ATNavClose_Btn = new Button();
-            comboBox1 = new ComboBox();
-            label1 = new Label();
-            Cancel_Btn = new Button();
             Main_Panel.SuspendLayout();
             Title_Panel.SuspendLayout();
             SubmitButton_Panel.SuspendLayout();
@@ -90,6 +90,25 @@
             Main_Panel.Name = "Main_Panel";
             Main_Panel.Size = new Size(433, 256);
             Main_Panel.TabIndex = 12;
+            // 
+            // comboBox1
+            // 
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Location = new Point(136, 7);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(192, 23);
+            comboBox1.TabIndex = 8;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Helvetica CE", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 238);
+            label1.ForeColor = Color.FromArgb(253, 248, 225);
+            label1.Location = new Point(20, 7);
+            label1.Name = "label1";
+            label1.Size = new Size(75, 15);
+            label1.TabIndex = 7;
+            label1.Text = "Select User";
             // 
             // Role_CB
             // 
@@ -163,6 +182,21 @@
             SubmitButton_Panel.Size = new Size(433, 55);
             SubmitButton_Panel.TabIndex = 14;
             // 
+            // Cancel_Btn
+            // 
+            Cancel_Btn.BackColor = Color.FromArgb(60, 90, 130);
+            Cancel_Btn.FlatAppearance.BorderSize = 0;
+            Cancel_Btn.FlatStyle = FlatStyle.Flat;
+            Cancel_Btn.Font = new Font("Helvetica 2 BQ ", 11.9999981F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            Cancel_Btn.ForeColor = Color.FromArgb(253, 248, 225);
+            Cancel_Btn.Location = new Point(136, 3);
+            Cancel_Btn.Name = "Cancel_Btn";
+            Cancel_Btn.Size = new Size(118, 29);
+            Cancel_Btn.TabIndex = 9;
+            Cancel_Btn.Text = "Cancel";
+            Cancel_Btn.UseVisualStyleBackColor = false;
+            Cancel_Btn.Click += Cancel_Btn_Click;
+            // 
             // Format_Panel
             // 
             Format_Panel.Location = new Point(21, 353);
@@ -172,7 +206,7 @@
             // 
             // ATNav_Panel
             // 
-            ATNav_Panel.BackColor = Color.FromArgb(60, 90, 130);
+            ATNav_Panel.BackColor = Color.FromArgb(8, 23, 45);
             ATNav_Panel.Controls.Add(ATNavClose_Btn);
             ATNav_Panel.Dock = DockStyle.Top;
             ATNav_Panel.Location = new Point(0, 0);
@@ -192,39 +226,7 @@
             ATNavClose_Btn.Size = new Size(30, 33);
             ATNavClose_Btn.TabIndex = 1;
             ATNavClose_Btn.UseVisualStyleBackColor = false;
-            // 
-            // comboBox1
-            // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(136, 7);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(192, 23);
-            comboBox1.TabIndex = 8;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Helvetica CE", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 238);
-            label1.ForeColor = Color.FromArgb(253, 248, 225);
-            label1.Location = new Point(20, 7);
-            label1.Name = "label1";
-            label1.Size = new Size(75, 15);
-            label1.TabIndex = 7;
-            label1.Text = "Select User";
-            // 
-            // Cancel_Btn
-            // 
-            Cancel_Btn.BackColor = Color.FromArgb(60, 90, 130);
-            Cancel_Btn.FlatAppearance.BorderSize = 0;
-            Cancel_Btn.FlatStyle = FlatStyle.Flat;
-            Cancel_Btn.Font = new Font("Helvetica 2 BQ ", 11.9999981F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            Cancel_Btn.ForeColor = Color.FromArgb(253, 248, 225);
-            Cancel_Btn.Location = new Point(136, 3);
-            Cancel_Btn.Name = "Cancel_Btn";
-            Cancel_Btn.Size = new Size(118, 29);
-            Cancel_Btn.TabIndex = 9;
-            Cancel_Btn.Text = "Cancel";
-            Cancel_Btn.UseVisualStyleBackColor = false;
+            ATNavClose_Btn.Click += ATNavClose_Btn_Click;
             // 
             // EditTeam
             // 

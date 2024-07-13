@@ -32,6 +32,7 @@
             Title_Panel = new Panel();
             AddTask_Label = new Label();
             SubmitButton_Panel = new Panel();
+            Cancel_Btn = new Button();
             Submit_Btn = new Button();
             dateTimePicker2 = new DateTimePicker();
             dateTimePicker1 = new DateTimePicker();
@@ -45,9 +46,8 @@
             Role_CB = new ComboBox();
             Role_Label = new Label();
             Main_Panel = new Panel();
-            ATNav_Panel = new Panel();
             comboBox2 = new ComboBox();
-            Cancel_Btn = new Button();
+            ATNav_Panel = new Panel();
             Title_Panel.SuspendLayout();
             SubmitButton_Panel.SuspendLayout();
             Main_Panel.SuspendLayout();
@@ -66,6 +66,7 @@
             ATNavClose_Btn.Size = new Size(30, 33);
             ATNavClose_Btn.TabIndex = 1;
             ATNavClose_Btn.UseVisualStyleBackColor = false;
+            ATNavClose_Btn.Click += ATNavClose_Btn_Click;
             // 
             // Title_Panel
             // 
@@ -94,6 +95,21 @@
             SubmitButton_Panel.Name = "SubmitButton_Panel";
             SubmitButton_Panel.Size = new Size(433, 55);
             SubmitButton_Panel.TabIndex = 18;
+            // 
+            // Cancel_Btn
+            // 
+            Cancel_Btn.BackColor = Color.FromArgb(60, 90, 130);
+            Cancel_Btn.FlatAppearance.BorderSize = 0;
+            Cancel_Btn.FlatStyle = FlatStyle.Flat;
+            Cancel_Btn.Font = new Font("Helvetica 2 BQ ", 11.9999981F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            Cancel_Btn.ForeColor = Color.FromArgb(253, 248, 225);
+            Cancel_Btn.Location = new Point(133, 3);
+            Cancel_Btn.Name = "Cancel_Btn";
+            Cancel_Btn.Size = new Size(118, 29);
+            Cancel_Btn.TabIndex = 1;
+            Cancel_Btn.Text = "Cancel";
+            Cancel_Btn.UseVisualStyleBackColor = false;
+            Cancel_Btn.Click += Cancel_Btn_Click;
             // 
             // Submit_Btn
             // 
@@ -236,16 +252,6 @@
             Main_Panel.Size = new Size(433, 295);
             Main_Panel.TabIndex = 17;
             // 
-            // ATNav_Panel
-            // 
-            ATNav_Panel.BackColor = Color.FromArgb(60, 90, 130);
-            ATNav_Panel.Controls.Add(ATNavClose_Btn);
-            ATNav_Panel.Dock = DockStyle.Top;
-            ATNav_Panel.Location = new Point(0, 0);
-            ATNav_Panel.Name = "ATNav_Panel";
-            ATNav_Panel.Size = new Size(475, 33);
-            ATNav_Panel.TabIndex = 19;
-            // 
             // comboBox2
             // 
             comboBox2.FormattingEnabled = true;
@@ -254,19 +260,15 @@
             comboBox2.Size = new Size(200, 23);
             comboBox2.TabIndex = 17;
             // 
-            // Cancel_Btn
+            // ATNav_Panel
             // 
-            Cancel_Btn.BackColor = Color.FromArgb(60, 90, 130);
-            Cancel_Btn.FlatAppearance.BorderSize = 0;
-            Cancel_Btn.FlatStyle = FlatStyle.Flat;
-            Cancel_Btn.Font = new Font("Helvetica 2 BQ ", 11.9999981F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            Cancel_Btn.ForeColor = Color.FromArgb(253, 248, 225);
-            Cancel_Btn.Location = new Point(133, 3);
-            Cancel_Btn.Name = "Cancel_Btn";
-            Cancel_Btn.Size = new Size(118, 29);
-            Cancel_Btn.TabIndex = 1;
-            Cancel_Btn.Text = "Cancel";
-            Cancel_Btn.UseVisualStyleBackColor = false;
+            ATNav_Panel.BackColor = Color.FromArgb(8, 23, 45);
+            ATNav_Panel.Controls.Add(ATNavClose_Btn);
+            ATNav_Panel.Dock = DockStyle.Top;
+            ATNav_Panel.Location = new Point(0, 0);
+            ATNav_Panel.Name = "ATNav_Panel";
+            ATNav_Panel.Size = new Size(475, 33);
+            ATNav_Panel.TabIndex = 19;
             // 
             // EditTask
             // 

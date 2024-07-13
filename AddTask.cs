@@ -16,5 +16,15 @@ namespace Nimble
         {
             InitializeComponent();
         }
+
+        private void ATNavClose_Btn_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void Cancel_Btn_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

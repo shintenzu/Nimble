@@ -118,6 +118,7 @@
             exit_Btn.TextAlign = ContentAlignment.MiddleLeft;
             exit_Btn.TextImageRelation = TextImageRelation.ImageBeforeText;
             exit_Btn.UseVisualStyleBackColor = false;
+            exit_Btn.Click += exit_Btn_Click;
             exit_Btn.MouseClick += exit_Btn_MouseClick;
             // 
             // back_Btn
@@ -201,6 +202,7 @@
             effort_Btn.TextAlign = ContentAlignment.MiddleLeft;
             effort_Btn.TextImageRelation = TextImageRelation.ImageBeforeText;
             effort_Btn.UseVisualStyleBackColor = false;
+            effort_Btn.Click += effort_Btn_Click;
             // 
             // tasks_Btn
             // 
@@ -222,6 +224,7 @@
             tasks_Btn.TextAlign = ContentAlignment.MiddleLeft;
             tasks_Btn.TextImageRelation = TextImageRelation.ImageBeforeText;
             tasks_Btn.UseVisualStyleBackColor = false;
+            tasks_Btn.Click += tasks_Btn_Click;
             // 
             // team_Btn
             // 
@@ -243,6 +246,7 @@
             team_Btn.TextAlign = ContentAlignment.MiddleLeft;
             team_Btn.TextImageRelation = TextImageRelation.ImageBeforeText;
             team_Btn.UseVisualStyleBackColor = false;
+            team_Btn.Click += team_Btn_Click;
             // 
             // overview_Btn
             // 
@@ -330,7 +334,7 @@
             // overview_uc1
             // 
             overview_uc1.BackColor = Color.FromArgb(60, 90, 130);
-            overview_uc1.Location = new Point(246, 80);
+            overview_uc1.Location = new Point(240, 60);
             overview_uc1.Name = "overview_uc1";
             overview_uc1.Size = new Size(960, 615);
             overview_uc1.TabIndex = 3;
@@ -338,7 +342,7 @@
             // team_uc1
             // 
             team_uc1.BackColor = Color.FromArgb(60, 90, 130);
-            team_uc1.Location = new Point(261, 120);
+            team_uc1.Location = new Point(240, 100);
             team_uc1.Name = "team_uc1";
             team_uc1.Size = new Size(960, 615);
             team_uc1.TabIndex = 4;
@@ -346,7 +350,7 @@
             // task_uc1
             // 
             task_uc1.BackColor = Color.FromArgb(60, 90, 130);
-            task_uc1.Location = new Point(278, 280);
+            task_uc1.Location = new Point(240, 160);
             task_uc1.Name = "task_uc1";
             task_uc1.Size = new Size(960, 615);
             task_uc1.TabIndex = 5;
@@ -354,7 +358,7 @@
             // effort_uc1
             // 
             effort_uc1.BackColor = Color.FromArgb(60, 90, 130);
-            effort_uc1.Location = new Point(278, 407);
+            effort_uc1.Location = new Point(240, 219);
             effort_uc1.Name = "effort_uc1";
             effort_uc1.Size = new Size(960, 615);
             effort_uc1.TabIndex = 6;

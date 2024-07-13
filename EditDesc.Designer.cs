@@ -34,10 +34,10 @@
             ED_RTB = new RichTextBox();
             EDFormat_Panel = new Panel();
             EDButton_Panel = new Panel();
+            Cancel_Btn = new Button();
             EDSubmit_Btn = new Button();
             panel1 = new Panel();
             EDNavClose_Btn = new Button();
-            Cancel_Btn = new Button();
             EDTitle_Panel.SuspendLayout();
             EditDescEntryRTB_Panel.SuspendLayout();
             EDButton_Panel.SuspendLayout();
@@ -98,6 +98,21 @@
             EDButton_Panel.Size = new Size(433, 55);
             EDButton_Panel.TabIndex = 4;
             // 
+            // Cancel_Btn
+            // 
+            Cancel_Btn.BackColor = Color.FromArgb(60, 90, 130);
+            Cancel_Btn.FlatAppearance.BorderSize = 0;
+            Cancel_Btn.FlatStyle = FlatStyle.Flat;
+            Cancel_Btn.Font = new Font("Helvetica 2 BQ ", 11.9999981F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            Cancel_Btn.ForeColor = Color.FromArgb(253, 248, 225);
+            Cancel_Btn.Location = new Point(133, 3);
+            Cancel_Btn.Name = "Cancel_Btn";
+            Cancel_Btn.Size = new Size(118, 29);
+            Cancel_Btn.TabIndex = 3;
+            Cancel_Btn.Text = "Cancel";
+            Cancel_Btn.UseVisualStyleBackColor = false;
+            Cancel_Btn.Click += Cancel_Btn_Click;
+            // 
             // EDSubmit_Btn
             // 
             EDSubmit_Btn.BackColor = Color.FromArgb(60, 90, 130);
@@ -114,7 +129,7 @@
             // 
             // panel1
             // 
-            panel1.BackColor = Color.FromArgb(60, 90, 130);
+            panel1.BackColor = Color.FromArgb(8, 23, 45);
             panel1.Controls.Add(EDNavClose_Btn);
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
@@ -135,20 +150,6 @@
             EDNavClose_Btn.TabIndex = 1;
             EDNavClose_Btn.UseVisualStyleBackColor = false;
             EDNavClose_Btn.Click += EDNavClose_Btn_Click;
-            // 
-            // Cancel_Btn
-            // 
-            Cancel_Btn.BackColor = Color.FromArgb(60, 90, 130);
-            Cancel_Btn.FlatAppearance.BorderSize = 0;
-            Cancel_Btn.FlatStyle = FlatStyle.Flat;
-            Cancel_Btn.Font = new Font("Helvetica 2 BQ ", 11.9999981F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            Cancel_Btn.ForeColor = Color.FromArgb(253, 248, 225);
-            Cancel_Btn.Location = new Point(133, 3);
-            Cancel_Btn.Name = "Cancel_Btn";
-            Cancel_Btn.Size = new Size(118, 29);
-            Cancel_Btn.TabIndex = 3;
-            Cancel_Btn.Text = "Cancel";
-            Cancel_Btn.UseVisualStyleBackColor = false;
             // 
             // EditDesc
             // 
