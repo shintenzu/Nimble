@@ -126,6 +126,7 @@
             EDSubmit_Btn.TabIndex = 0;
             EDSubmit_Btn.Text = "Submit";
             EDSubmit_Btn.UseVisualStyleBackColor = false;
+            EDSubmit_Btn.Click += EDSubmit_Btn_Click;
             // 
             // panel1
             // 

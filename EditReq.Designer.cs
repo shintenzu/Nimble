@@ -119,6 +119,7 @@
             Submit_Btn.TabIndex = 0;
             Submit_Btn.Text = "Submit";
             Submit_Btn.UseVisualStyleBackColor = false;
+            Submit_Btn.Click += Submit_Btn_Click;
             // 
             // Format_Panel
             // 

@@ -10,13 +10,11 @@ using System.Windows.Forms;
 
 namespace Nimble
 {
-    public partial class Effort_UC : UserControl
+    public partial class Risk_UC : UserControl
     {
-        public static Effort_UC instance;
-        public Effort_UC()
+        public Risk_UC()
         {
             InitializeComponent();
-            instance = this;
         }
     }
 }

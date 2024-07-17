@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             overviewtitle_Label = new Label();
             overviewtitle_Panel = new Panel();
             projectdesc_Panel = new Panel();
@@ -39,24 +40,36 @@
             editreq_Btn = new Button();
             projectreq_Label = new Label();
             team_Panel = new Panel();
+            UserEffort_Label = new Label();
+            uTaskCount_Label = new Label();
+            UserTask_Label = new Label();
+            UTL_LB = new ListBox();
+            UserID_Label = new Label();
+            TeamName_Label = new Label();
+            user_LB = new ListBox();
             editteam_Btn = new Button();
-            team_DGV = new DataGridView();
             addteam_Btn = new Button();
             team_Label = new Label();
+            taskBindingSource = new BindingSource(components);
             task_Panel = new Panel();
+            TaskDesc_RTB = new RichTextBox();
+            DueDate_Label = new Label();
+            StartDate_Label = new Label();
+            TaskEstEffort_Label = new Label();
+            TaskID_Label = new Label();
+            task_LB = new ListBox();
+            TD_Label = new Label();
             edittasks_Btn = new Button();
-            task_DGV = new DataGridView();
             addtask_Btn = new Button();
             task_Label = new Label();
-            overviewbody_Panel = new Panel();
+            taskBindingSource1 = new BindingSource(components);
             overviewtitle_Panel.SuspendLayout();
             projectdesc_Panel.SuspendLayout();
             req_Panel.SuspendLayout();
             team_Panel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)team_DGV).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)taskBindingSource).BeginInit();
             task_Panel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)task_DGV).BeginInit();
-            overviewbody_Panel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)taskBindingSource1).BeginInit();
             SuspendLayout();
             // 
             // overviewtitle_Label
@@ -88,7 +101,7 @@
             projectdesc_Panel.Controls.Add(Desc_RTB);
             projectdesc_Panel.Controls.Add(changedesc_Btn);
             projectdesc_Panel.Controls.Add(projectdesc_Label);
-            projectdesc_Panel.Location = new Point(24, 17);
+            projectdesc_Panel.Location = new Point(25, 65);
             projectdesc_Panel.Margin = new Padding(10);
             projectdesc_Panel.Name = "projectdesc_Panel";
             projectdesc_Panel.Padding = new Padding(5);
@@ -103,7 +116,7 @@
             Desc_RTB.Name = "Desc_RTB";
             Desc_RTB.ReadOnly = true;
             Desc_RTB.ScrollBars = RichTextBoxScrollBars.Vertical;
-            Desc_RTB.Size = new Size(339, 147);
+            Desc_RTB.Size = new Size(339, 139);
             Desc_RTB.TabIndex = 7;
             Desc_RTB.Text = "";
             // 
@@ -149,7 +162,7 @@
             req_Panel.Controls.Add(req_RTB);
             req_Panel.Controls.Add(editreq_Btn);
             req_Panel.Controls.Add(projectreq_Label);
-            req_Panel.Location = new Point(24, 248);
+            req_Panel.Location = new Point(25, 296);
             req_Panel.Margin = new Padding(10);
             req_Panel.Name = "req_Panel";
             req_Panel.Padding = new Padding(5);
@@ -164,7 +177,7 @@
             req_RTB.Name = "req_RTB";
             req_RTB.ReadOnly = true;
             req_RTB.ScrollBars = RichTextBoxScrollBars.Vertical;
-            req_RTB.Size = new Size(339, 221);
+            req_RTB.Size = new Size(339, 214);
             req_RTB.TabIndex = 8;
             req_RTB.Text = "";
             // 
@@ -207,16 +220,119 @@
             // 
             // team_Panel
             // 
+            team_Panel.Controls.Add(UserEffort_Label);
+            team_Panel.Controls.Add(uTaskCount_Label);
+            team_Panel.Controls.Add(UserTask_Label);
+            team_Panel.Controls.Add(UTL_LB);
+            team_Panel.Controls.Add(UserID_Label);
+            team_Panel.Controls.Add(TeamName_Label);
+            team_Panel.Controls.Add(user_LB);
             team_Panel.Controls.Add(editteam_Btn);
-            team_Panel.Controls.Add(team_DGV);
             team_Panel.Controls.Add(addteam_Btn);
             team_Panel.Controls.Add(team_Label);
-            team_Panel.Location = new Point(411, 17);
+            team_Panel.Location = new Point(412, 65);
             team_Panel.Margin = new Padding(10);
             team_Panel.Name = "team_Panel";
             team_Panel.Padding = new Padding(5);
             team_Panel.Size = new Size(523, 219);
             team_Panel.TabIndex = 4;
+            // 
+            // UserEffort_Label
+            // 
+            UserEffort_Label.AutoSize = true;
+            UserEffort_Label.BackColor = Color.Transparent;
+            UserEffort_Label.FlatStyle = FlatStyle.Flat;
+            UserEffort_Label.Font = new Font("Helvetica", 9.749999F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            UserEffort_Label.ForeColor = Color.FromArgb(253, 248, 225);
+            UserEffort_Label.Location = new Point(186, 110);
+            UserEffort_Label.Margin = new Padding(3);
+            UserEffort_Label.Name = "UserEffort_Label";
+            UserEffort_Label.Padding = new Padding(0, 0, 0, 5);
+            UserEffort_Label.Size = new Size(76, 21);
+            UserEffort_Label.TabIndex = 14;
+            UserEffort_Label.Text = "User Effort:";
+            // 
+            // uTaskCount_Label
+            // 
+            uTaskCount_Label.AutoSize = true;
+            uTaskCount_Label.BackColor = Color.Transparent;
+            uTaskCount_Label.FlatStyle = FlatStyle.Flat;
+            uTaskCount_Label.Font = new Font("Helvetica", 9.749999F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            uTaskCount_Label.ForeColor = Color.FromArgb(253, 248, 225);
+            uTaskCount_Label.Location = new Point(186, 83);
+            uTaskCount_Label.Margin = new Padding(3);
+            uTaskCount_Label.Name = "uTaskCount_Label";
+            uTaskCount_Label.Padding = new Padding(0, 0, 0, 5);
+            uTaskCount_Label.Size = new Size(80, 21);
+            uTaskCount_Label.TabIndex = 13;
+            uTaskCount_Label.Text = "Task Count:";
+            // 
+            // UserTask_Label
+            // 
+            UserTask_Label.AutoSize = true;
+            UserTask_Label.BackColor = Color.Transparent;
+            UserTask_Label.FlatStyle = FlatStyle.Flat;
+            UserTask_Label.Font = new Font("Helvetica", 9.749999F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            UserTask_Label.ForeColor = Color.FromArgb(253, 248, 225);
+            UserTask_Label.Location = new Point(409, 29);
+            UserTask_Label.Margin = new Padding(3);
+            UserTask_Label.Name = "UserTask_Label";
+            UserTask_Label.Padding = new Padding(0, 0, 0, 5);
+            UserTask_Label.Size = new Size(106, 21);
+            UserTask_Label.TabIndex = 12;
+            UserTask_Label.Text = "User's Task List:";
+            // 
+            // UTL_LB
+            // 
+            UTL_LB.BackColor = Color.FromArgb(254, 248, 235);
+            UTL_LB.FormattingEnabled = true;
+            UTL_LB.ItemHeight = 15;
+            UTL_LB.Location = new Point(409, 56);
+            UTL_LB.Name = "UTL_LB";
+            UTL_LB.Size = new Size(106, 124);
+            UTL_LB.TabIndex = 11;
+            // 
+            // UserID_Label
+            // 
+            UserID_Label.AutoSize = true;
+            UserID_Label.BackColor = Color.Transparent;
+            UserID_Label.FlatStyle = FlatStyle.Flat;
+            UserID_Label.Font = new Font("Helvetica", 9.749999F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            UserID_Label.ForeColor = Color.FromArgb(253, 248, 225);
+            UserID_Label.Location = new Point(186, 29);
+            UserID_Label.Margin = new Padding(3);
+            UserID_Label.Name = "UserID_Label";
+            UserID_Label.Padding = new Padding(0, 0, 0, 5);
+            UserID_Label.Size = new Size(24, 21);
+            UserID_Label.TabIndex = 10;
+            UserID_Label.Text = "ID:";
+            // 
+            // TeamName_Label
+            // 
+            TeamName_Label.AutoSize = true;
+            TeamName_Label.BackColor = Color.Transparent;
+            TeamName_Label.FlatStyle = FlatStyle.Flat;
+            TeamName_Label.Font = new Font("Helvetica", 9.749999F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            TeamName_Label.ForeColor = Color.FromArgb(253, 248, 225);
+            TeamName_Label.Location = new Point(186, 56);
+            TeamName_Label.Margin = new Padding(3);
+            TeamName_Label.Name = "TeamName_Label";
+            TeamName_Label.Padding = new Padding(0, 0, 0, 5);
+            TeamName_Label.Size = new Size(48, 21);
+            TeamName_Label.TabIndex = 9;
+            TeamName_Label.Text = "Name:";
+            // 
+            // user_LB
+            // 
+            user_LB.BackColor = Color.FromArgb(254, 248, 235);
+            user_LB.FormattingEnabled = true;
+            user_LB.ItemHeight = 15;
+            user_LB.Location = new Point(8, 33);
+            user_LB.Name = "user_LB";
+            user_LB.Size = new Size(120, 139);
+            user_LB.TabIndex = 8;
+            user_LB.Click += user_LB_Click;
+            user_LB.SelectedIndexChanged += user_LB_SelectedIndexChanged;
             // 
             // editteam_Btn
             // 
@@ -238,15 +354,6 @@
             editteam_Btn.TextImageRelation = TextImageRelation.ImageBeforeText;
             editteam_Btn.UseVisualStyleBackColor = false;
             editteam_Btn.Click += editteam_Btn_Click;
-            // 
-            // team_DGV
-            // 
-            team_DGV.BackgroundColor = Color.FromArgb(254, 248, 235);
-            team_DGV.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            team_DGV.Location = new Point(5, 33);
-            team_DGV.Name = "team_DGV";
-            team_DGV.Size = new Size(510, 147);
-            team_DGV.TabIndex = 5;
             // 
             // addteam_Btn
             // 
@@ -285,18 +392,126 @@
             team_Label.TabIndex = 1;
             team_Label.Text = "Team Members";
             // 
+            // taskBindingSource
+            // 
+            taskBindingSource.DataSource = typeof(Task);
+            // 
             // task_Panel
             // 
+            task_Panel.Controls.Add(TaskDesc_RTB);
+            task_Panel.Controls.Add(DueDate_Label);
+            task_Panel.Controls.Add(StartDate_Label);
+            task_Panel.Controls.Add(TaskEstEffort_Label);
+            task_Panel.Controls.Add(TaskID_Label);
+            task_Panel.Controls.Add(task_LB);
+            task_Panel.Controls.Add(TD_Label);
             task_Panel.Controls.Add(edittasks_Btn);
-            task_Panel.Controls.Add(task_DGV);
             task_Panel.Controls.Add(addtask_Btn);
             task_Panel.Controls.Add(task_Label);
-            task_Panel.Location = new Point(411, 248);
+            task_Panel.Location = new Point(412, 296);
             task_Panel.Margin = new Padding(10);
             task_Panel.Name = "task_Panel";
             task_Panel.Padding = new Padding(5);
             task_Panel.Size = new Size(523, 300);
             task_Panel.TabIndex = 5;
+            // 
+            // TaskDesc_RTB
+            // 
+            TaskDesc_RTB.BackColor = Color.FromArgb(254, 248, 235);
+            TaskDesc_RTB.BorderStyle = BorderStyle.None;
+            TaskDesc_RTB.Location = new Point(195, 87);
+            TaskDesc_RTB.Name = "TaskDesc_RTB";
+            TaskDesc_RTB.ReadOnly = true;
+            TaskDesc_RTB.ScrollBars = RichTextBoxScrollBars.Vertical;
+            TaskDesc_RTB.Size = new Size(320, 85);
+            TaskDesc_RTB.TabIndex = 8;
+            TaskDesc_RTB.Text = "";
+            // 
+            // DueDate_Label
+            // 
+            DueDate_Label.AutoSize = true;
+            DueDate_Label.BackColor = Color.Transparent;
+            DueDate_Label.FlatStyle = FlatStyle.Flat;
+            DueDate_Label.Font = new Font("Helvetica", 9.749999F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            DueDate_Label.ForeColor = Color.FromArgb(253, 248, 225);
+            DueDate_Label.Location = new Point(186, 232);
+            DueDate_Label.Margin = new Padding(3);
+            DueDate_Label.Name = "DueDate_Label";
+            DueDate_Label.Padding = new Padding(0, 0, 0, 5);
+            DueDate_Label.Size = new Size(73, 21);
+            DueDate_Label.TabIndex = 17;
+            DueDate_Label.Text = "Due Date: ";
+            // 
+            // StartDate_Label
+            // 
+            StartDate_Label.AutoSize = true;
+            StartDate_Label.BackColor = Color.Transparent;
+            StartDate_Label.FlatStyle = FlatStyle.Flat;
+            StartDate_Label.Font = new Font("Helvetica", 9.749999F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            StartDate_Label.ForeColor = Color.FromArgb(253, 248, 225);
+            StartDate_Label.Location = new Point(186, 205);
+            StartDate_Label.Margin = new Padding(3);
+            StartDate_Label.Name = "StartDate_Label";
+            StartDate_Label.Padding = new Padding(0, 0, 0, 5);
+            StartDate_Label.Size = new Size(78, 21);
+            StartDate_Label.TabIndex = 16;
+            StartDate_Label.Text = "Start Date: ";
+            // 
+            // TaskEstEffort_Label
+            // 
+            TaskEstEffort_Label.AutoSize = true;
+            TaskEstEffort_Label.BackColor = Color.Transparent;
+            TaskEstEffort_Label.FlatStyle = FlatStyle.Flat;
+            TaskEstEffort_Label.Font = new Font("Helvetica", 9.749999F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            TaskEstEffort_Label.ForeColor = Color.FromArgb(253, 248, 225);
+            TaskEstEffort_Label.Location = new Point(186, 178);
+            TaskEstEffort_Label.Margin = new Padding(3);
+            TaskEstEffort_Label.Name = "TaskEstEffort_Label";
+            TaskEstEffort_Label.Padding = new Padding(0, 0, 0, 5);
+            TaskEstEffort_Label.Size = new Size(146, 21);
+            TaskEstEffort_Label.TabIndex = 15;
+            TaskEstEffort_Label.Text = "Task Estimated Effort: ";
+            // 
+            // TaskID_Label
+            // 
+            TaskID_Label.AutoSize = true;
+            TaskID_Label.BackColor = Color.Transparent;
+            TaskID_Label.FlatStyle = FlatStyle.Flat;
+            TaskID_Label.Font = new Font("Helvetica", 9.749999F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            TaskID_Label.ForeColor = Color.FromArgb(253, 248, 225);
+            TaskID_Label.Location = new Point(186, 37);
+            TaskID_Label.Margin = new Padding(3);
+            TaskID_Label.Name = "TaskID_Label";
+            TaskID_Label.Padding = new Padding(0, 0, 0, 5);
+            TaskID_Label.Size = new Size(56, 21);
+            TaskID_Label.TabIndex = 14;
+            TaskID_Label.Text = "Task ID:";
+            // 
+            // task_LB
+            // 
+            task_LB.BackColor = Color.FromArgb(254, 248, 235);
+            task_LB.FormattingEnabled = true;
+            task_LB.ItemHeight = 15;
+            task_LB.Location = new Point(8, 39);
+            task_LB.Name = "task_LB";
+            task_LB.Size = new Size(120, 214);
+            task_LB.TabIndex = 13;
+            task_LB.Click += task_LB_Click;
+            // 
+            // TD_Label
+            // 
+            TD_Label.AutoSize = true;
+            TD_Label.BackColor = Color.Transparent;
+            TD_Label.FlatStyle = FlatStyle.Flat;
+            TD_Label.Font = new Font("Helvetica", 9.749999F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            TD_Label.ForeColor = Color.FromArgb(253, 248, 225);
+            TD_Label.Location = new Point(186, 64);
+            TD_Label.Margin = new Padding(3);
+            TD_Label.Name = "TD_Label";
+            TD_Label.Padding = new Padding(0, 0, 0, 5);
+            TD_Label.Size = new Size(118, 21);
+            TD_Label.TabIndex = 13;
+            TD_Label.Text = "Task Description: ";
             // 
             // edittasks_Btn
             // 
@@ -318,15 +533,6 @@
             edittasks_Btn.TextImageRelation = TextImageRelation.ImageBeforeText;
             edittasks_Btn.UseVisualStyleBackColor = false;
             edittasks_Btn.Click += edittasks_Btn_Click;
-            // 
-            // task_DGV
-            // 
-            task_DGV.BackgroundColor = Color.FromArgb(254, 248, 235);
-            task_DGV.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            task_DGV.Location = new Point(5, 33);
-            task_DGV.Name = "task_DGV";
-            task_DGV.Size = new Size(510, 227);
-            task_DGV.TabIndex = 7;
             // 
             // addtask_Btn
             // 
@@ -365,27 +571,23 @@
             task_Label.TabIndex = 1;
             task_Label.Text = "Tasks";
             // 
-            // overviewbody_Panel
+            // taskBindingSource1
             // 
-            overviewbody_Panel.Controls.Add(task_Panel);
-            overviewbody_Panel.Controls.Add(team_Panel);
-            overviewbody_Panel.Controls.Add(req_Panel);
-            overviewbody_Panel.Controls.Add(projectdesc_Panel);
-            overviewbody_Panel.Dock = DockStyle.Fill;
-            overviewbody_Panel.Location = new Point(0, 42);
-            overviewbody_Panel.Name = "overviewbody_Panel";
-            overviewbody_Panel.Size = new Size(960, 573);
-            overviewbody_Panel.TabIndex = 2;
+            taskBindingSource1.DataSource = typeof(Task);
             // 
             // Overview_UC
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(60, 90, 130);
-            Controls.Add(overviewbody_Panel);
+            Controls.Add(task_Panel);
+            Controls.Add(team_Panel);
             Controls.Add(overviewtitle_Panel);
+            Controls.Add(req_Panel);
+            Controls.Add(projectdesc_Panel);
             Name = "Overview_UC";
             Size = new Size(960, 615);
+            Load += Overview_UC_Load;
             overviewtitle_Panel.ResumeLayout(false);
             overviewtitle_Panel.PerformLayout();
             projectdesc_Panel.ResumeLayout(false);
@@ -394,11 +596,10 @@
             req_Panel.PerformLayout();
             team_Panel.ResumeLayout(false);
             team_Panel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)team_DGV).EndInit();
+            ((System.ComponentModel.ISupportInitialize)taskBindingSource).EndInit();
             task_Panel.ResumeLayout(false);
             task_Panel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)task_DGV).EndInit();
-            overviewbody_Panel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)taskBindingSource1).EndInit();
             ResumeLayout(false);
         }
 
@@ -415,14 +616,27 @@
         private Label projectreq_Label;
         private Panel team_Panel;
         private Button editteam_Btn;
-        private DataGridView team_DGV;
         private Button addteam_Btn;
         private Label team_Label;
         private Panel task_Panel;
         private Button edittasks_Btn;
-        private DataGridView task_DGV;
         private Button addtask_Btn;
         private Label task_Label;
-        private Panel overviewbody_Panel;
+        private BindingSource taskBindingSource;
+        private BindingSource taskBindingSource1;
+        private ListBox user_LB;
+        private Label TeamName_Label;
+        private Label UserID_Label;
+        private Label UserTask_Label;
+        private ListBox UTL_LB;
+        private Label TaskID_Label;
+        private ListBox task_LB;
+        private Label TD_Label;
+        private Label uTaskCount_Label;
+        private Label UserEffort_Label;
+        private Label TaskEstEffort_Label;
+        private Label DueDate_Label;
+        private Label StartDate_Label;
+        private RichTextBox TaskDesc_RTB;
     }
 }

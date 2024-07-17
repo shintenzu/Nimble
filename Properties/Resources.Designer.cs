@@ -73,6 +73,16 @@ namespace Nimble.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Empty_Icon {
+            get {
+                object obj = ResourceManager.GetObject("Empty Icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Nimble_Logo {
             get {
                 object obj = ResourceManager.GetObject("Nimble Logo", resourceCulture);

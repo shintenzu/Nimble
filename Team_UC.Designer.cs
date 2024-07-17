@@ -30,15 +30,22 @@
         {
             overviewbody_Panel = new Panel();
             team_Panel = new Panel();
+            TaskID_Label = new Label();
+            TD_Label = new Label();
+            UserEffort_Label = new Label();
+            uTaskCount_Label = new Label();
+            UserTask_Label = new Label();
+            UTL_LB = new ListBox();
+            UserID_Label = new Label();
+            TeamName_Label = new Label();
+            user_LB = new ListBox();
             editteam_Btn = new Button();
-            team_DGV = new DataGridView();
             addteam_Btn = new Button();
             team_Label = new Label();
             overviewtitle_Panel = new Panel();
             overviewtitle_Label = new Label();
             overviewbody_Panel.SuspendLayout();
             team_Panel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)team_DGV).BeginInit();
             overviewtitle_Panel.SuspendLayout();
             SuspendLayout();
             // 
@@ -53,8 +60,16 @@
             // 
             // team_Panel
             // 
+            team_Panel.Controls.Add(TaskID_Label);
+            team_Panel.Controls.Add(TD_Label);
+            team_Panel.Controls.Add(UserEffort_Label);
+            team_Panel.Controls.Add(uTaskCount_Label);
+            team_Panel.Controls.Add(UserTask_Label);
+            team_Panel.Controls.Add(UTL_LB);
+            team_Panel.Controls.Add(UserID_Label);
+            team_Panel.Controls.Add(TeamName_Label);
+            team_Panel.Controls.Add(user_LB);
             team_Panel.Controls.Add(editteam_Btn);
-            team_Panel.Controls.Add(team_DGV);
             team_Panel.Controls.Add(addteam_Btn);
             team_Panel.Controls.Add(team_Label);
             team_Panel.Location = new Point(24, 17);
@@ -63,6 +78,133 @@
             team_Panel.Padding = new Padding(5);
             team_Panel.Size = new Size(926, 528);
             team_Panel.TabIndex = 4;
+            // 
+            // TaskID_Label
+            // 
+            TaskID_Label.AutoSize = true;
+            TaskID_Label.BackColor = Color.Transparent;
+            TaskID_Label.FlatStyle = FlatStyle.Flat;
+            TaskID_Label.Font = new Font("Helvetica", 9.749999F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            TaskID_Label.ForeColor = Color.FromArgb(253, 248, 225);
+            TaskID_Label.Location = new Point(498, 52);
+            TaskID_Label.Margin = new Padding(3);
+            TaskID_Label.Name = "TaskID_Label";
+            TaskID_Label.Padding = new Padding(0, 0, 0, 5);
+            TaskID_Label.Size = new Size(56, 21);
+            TaskID_Label.TabIndex = 22;
+            TaskID_Label.Text = "Task ID:";
+            // 
+            // TD_Label
+            // 
+            TD_Label.AutoSize = true;
+            TD_Label.BackColor = Color.Transparent;
+            TD_Label.FlatStyle = FlatStyle.Flat;
+            TD_Label.Font = new Font("Helvetica", 9.749999F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            TD_Label.ForeColor = Color.FromArgb(253, 248, 225);
+            TD_Label.Location = new Point(498, 79);
+            TD_Label.Margin = new Padding(3);
+            TD_Label.Name = "TD_Label";
+            TD_Label.Padding = new Padding(0, 0, 0, 5);
+            TD_Label.Size = new Size(118, 21);
+            TD_Label.TabIndex = 21;
+            TD_Label.Text = "Task Description: ";
+            // 
+            // UserEffort_Label
+            // 
+            UserEffort_Label.AutoSize = true;
+            UserEffort_Label.BackColor = Color.Transparent;
+            UserEffort_Label.FlatStyle = FlatStyle.Flat;
+            UserEffort_Label.Font = new Font("Helvetica", 9.749999F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            UserEffort_Label.ForeColor = Color.FromArgb(253, 248, 225);
+            UserEffort_Label.Location = new Point(165, 133);
+            UserEffort_Label.Margin = new Padding(3);
+            UserEffort_Label.Name = "UserEffort_Label";
+            UserEffort_Label.Padding = new Padding(0, 0, 0, 5);
+            UserEffort_Label.Size = new Size(76, 21);
+            UserEffort_Label.TabIndex = 20;
+            UserEffort_Label.Text = "User Effort:";
+            // 
+            // uTaskCount_Label
+            // 
+            uTaskCount_Label.AutoSize = true;
+            uTaskCount_Label.BackColor = Color.Transparent;
+            uTaskCount_Label.FlatStyle = FlatStyle.Flat;
+            uTaskCount_Label.Font = new Font("Helvetica", 9.749999F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            uTaskCount_Label.ForeColor = Color.FromArgb(253, 248, 225);
+            uTaskCount_Label.Location = new Point(165, 106);
+            uTaskCount_Label.Margin = new Padding(3);
+            uTaskCount_Label.Name = "uTaskCount_Label";
+            uTaskCount_Label.Padding = new Padding(0, 0, 0, 5);
+            uTaskCount_Label.Size = new Size(80, 21);
+            uTaskCount_Label.TabIndex = 19;
+            uTaskCount_Label.Text = "Task Count:";
+            // 
+            // UserTask_Label
+            // 
+            UserTask_Label.AutoSize = true;
+            UserTask_Label.BackColor = Color.Transparent;
+            UserTask_Label.FlatStyle = FlatStyle.Flat;
+            UserTask_Label.Font = new Font("Helvetica", 9.749999F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            UserTask_Label.ForeColor = Color.FromArgb(253, 248, 225);
+            UserTask_Label.Location = new Point(351, 52);
+            UserTask_Label.Margin = new Padding(3);
+            UserTask_Label.Name = "UserTask_Label";
+            UserTask_Label.Padding = new Padding(0, 0, 0, 5);
+            UserTask_Label.Size = new Size(106, 21);
+            UserTask_Label.TabIndex = 18;
+            UserTask_Label.Text = "User's Task List:";
+            // 
+            // UTL_LB
+            // 
+            UTL_LB.BackColor = Color.FromArgb(254, 248, 235);
+            UTL_LB.FormattingEnabled = true;
+            UTL_LB.ItemHeight = 15;
+            UTL_LB.Location = new Point(351, 79);
+            UTL_LB.Name = "UTL_LB";
+            UTL_LB.Size = new Size(106, 394);
+            UTL_LB.TabIndex = 17;
+            UTL_LB.Click += UTL_LB_Click;
+            // 
+            // UserID_Label
+            // 
+            UserID_Label.AutoSize = true;
+            UserID_Label.BackColor = Color.Transparent;
+            UserID_Label.FlatStyle = FlatStyle.Flat;
+            UserID_Label.Font = new Font("Helvetica", 9.749999F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            UserID_Label.ForeColor = Color.FromArgb(253, 248, 225);
+            UserID_Label.Location = new Point(165, 52);
+            UserID_Label.Margin = new Padding(3);
+            UserID_Label.Name = "UserID_Label";
+            UserID_Label.Padding = new Padding(0, 0, 0, 5);
+            UserID_Label.Size = new Size(24, 21);
+            UserID_Label.TabIndex = 16;
+            UserID_Label.Text = "ID:";
+            // 
+            // TeamName_Label
+            // 
+            TeamName_Label.AutoSize = true;
+            TeamName_Label.BackColor = Color.Transparent;
+            TeamName_Label.FlatStyle = FlatStyle.Flat;
+            TeamName_Label.Font = new Font("Helvetica", 9.749999F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            TeamName_Label.ForeColor = Color.FromArgb(253, 248, 225);
+            TeamName_Label.Location = new Point(165, 79);
+            TeamName_Label.Margin = new Padding(3);
+            TeamName_Label.Name = "TeamName_Label";
+            TeamName_Label.Padding = new Padding(0, 0, 0, 5);
+            TeamName_Label.Size = new Size(48, 21);
+            TeamName_Label.TabIndex = 15;
+            TeamName_Label.Text = "Name:";
+            // 
+            // user_LB
+            // 
+            user_LB.BackColor = Color.FromArgb(254, 248, 235);
+            user_LB.FormattingEnabled = true;
+            user_LB.ItemHeight = 15;
+            user_LB.Location = new Point(8, 56);
+            user_LB.Name = "user_LB";
+            user_LB.Size = new Size(120, 409);
+            user_LB.TabIndex = 14;
+            user_LB.Click += user_LB_Click;
             // 
             // editteam_Btn
             // 
@@ -83,15 +225,6 @@
             editteam_Btn.TextAlign = ContentAlignment.MiddleLeft;
             editteam_Btn.TextImageRelation = TextImageRelation.ImageBeforeText;
             editteam_Btn.UseVisualStyleBackColor = false;
-            // 
-            // team_DGV
-            // 
-            team_DGV.BackgroundColor = Color.FromArgb(254, 248, 235);
-            team_DGV.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            team_DGV.Location = new Point(5, 33);
-            team_DGV.Name = "team_DGV";
-            team_DGV.Size = new Size(896, 443);
-            team_DGV.TabIndex = 5;
             // 
             // addteam_Btn
             // 
@@ -165,7 +298,6 @@
             overviewbody_Panel.ResumeLayout(false);
             team_Panel.ResumeLayout(false);
             team_Panel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)team_DGV).EndInit();
             overviewtitle_Panel.ResumeLayout(false);
             overviewtitle_Panel.PerformLayout();
             ResumeLayout(false);
@@ -176,10 +308,18 @@
         private Panel overviewbody_Panel;
         private Panel team_Panel;
         private Button editteam_Btn;
-        private DataGridView team_DGV;
         private Button addteam_Btn;
         private Label team_Label;
         private Panel overviewtitle_Panel;
         private Label overviewtitle_Label;
+        private Label uTaskCount_Label;
+        private Label UserTask_Label;
+        private ListBox UTL_LB;
+        private Label UserID_Label;
+        private Label TeamName_Label;
+        private ListBox user_LB;
+        private Label UserEffort_Label;
+        private Label TaskID_Label;
+        private Label TD_Label;
     }
 }

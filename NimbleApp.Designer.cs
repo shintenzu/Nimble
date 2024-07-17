@@ -36,6 +36,7 @@
             selectproject_Panel = new Panel();
             projectselect_Cbox = new ComboBox();
             selectproject_Btn = new Button();
+            risk_Btn = new Button();
             effort_Btn = new Button();
             tasks_Btn = new Button();
             team_Btn = new Button();
@@ -48,6 +49,7 @@
             team_uc1 = new Team_UC();
             task_uc1 = new Task_UC();
             effort_uc1 = new Effort_UC();
+            risk_uc1 = new Risk_UC();
             nav_Panel.SuspendLayout();
             side_Panel.SuspendLayout();
             selectproject_Panel.SuspendLayout();
@@ -86,6 +88,7 @@
             side_Panel.Controls.Add(back_Btn);
             side_Panel.Controls.Add(selectproject_Panel);
             side_Panel.Controls.Add(selectproject_Btn);
+            side_Panel.Controls.Add(risk_Btn);
             side_Panel.Controls.Add(effort_Btn);
             side_Panel.Controls.Add(tasks_Btn);
             side_Panel.Controls.Add(team_Btn);
@@ -107,13 +110,13 @@
             exit_Btn.FlatStyle = FlatStyle.Flat;
             exit_Btn.Font = new Font("Helvetica 2 BQ ", 15.7499981F, FontStyle.Bold);
             exit_Btn.ForeColor = Color.FromArgb(253, 248, 225);
-            exit_Btn.Image = Properties.Resources.return_104;
+            exit_Btn.Image = Properties.Resources.Empty_Icon;
             exit_Btn.ImageAlign = ContentAlignment.MiddleLeft;
-            exit_Btn.Location = new Point(0, 490);
+            exit_Btn.Location = new Point(0, 530);
             exit_Btn.Name = "exit_Btn";
             exit_Btn.Padding = new Padding(10, 0, 0, 0);
             exit_Btn.Size = new Size(240, 40);
-            exit_Btn.TabIndex = 8;
+            exit_Btn.TabIndex = 9;
             exit_Btn.Text = "Exit App";
             exit_Btn.TextAlign = ContentAlignment.MiddleLeft;
             exit_Btn.TextImageRelation = TextImageRelation.ImageBeforeText;
@@ -132,11 +135,11 @@
             back_Btn.ForeColor = Color.FromArgb(253, 248, 225);
             back_Btn.Image = Properties.Resources.return_104;
             back_Btn.ImageAlign = ContentAlignment.MiddleLeft;
-            back_Btn.Location = new Point(0, 450);
+            back_Btn.Location = new Point(0, 490);
             back_Btn.Name = "back_Btn";
             back_Btn.Padding = new Padding(10, 0, 0, 0);
             back_Btn.Size = new Size(240, 40);
-            back_Btn.TabIndex = 7;
+            back_Btn.TabIndex = 8;
             back_Btn.Text = "Back to Sign-In";
             back_Btn.TextAlign = ContentAlignment.MiddleLeft;
             back_Btn.TextImageRelation = TextImageRelation.ImageBeforeText;
@@ -146,10 +149,10 @@
             // 
             selectproject_Panel.Controls.Add(projectselect_Cbox);
             selectproject_Panel.Dock = DockStyle.Top;
-            selectproject_Panel.Location = new Point(0, 330);
+            selectproject_Panel.Location = new Point(0, 370);
             selectproject_Panel.Name = "selectproject_Panel";
             selectproject_Panel.Size = new Size(240, 120);
-            selectproject_Panel.TabIndex = 6;
+            selectproject_Panel.TabIndex = 7;
             // 
             // projectselect_Cbox
             // 
@@ -170,17 +173,39 @@
             selectproject_Btn.FlatStyle = FlatStyle.Flat;
             selectproject_Btn.Font = new Font("Helvetica 2 BQ ", 15.7499981F, FontStyle.Bold);
             selectproject_Btn.ForeColor = Color.FromArgb(253, 248, 225);
-            selectproject_Btn.Image = Properties.Resources.return_104;
+            selectproject_Btn.Image = Properties.Resources.Empty_Icon;
             selectproject_Btn.ImageAlign = ContentAlignment.MiddleLeft;
-            selectproject_Btn.Location = new Point(0, 290);
+            selectproject_Btn.Location = new Point(0, 330);
             selectproject_Btn.Name = "selectproject_Btn";
             selectproject_Btn.Padding = new Padding(10, 0, 0, 0);
             selectproject_Btn.Size = new Size(240, 40);
-            selectproject_Btn.TabIndex = 5;
+            selectproject_Btn.TabIndex = 6;
             selectproject_Btn.Text = "Select Project";
             selectproject_Btn.TextAlign = ContentAlignment.MiddleLeft;
             selectproject_Btn.TextImageRelation = TextImageRelation.ImageBeforeText;
             selectproject_Btn.UseVisualStyleBackColor = false;
+            // 
+            // risk_Btn
+            // 
+            risk_Btn.BackColor = Color.FromArgb(21, 35, 57);
+            risk_Btn.BackgroundImageLayout = ImageLayout.None;
+            risk_Btn.Dock = DockStyle.Top;
+            risk_Btn.FlatAppearance.BorderSize = 0;
+            risk_Btn.FlatStyle = FlatStyle.Flat;
+            risk_Btn.Font = new Font("Helvetica 2 BQ ", 14.2499981F);
+            risk_Btn.ForeColor = Color.FromArgb(253, 248, 225);
+            risk_Btn.Image = Properties.Resources.Empty_Icon;
+            risk_Btn.ImageAlign = ContentAlignment.MiddleLeft;
+            risk_Btn.Location = new Point(0, 290);
+            risk_Btn.Name = "risk_Btn";
+            risk_Btn.Padding = new Padding(40, 0, 0, 0);
+            risk_Btn.Size = new Size(240, 40);
+            risk_Btn.TabIndex = 5;
+            risk_Btn.Text = "Risk";
+            risk_Btn.TextAlign = ContentAlignment.MiddleLeft;
+            risk_Btn.TextImageRelation = TextImageRelation.ImageBeforeText;
+            risk_Btn.UseVisualStyleBackColor = false;
+            risk_Btn.Click += risk_Btn_Click;
             // 
             // effort_Btn
             // 
@@ -191,7 +216,7 @@
             effort_Btn.FlatStyle = FlatStyle.Flat;
             effort_Btn.Font = new Font("Helvetica 2 BQ ", 14.2499981F);
             effort_Btn.ForeColor = Color.FromArgb(253, 248, 225);
-            effort_Btn.Image = Properties.Resources.return_104;
+            effort_Btn.Image = Properties.Resources.Empty_Icon;
             effort_Btn.ImageAlign = ContentAlignment.MiddleLeft;
             effort_Btn.Location = new Point(0, 250);
             effort_Btn.Name = "effort_Btn";
@@ -213,7 +238,7 @@
             tasks_Btn.FlatStyle = FlatStyle.Flat;
             tasks_Btn.Font = new Font("Helvetica 2 BQ ", 14.2499981F);
             tasks_Btn.ForeColor = Color.FromArgb(253, 248, 225);
-            tasks_Btn.Image = Properties.Resources.return_104;
+            tasks_Btn.Image = Properties.Resources.Empty_Icon;
             tasks_Btn.ImageAlign = ContentAlignment.MiddleLeft;
             tasks_Btn.Location = new Point(0, 210);
             tasks_Btn.Name = "tasks_Btn";
@@ -235,7 +260,7 @@
             team_Btn.FlatStyle = FlatStyle.Flat;
             team_Btn.Font = new Font("Helvetica 2 BQ ", 14.2499981F);
             team_Btn.ForeColor = Color.FromArgb(253, 248, 225);
-            team_Btn.Image = Properties.Resources.return_104;
+            team_Btn.Image = Properties.Resources.Empty_Icon;
             team_Btn.ImageAlign = ContentAlignment.MiddleLeft;
             team_Btn.Location = new Point(0, 170);
             team_Btn.Name = "team_Btn";
@@ -257,7 +282,7 @@
             overview_Btn.FlatStyle = FlatStyle.Flat;
             overview_Btn.Font = new Font("Helvetica 2 BQ ", 14.2499981F);
             overview_Btn.ForeColor = Color.FromArgb(253, 248, 225);
-            overview_Btn.Image = Properties.Resources.return_104;
+            overview_Btn.Image = Properties.Resources.Empty_Icon;
             overview_Btn.ImageAlign = ContentAlignment.MiddleLeft;
             overview_Btn.Location = new Point(0, 130);
             overview_Btn.Name = "overview_Btn";
@@ -279,7 +304,7 @@
             dashboard_Btn.FlatStyle = FlatStyle.Flat;
             dashboard_Btn.Font = new Font("Helvetica 2 BQ ", 15.7499981F, FontStyle.Bold);
             dashboard_Btn.ForeColor = Color.FromArgb(253, 248, 225);
-            dashboard_Btn.Image = Properties.Resources.return_104;
+            dashboard_Btn.Image = Properties.Resources.Empty_Icon;
             dashboard_Btn.ImageAlign = ContentAlignment.MiddleLeft;
             dashboard_Btn.Location = new Point(0, 90);
             dashboard_Btn.Name = "dashboard_Btn";
@@ -319,7 +344,7 @@
             username_Btn.FlatStyle = FlatStyle.Flat;
             username_Btn.Font = new Font("Helvetica 2 BQ ", 15.7499981F, FontStyle.Bold, GraphicsUnit.Point, 0);
             username_Btn.ForeColor = Color.FromArgb(253, 248, 225);
-            username_Btn.Image = Properties.Resources.return_104;
+            username_Btn.Image = Properties.Resources.Empty_Icon;
             username_Btn.ImageAlign = ContentAlignment.MiddleRight;
             username_Btn.Location = new Point(720, 0);
             username_Btn.Name = "username_Btn";
@@ -342,7 +367,7 @@
             // team_uc1
             // 
             team_uc1.BackColor = Color.FromArgb(60, 90, 130);
-            team_uc1.Location = new Point(240, 100);
+            team_uc1.Location = new Point(240, 93);
             team_uc1.Name = "team_uc1";
             team_uc1.Size = new Size(960, 615);
             team_uc1.TabIndex = 4;
@@ -350,7 +375,7 @@
             // task_uc1
             // 
             task_uc1.BackColor = Color.FromArgb(60, 90, 130);
-            task_uc1.Location = new Point(240, 160);
+            task_uc1.Location = new Point(240, 126);
             task_uc1.Name = "task_uc1";
             task_uc1.Size = new Size(960, 615);
             task_uc1.TabIndex = 5;
@@ -358,10 +383,18 @@
             // effort_uc1
             // 
             effort_uc1.BackColor = Color.FromArgb(60, 90, 130);
-            effort_uc1.Location = new Point(240, 219);
+            effort_uc1.Location = new Point(240, 160);
             effort_uc1.Name = "effort_uc1";
             effort_uc1.Size = new Size(960, 615);
             effort_uc1.TabIndex = 6;
+            // 
+            // risk_uc1
+            // 
+            risk_uc1.BackColor = Color.FromArgb(60, 90, 130);
+            risk_uc1.Location = new Point(240, 206);
+            risk_uc1.Name = "risk_uc1";
+            risk_uc1.Size = new Size(960, 615);
+            risk_uc1.TabIndex = 7;
             // 
             // NimbleApp
             // 
@@ -369,6 +402,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(60, 90, 130);
             ClientSize = new Size(1200, 675);
+            Controls.Add(risk_uc1);
             Controls.Add(effort_uc1);
             Controls.Add(task_uc1);
             Controls.Add(team_uc1);
@@ -402,6 +436,7 @@
         private Panel selectproject_Panel;
         private Button selectproject_Btn;
         private Button effort_Btn;
+        private Button risk_Btn;
         private Button exit_Btn;
         private Button username_Btn;
         private ComboBox projectselect_Cbox;
@@ -409,6 +444,7 @@
         private Overview_UC overview_uc1;
         private Team_UC team_uc1;
         private Task_UC task_uc1;
-        private Effort_UC effort_uc1;
+        private Effort_UC effort_uc1;        
+        private Risk_UC risk_uc1;
     }
 }

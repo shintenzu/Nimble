@@ -12,9 +12,11 @@ namespace Nimble
 {
     public partial class EditTeam : Form
     {
+        public static EditTeam instance;
         public EditTeam()
         {
             InitializeComponent();
+            instance = this;
         }
 
         private void ATNavClose_Btn_Click(object sender, EventArgs e)

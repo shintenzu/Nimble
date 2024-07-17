@@ -30,17 +30,17 @@
         {
             AddTask_Label = new Label();
             Main_Panel = new Panel();
-            dateTimePicker2 = new DateTimePicker();
-            dateTimePicker1 = new DateTimePicker();
+            DueDate = new DateTimePicker();
+            StartDate = new DateTimePicker();
             label5 = new Label();
             label4 = new Label();
-            textBox1 = new TextBox();
+            taskID = new TextBox();
             label3 = new Label();
             ED_RTB = new RichTextBox();
             label2 = new Label();
             comboBox1 = new ComboBox();
             label1 = new Label();
-            Role_CB = new ComboBox();
+            assign_CB = new ComboBox();
             Role_Label = new Label();
             Title_Panel = new Panel();
             SubmitButton_Panel = new Panel();
@@ -67,36 +67,36 @@
             // 
             // Main_Panel
             // 
-            Main_Panel.Controls.Add(dateTimePicker2);
-            Main_Panel.Controls.Add(dateTimePicker1);
+            Main_Panel.Controls.Add(DueDate);
+            Main_Panel.Controls.Add(StartDate);
             Main_Panel.Controls.Add(label5);
             Main_Panel.Controls.Add(label4);
-            Main_Panel.Controls.Add(textBox1);
+            Main_Panel.Controls.Add(taskID);
             Main_Panel.Controls.Add(label3);
             Main_Panel.Controls.Add(ED_RTB);
             Main_Panel.Controls.Add(label2);
             Main_Panel.Controls.Add(comboBox1);
             Main_Panel.Controls.Add(label1);
-            Main_Panel.Controls.Add(Role_CB);
+            Main_Panel.Controls.Add(assign_CB);
             Main_Panel.Controls.Add(Role_Label);
             Main_Panel.Location = new Point(21, 91);
             Main_Panel.Name = "Main_Panel";
             Main_Panel.Size = new Size(433, 295);
             Main_Panel.TabIndex = 12;
             // 
-            // dateTimePicker2
+            // DueDate
             // 
-            dateTimePicker2.Location = new Point(133, 254);
-            dateTimePicker2.Name = "dateTimePicker2";
-            dateTimePicker2.Size = new Size(200, 23);
-            dateTimePicker2.TabIndex = 16;
+            DueDate.Location = new Point(133, 254);
+            DueDate.Name = "DueDate";
+            DueDate.Size = new Size(200, 23);
+            DueDate.TabIndex = 16;
             // 
-            // dateTimePicker1
+            // StartDate
             // 
-            dateTimePicker1.Location = new Point(133, 215);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(200, 23);
-            dateTimePicker1.TabIndex = 15;
+            StartDate.Location = new Point(133, 215);
+            StartDate.Name = "StartDate";
+            StartDate.Size = new Size(200, 23);
+            StartDate.TabIndex = 15;
             // 
             // label5
             // 
@@ -122,12 +122,13 @@
             label4.TabIndex = 13;
             label4.Text = "Start Date";
             // 
-            // textBox1
+            // taskID
             // 
-            textBox1.Location = new Point(133, 108);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(73, 23);
-            textBox1.TabIndex = 12;
+            taskID.Location = new Point(133, 108);
+            taskID.Name = "taskID";
+            taskID.ReadOnly = true;
+            taskID.Size = new Size(73, 23);
+            taskID.TabIndex = 12;
             // 
             // label3
             // 
@@ -180,13 +181,13 @@
             label1.TabIndex = 7;
             label1.Text = "Task Category";
             // 
-            // Role_CB
+            // assign_CB
             // 
-            Role_CB.FormattingEnabled = true;
-            Role_CB.Location = new Point(133, 143);
-            Role_CB.Name = "Role_CB";
-            Role_CB.Size = new Size(200, 23);
-            Role_CB.TabIndex = 6;
+            assign_CB.FormattingEnabled = true;
+            assign_CB.Location = new Point(133, 143);
+            assign_CB.Name = "assign_CB";
+            assign_CB.Size = new Size(200, 23);
+            assign_CB.TabIndex = 6;
             // 
             // Role_Label
             // 
@@ -244,6 +245,7 @@
             Submit_Btn.TabIndex = 0;
             Submit_Btn.Text = "Submit";
             Submit_Btn.UseVisualStyleBackColor = false;
+            Submit_Btn.Click += Submit_Btn_Click;
             // 
             // ATNav_Panel
             // 
@@ -294,7 +296,7 @@
         #endregion
         private Label AddTask_Label;
         private Panel Main_Panel;
-        private ComboBox Role_CB;
+        private ComboBox assign_CB;
         private Label Role_Label;
         private Panel Title_Panel;
         private Panel SubmitButton_Panel;
@@ -305,11 +307,11 @@
         private Label label1;
         private Label label2;
         private RichTextBox ED_RTB;
-        private TextBox textBox1;
+        private TextBox taskID;
         private Label label3;
         private Label label4;
-        private DateTimePicker dateTimePicker2;
-        private DateTimePicker dateTimePicker1;
+        private DateTimePicker DueDate;
+        private DateTimePicker StartDate;
         private Label label5;
         private Button Cancel_Btn;
     }

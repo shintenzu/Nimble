@@ -10,10 +10,10 @@ using System.Windows.Forms;
 
 namespace Nimble
 {
-    public partial class Effort_UC : UserControl
+    public partial class Login_Form : Form
     {
-        public static Effort_UC instance;
-        public Effort_UC()
+        public static Login_Form instance;
+        public Login_Form()
         {
             InitializeComponent();
             instance = this;

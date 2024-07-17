@@ -32,10 +32,8 @@
             Main_Panel = new Panel();
             Role_CB = new ComboBox();
             Role_Label = new Label();
-            LastName_Label = new Label();
-            LastName_TB = new TextBox();
             FirstName_Label = new Label();
-            FirstName_TB = new TextBox();
+            FullName_TB = new TextBox();
             Title_Panel = new Panel();
             SubmitButton_Panel = new Panel();
             Cancel_Btn = new Button();
@@ -43,6 +41,8 @@
             Format_Panel = new Panel();
             ATNav_Panel = new Panel();
             ATNavClose_Btn = new Button();
+            userID_TB = new TextBox();
+            UserId_Label = new Label();
             Main_Panel.SuspendLayout();
             Title_Panel.SuspendLayout();
             SubmitButton_Panel.SuspendLayout();
@@ -62,12 +62,12 @@
             // 
             // Main_Panel
             // 
+            Main_Panel.Controls.Add(userID_TB);
+            Main_Panel.Controls.Add(UserId_Label);
             Main_Panel.Controls.Add(Role_CB);
             Main_Panel.Controls.Add(Role_Label);
-            Main_Panel.Controls.Add(LastName_Label);
-            Main_Panel.Controls.Add(LastName_TB);
             Main_Panel.Controls.Add(FirstName_Label);
-            Main_Panel.Controls.Add(FirstName_TB);
+            Main_Panel.Controls.Add(FullName_TB);
             Main_Panel.Location = new Point(21, 88);
             Main_Panel.Name = "Main_Panel";
             Main_Panel.Size = new Size(433, 256);
@@ -76,7 +76,7 @@
             // Role_CB
             // 
             Role_CB.FormattingEnabled = true;
-            Role_CB.Location = new Point(133, 93);
+            Role_CB.Location = new Point(133, 51);
             Role_CB.Name = "Role_CB";
             Role_CB.Size = new Size(192, 23);
             Role_CB.TabIndex = 6;
@@ -86,29 +86,11 @@
             Role_Label.AutoSize = true;
             Role_Label.Font = new Font("Helvetica CE", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 238);
             Role_Label.ForeColor = Color.FromArgb(253, 248, 225);
-            Role_Label.Location = new Point(17, 93);
+            Role_Label.Location = new Point(17, 51);
             Role_Label.Name = "Role_Label";
             Role_Label.Size = new Size(33, 15);
             Role_Label.TabIndex = 5;
             Role_Label.Text = "Role";
-            // 
-            // LastName_Label
-            // 
-            LastName_Label.AutoSize = true;
-            LastName_Label.Font = new Font("Helvetica CE", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 238);
-            LastName_Label.ForeColor = Color.FromArgb(253, 248, 225);
-            LastName_Label.Location = new Point(17, 58);
-            LastName_Label.Name = "LastName_Label";
-            LastName_Label.Size = new Size(70, 15);
-            LastName_Label.TabIndex = 3;
-            LastName_Label.Text = "Last Name";
-            // 
-            // LastName_TB
-            // 
-            LastName_TB.Location = new Point(133, 55);
-            LastName_TB.Name = "LastName_TB";
-            LastName_TB.Size = new Size(297, 23);
-            LastName_TB.TabIndex = 2;
             // 
             // FirstName_Label
             // 
@@ -121,12 +103,12 @@
             FirstName_Label.TabIndex = 1;
             FirstName_Label.Text = "First Name";
             // 
-            // FirstName_TB
+            // FullName_TB
             // 
-            FirstName_TB.Location = new Point(133, 17);
-            FirstName_TB.Name = "FirstName_TB";
-            FirstName_TB.Size = new Size(297, 23);
-            FirstName_TB.TabIndex = 0;
+            FullName_TB.Location = new Point(133, 17);
+            FullName_TB.Name = "FullName_TB";
+            FullName_TB.Size = new Size(297, 23);
+            FullName_TB.TabIndex = 0;
             // 
             // Title_Panel
             // 
@@ -173,6 +155,7 @@
             Submit_Btn.TabIndex = 0;
             Submit_Btn.Text = "Submit";
             Submit_Btn.UseVisualStyleBackColor = false;
+            Submit_Btn.Click += Submit_Btn_Click;
             // 
             // Format_Panel
             // 
@@ -204,6 +187,25 @@
             ATNavClose_Btn.TabIndex = 1;
             ATNavClose_Btn.UseVisualStyleBackColor = false;
             ATNavClose_Btn.Click += ATNavClose_Btn_Click;
+            // 
+            // userID_TB
+            // 
+            userID_TB.Location = new Point(133, 89);
+            userID_TB.Name = "userID_TB";
+            userID_TB.ReadOnly = true;
+            userID_TB.Size = new Size(73, 23);
+            userID_TB.TabIndex = 14;
+            // 
+            // UserId_Label
+            // 
+            UserId_Label.AutoSize = true;
+            UserId_Label.Font = new Font("Helvetica CE", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 238);
+            UserId_Label.ForeColor = Color.FromArgb(253, 248, 225);
+            UserId_Label.Location = new Point(17, 93);
+            UserId_Label.Name = "UserId_Label";
+            UserId_Label.Size = new Size(90, 15);
+            UserId_Label.TabIndex = 13;
+            UserId_Label.Text = "User ID (Auto)";
             // 
             // AddTeam
             // 
@@ -239,11 +241,11 @@
         private Panel ATNav_Panel;
         private Button ATNavClose_Btn;
         private Label FirstName_Label;
-        private TextBox FirstName_TB;
+        private TextBox FullName_TB;
         private Label Role_Label;
-        private Label LastName_Label;
-        private TextBox LastName_TB;
         private ComboBox Role_CB;
         private Button Cancel_Btn;
+        private TextBox userID_TB;
+        private Label UserId_Label;
     }
 }

@@ -12,10 +12,94 @@ namespace Nimble
 {
     public partial class Overview_UC : UserControl
     {
+        //public string[] description;
+        public static Overview_UC instance;
+        public static List<String> names = new List<String>();
+        BindingSource namesBindingSource = new BindingSource();
+        public static List<String> utasks = new List<String>();
+        BindingSource utasksBindingSource = new BindingSource();
+        public static List<String> tasks = new List<String>();
+        BindingSource tasksBindingSource = new BindingSource();
+
         public Overview_UC()
         {
             InitializeComponent();
+            instance = this;
+                        
         }
+
+        public void resetNBindings()
+        {
+            namesBindingSource.DataSource = names;
+            user_LB.DataSource = namesBindingSource;
+            namesBindingSource.ResetBindings(false);
+        }
+        public void resetTBindings()
+        {
+            tasksBindingSource.DataSource = tasks;
+            task_LB.DataSource = tasksBindingSource;
+            tasksBindingSource.ResetBindings(false);
+        }
+
+        public void resetUTBindings()
+        {
+            utasksBindingSource.DataSource = utasks;
+            UTL_LB.DataSource = utasksBindingSource;
+            utasksBindingSource.ResetBindings(false);
+        }
+
+        public void clearTasks()
+        {
+            tasks.Clear();
+            tasksBindingSource.DataSource = tasks;
+            task_LB.DataSource = tasksBindingSource;
+            tasksBindingSource.ResetBindings(false);
+        }
+        public void clearUTasks()
+        {
+            utasks.Clear();
+            utasksBindingSource.DataSource = utasks;
+            UTL_LB.DataSource = utasksBindingSource;
+            utasksBindingSource.ResetBindings(false);
+        }
+
+        public void clearUsers()
+        {
+            names.Clear();
+            namesBindingSource.DataSource = names;
+            user_LB.DataSource = namesBindingSource;
+            namesBindingSource.ResetBindings(false);
+        }
+
+
+        public void receiveUser(string newUser)
+        {
+            names.Add(newUser);
+        }
+
+        public void receiveUTask(string newTask)
+        {
+            utasks.Add(newTask);
+        }
+        public void receiveTask(string newTask)
+        {
+            tasks.Add(newTask);
+        }
+
+
+        public void setDesc(string input)
+        {
+            Desc_RTB.Text = input;
+        }
+        public string getDesc() { return Desc_RTB.Text; }
+
+
+
+        public void setReq(string input)
+        {
+            req_RTB.Text = input;
+        }
+        public string getReq() { return req_RTB.Text; }
 
         private void changedesc_Btn_Click(object sender, EventArgs e)
         {
@@ -58,6 +142,81 @@ namespace Nimble
             EditTask editTask = new EditTask();
             editTask.StartPosition = FormStartPosition.CenterScreen;
             editTask.Show();
+        }
+
+        private void overviewbody_Panel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void Overview_UC_Load(object sender, EventArgs e)
+        {
+
+            if (NimbleApp.main.teamCounter > 0)
+            {
+                for (int i = 0; i < NimbleApp.main.teamCounter; i++)
+                {
+                    names.Add(NimbleApp.main.getUser(i).FullName);
+                }
+            }
+
+            if (NimbleApp.main.taskCounter > 0)
+            {
+                for (int i = 0; i < NimbleApp.main.taskCounter; i++)
+                {
+                    tasks.Add("T" + NimbleApp.main.getTask(i).TaskId.ToString());
+                }
+            }
+
+            resetNBindings();
+            resetTBindings();
+            resetUTBindings();            
+
+        }
+
+        private void user_LB_Click(object sender, EventArgs e)
+        {
+                        
+            if (NimbleApp.main.teamCounter > 0)
+            {
+                clearUTasks();
+                UserID_Label.Text = "ID: " + NimbleApp.main.getUser(user_LB.SelectedIndex).UserId;
+                TeamName_Label.Text = "Name: " + NimbleApp.main.getUser(user_LB.SelectedIndex).FullName;
+                uTaskCount_Label.Text = "Task Count: " + NimbleApp.main.getUser(user_LB.SelectedIndex).TaskCounter;
+                UserEffort_Label.Text = "User Effort: " + NimbleApp.main.getUser(user_LB.SelectedIndex).UserEffort;
+
+                if (NimbleApp.main.getUser(user_LB.SelectedIndex).taskCounter > 0)
+                {
+                    for (int i = 0; i < NimbleApp.main.getUser(user_LB.SelectedIndex).taskCounter; i++)
+                    {
+                        utasks.Add("T" + NimbleApp.main.getUser(user_LB.SelectedIndex).getTask(i).TaskId.ToString());
+                    }
+                }
+
+                resetUTBindings();
+                
+            }
+            
+        }
+
+
+
+        private void task_LB_Click(object sender, EventArgs e)
+        {
+            if (NimbleApp.main.taskCounter > 0)
+            {
+                TaskID_Label.Text = "Task ID: " + NimbleApp.main.getTask(task_LB.SelectedIndex).TaskId;
+                //TD_Label.Text = "Task Description: " + NimbleApp.main.getTask(task_LB.SelectedIndex).TaskDesc;
+                TaskDesc_RTB.Text = NimbleApp.main.getTask(task_LB.SelectedIndex).TaskDesc;
+                TaskEstEffort_Label.Text = "Task Estimated Effort: " + NimbleApp.main.getTask(task_LB.SelectedIndex).EstEffort;
+                StartDate_Label.Text = "Start Date: " + NimbleApp.main.getTask(task_LB.SelectedIndex).StartDate.ToString();
+                DueDate_Label.Text = "Due Date: " + NimbleApp.main.getTask(task_LB.SelectedIndex).DueDate.ToString();
+            }
+        }
+
+        private void user_LB_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
