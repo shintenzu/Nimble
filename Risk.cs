@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.VisualBasic.ApplicationServices;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,39 +9,54 @@ namespace Nimble
 {
     public class Risk
     {
-        private int riskID;
+        private int riskId;
         private string riskDesc;
         private int priority;
-        private int prob;
-        private int cost;
+        private double prob;
+        private double cost;
+        private double rValue;
 
         public Risk() { }
 
-        public Risk(int riskID)
+        public Risk(int riskId)
         {
-            this.RiskID = riskID;
+            this.riskId = riskId;
         }
 
-        public int RiskID
+        public int RiskId
         {
-            get { return riskID; }
-            set { this.riskID = value; }
+            get { return riskId; }
+            set { this.riskId = value; }
+        }
+
+        public string RiskDesc
+        {
+            get { return riskDesc; }
+            set { this.riskDesc = value; }
         }
         public int Priority
         {
             get { return priority; }
             set { this.priority = value; }
         }
-        public int Prob
+        public double Prob
         {
             get { return prob; }
             set { this.prob = value; }
         }
 
-        public int Cost
+        public double Cost
         {
             get { return cost; }
             set { this.cost = value; }  
         }
+
+        public double RValue
+        {
+            get { return rValue; }
+            set { this.rValue = value; }
+        }
+
+        
     }
 }

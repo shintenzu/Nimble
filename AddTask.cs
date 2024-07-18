@@ -5,6 +5,7 @@ using System.Data;
 using System.Diagnostics.Metrics;
 using System.Drawing;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -45,36 +46,115 @@ namespace Nimble
 
         private void Submit_Btn_Click(object sender, EventArgs e)
         {
-            Task task1 = new Task();
-            //start = StartDate.Value;
-            task1.StartDate = StartDate.Value;
-            task1.DueDate = DueDate.Value;
-
-
-            task1.TaskId = NimbleApp.main.taskCounter;
-            task1.TaskDesc = ED_RTB.Text;
-
-            NimbleApp.main.addTask(NimbleApp.main.taskCounter, task1);
-            Overview_UC.instance.receiveTask("T" + NimbleApp.main.taskCounter.ToString());
-            Overview_UC.instance.resetTBindings();
-            Task_UC.instance.receiveTask("T" + NimbleApp.main.taskCounter.ToString());
-            Task_UC.instance.resetTBindings();
-
-            if (assign_CB.SelectedIndex > -1)
+            if (ED_RTB.Text == string.Empty)
             {
-                User currentUser = NimbleApp.main.getUser(assign_CB.SelectedIndex);
-                int uIndex = currentUser.TaskCounter;
-                currentUser.addTask(uIndex, task1);
-                currentUser.taskCounter++;
-                //Adding Task to selected user
-                //NimbleApp.main.getUser(assign_CB.SelectedIndex).addTask(NimbleApp.main.getUser(assign_CB.SelectedIndex).taskCounter, task1);
-                //assign_CB.Items[assign_CB.SelectedIndex];
-                //NimbleApp.main.getUser(assign_CB.SelectedIndex).taskCounter++;
+                MessageBox.Show("Please enter your task description!");
+                return;
+            }
+          
+
+            else if (assign_CB.SelectedIndex == -1)
+            {
+                MessageBox.Show("Please assign your task to someone!");
+                return;
+            }
+            else if (category_CB.SelectedIndex == -1)
+            {
+                MessageBox.Show("Please give your task a category!");
+                return;
             }
 
-            NimbleApp.main.taskCounter++;
-            
-            this.Close();
+            else
+            {
+                Task task1 = new Task();
+                //start = StartDate.Value;
+                task1.StartDate = StartDate.Value;
+                task1.DueDate = DueDate.Value;
+
+                task1.EstEffort = ((task1.DueDate - task1.StartDate).Days + 1) * 5;
+
+
+                task1.TaskId = NimbleApp.main.taskCounter;
+                task1.TaskDesc = ED_RTB.Text;
+
+                NimbleApp.main.addTask(NimbleApp.main.taskCounter, task1);
+                Overview_UC.instance.receiveTask("T" + NimbleApp.main.taskCounter.ToString());
+                Overview_UC.instance.resetTBindings();
+                Task_UC.instance.receiveTask("T" + NimbleApp.main.taskCounter.ToString());
+                Task_UC.instance.resetTBindings();
+
+                if (assign_CB.SelectedIndex > -1)
+                {
+                    User currentUser = NimbleApp.main.getUser(assign_CB.SelectedIndex);
+                    int uIndex = currentUser.TaskCounter;
+                    currentUser.addTask(uIndex, task1);
+                    currentUser.taskCounter++;
+                    currentUser.UserEffort += task1.EstEffort;
+                    task1.UserId = currentUser.UserId;
+                    
+                }
+
+                if (category_CB.GetItemText(category_CB.SelectedItem) == "1: Requirements Analysis")
+                {
+                    Stages currentStage = NimbleApp.main.req;
+                    int uIndex = currentStage.taskCounter;
+                    currentStage.addTask(uIndex, task1);
+                    currentStage.taskCounter++;
+                    currentStage.StageEffort += task1.EstEffort;
+                    //Effort_UC.instance.receiveR("T" + NimbleApp.main.taskCounter.ToString());
+                    Effort_UC.instance.resetRBindings();
+                }
+                else if (category_CB.GetItemText(category_CB.SelectedItem) == "2: Designing")
+                {
+                    Stages currentStage = NimbleApp.main.design;
+                    int uIndex = currentStage.taskCounter;
+                    currentStage.addTask(uIndex, task1);
+                    currentStage.taskCounter++;
+                    currentStage.StageEffort += task1.EstEffort;
+                    //Effort_UC.instance.receiveD("T" + NimbleApp.main.taskCounter.ToString());
+                    Effort_UC.instance.resetDBindings();
+                }
+                else if (category_CB.GetItemText(category_CB.SelectedItem) == "3: Coding")
+                {
+                    Stages currentStage = NimbleApp.main.code;
+                    int uIndex = currentStage.taskCounter;
+                    currentStage.addTask(uIndex, task1);
+                    currentStage.taskCounter++;
+                    currentStage.StageEffort += task1.EstEffort;
+                    //Effort_UC.instance.receiveC("T" + NimbleApp.main.taskCounter.ToString());
+                    Effort_UC.instance.resetCBindings();
+                }
+                else if (category_CB.GetItemText(category_CB.SelectedItem) == "4: Testing")
+                {
+                    Stages currentStage = NimbleApp.main.test;
+                    int uIndex = currentStage.taskCounter;
+                    currentStage.addTask(uIndex, task1);
+                    currentStage.taskCounter++;
+                    currentStage.StageEffort += task1.EstEffort;
+                    //Effort_UC.instance.receiveT("T" + NimbleApp.main.taskCounter.ToString());
+                    Effort_UC.instance.resetTBindings();
+                }
+                else if (category_CB.GetItemText(category_CB.SelectedItem) == "5: Project Management")
+                {
+                    Stages currentStage = NimbleApp.main.pm;
+                    int uIndex = currentStage.taskCounter;
+                    currentStage.addTask(uIndex, task1);
+                    currentStage.taskCounter++;
+                    currentStage.StageEffort += task1.EstEffort;
+                    //Effort_UC.instance.receivePM("T" + NimbleApp.main.taskCounter.ToString());
+                    Effort_UC.instance.resetPMBindings();
+                }
+
+                //1: Requirements Analysis
+                //2: Designing
+                //3: Coding
+                //4: Testing
+                //5: Project Management
+
+                NimbleApp.main.taskCounter++;
+
+                this.Close();
+            }
         }
     }
 }

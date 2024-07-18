@@ -9,22 +9,27 @@ namespace Nimble
     public class Project
     {
         private int projectID;
-        //private int taskId;        
-        
-        //private int[] tasks;
-        //private int[] users;
-        //private Task[] tasks = new Task[200];
-        //private User[] users = new User[200];
-        //private string description = string.Empty;
-        //private string requirements = string.Empty;
 
-        private Task[] tasks;
-        private User[] users;
-        private string description;
-        private string requirements;
-        public int teamCounter;
-        public int taskCounter;
-            
+        private Task[] tasks = new Task[200];
+        private User[] users = new User[200];
+        private Risk[] risks = new Risk[200];
+        private string description = string.Empty;
+        private string requirements = string.Empty;
+        public int teamCounter = 0;
+        public int taskCounter = 0;
+        public int riskCounter = 0;
+        public bool hasLeader = false;
+        public bool hasManager = false;
+        //public int req = 0;
+        //public int design = 0;
+        //public int req = 0;
+
+        public Stages req = new Stages();
+        public Stages design = new Stages();
+        public Stages code = new Stages();
+        public Stages test = new Stages();
+        public Stages pm = new Stages();
+
         public Project()
         {
 
@@ -32,12 +37,6 @@ namespace Nimble
         public Project(int projectID)
         {
             this.projectID = projectID;
-            this.tasks = new Task[200];
-            this.users = new User[200];
-            this.description = string.Empty;
-            this.requirements = string.Empty;
-            this.teamCounter = 0;
-            this.taskCounter = 0;
         }
         
         public int ProjectID { 
@@ -72,6 +71,14 @@ namespace Nimble
         public Task getTask(int Index)
         {
             return tasks[Index];
+        }
+        public void addRisk(int Index, Risk newRisk)
+        {
+            this.risks[Index] = newRisk;
+        }
+        public Risk getRisk(int Index)
+        {
+            return risks[Index];
         }
 
 

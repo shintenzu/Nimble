@@ -30,6 +30,8 @@
         {
             AddTeam_Label = new Label();
             Main_Panel = new Panel();
+            userID_TB = new TextBox();
+            UserId_Label = new Label();
             Role_CB = new ComboBox();
             Role_Label = new Label();
             FirstName_Label = new Label();
@@ -41,8 +43,6 @@
             Format_Panel = new Panel();
             ATNav_Panel = new Panel();
             ATNavClose_Btn = new Button();
-            userID_TB = new TextBox();
-            UserId_Label = new Label();
             Main_Panel.SuspendLayout();
             Title_Panel.SuspendLayout();
             SubmitButton_Panel.SuspendLayout();
@@ -73,13 +73,34 @@
             Main_Panel.Size = new Size(433, 256);
             Main_Panel.TabIndex = 7;
             // 
+            // userID_TB
+            // 
+            userID_TB.Location = new Point(133, 89);
+            userID_TB.Name = "userID_TB";
+            userID_TB.ReadOnly = true;
+            userID_TB.Size = new Size(73, 23);
+            userID_TB.TabIndex = 14;
+            // 
+            // UserId_Label
+            // 
+            UserId_Label.AutoSize = true;
+            UserId_Label.Font = new Font("Helvetica CE", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 238);
+            UserId_Label.ForeColor = Color.FromArgb(253, 248, 225);
+            UserId_Label.Location = new Point(17, 93);
+            UserId_Label.Name = "UserId_Label";
+            UserId_Label.Size = new Size(94, 15);
+            UserId_Label.TabIndex = 13;
+            UserId_Label.Text = "User ID (Auto):";
+            // 
             // Role_CB
             // 
             Role_CB.FormattingEnabled = true;
+            Role_CB.Items.AddRange(new object[] { "1: Project Owner", "2: Project Manager", "3: Designer", "4: Coder" });
             Role_CB.Location = new Point(133, 51);
             Role_CB.Name = "Role_CB";
             Role_CB.Size = new Size(192, 23);
             Role_CB.TabIndex = 6;
+            Role_CB.Text = "(Select Your User's Role)";
             // 
             // Role_Label
             // 
@@ -88,9 +109,9 @@
             Role_Label.ForeColor = Color.FromArgb(253, 248, 225);
             Role_Label.Location = new Point(17, 51);
             Role_Label.Name = "Role_Label";
-            Role_Label.Size = new Size(33, 15);
+            Role_Label.Size = new Size(37, 15);
             Role_Label.TabIndex = 5;
-            Role_Label.Text = "Role";
+            Role_Label.Text = "Role:";
             // 
             // FirstName_Label
             // 
@@ -99,9 +120,9 @@
             FirstName_Label.ForeColor = Color.FromArgb(253, 248, 225);
             FirstName_Label.Location = new Point(17, 20);
             FirstName_Label.Name = "FirstName_Label";
-            FirstName_Label.Size = new Size(71, 15);
+            FirstName_Label.Size = new Size(70, 15);
             FirstName_Label.TabIndex = 1;
-            FirstName_Label.Text = "First Name";
+            FirstName_Label.Text = "Full Name:";
             // 
             // FullName_TB
             // 
@@ -187,25 +208,6 @@
             ATNavClose_Btn.TabIndex = 1;
             ATNavClose_Btn.UseVisualStyleBackColor = false;
             ATNavClose_Btn.Click += ATNavClose_Btn_Click;
-            // 
-            // userID_TB
-            // 
-            userID_TB.Location = new Point(133, 89);
-            userID_TB.Name = "userID_TB";
-            userID_TB.ReadOnly = true;
-            userID_TB.Size = new Size(73, 23);
-            userID_TB.TabIndex = 14;
-            // 
-            // UserId_Label
-            // 
-            UserId_Label.AutoSize = true;
-            UserId_Label.Font = new Font("Helvetica CE", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 238);
-            UserId_Label.ForeColor = Color.FromArgb(253, 248, 225);
-            UserId_Label.Location = new Point(17, 93);
-            UserId_Label.Name = "UserId_Label";
-            UserId_Label.Size = new Size(90, 15);
-            UserId_Label.TabIndex = 13;
-            UserId_Label.Text = "User ID (Auto)";
             // 
             // AddTeam
             // 

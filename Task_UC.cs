@@ -42,16 +42,33 @@ namespace Nimble
 
         private void addtask_Btn_Click(object sender, EventArgs e)
         {
-            AddTask addTask = new AddTask();
-            addTask.StartPosition = FormStartPosition.CenterScreen;
-            addTask.Show();
+            if (NimbleApp.main.teamCounter == 0)
+            {
+                MessageBox.Show("You need at least 1 team member to create a task!");
+                return;
+            }
+            else
+            {
+                AddTask addTask = new AddTask();
+                addTask.StartPosition = FormStartPosition.CenterScreen;
+                addTask.Show();
+            }
         }
 
         private void edittasks_Btn_Click(object sender, EventArgs e)
         {
-            EditTask editTask = new EditTask();
-            editTask.StartPosition = FormStartPosition.CenterScreen;
-            editTask.Show();
+            if (NimbleApp.main.taskCounter == 0)
+            {
+                MessageBox.Show("You need at least 1 task to edit!");
+                return;
+            }
+            else
+            {
+                EditTask editTask = new EditTask();
+                editTask.StartPosition = FormStartPosition.CenterScreen;
+                editTask.Show();
+            }
+            
         }
 
         private void task_LB_Click(object sender, EventArgs e)
@@ -61,7 +78,7 @@ namespace Nimble
                 TaskID_Label.Text = "Task ID: " + NimbleApp.main.getTask(task_LB.SelectedIndex).TaskId;
                 //TD_Label.Text = "Task Description: " + NimbleApp.main.getTask(task_LB.SelectedIndex).TaskDesc;
                 TaskDesc_RTB.Text = NimbleApp.main.getTask(task_LB.SelectedIndex).TaskDesc;
-                TaskEstEffort_Label.Text = "Task Estimated Effort: " + NimbleApp.main.getTask(task_LB.SelectedIndex).EstEffort;
+                TaskEstEffort_Label.Text = "Task Estimated Effort: " + NimbleApp.main.getTask(task_LB.SelectedIndex).EstEffort + " Person Hours";
                 StartDate_Label.Text = "Start Date: " + NimbleApp.main.getTask(task_LB.SelectedIndex).StartDate.ToString();
                 DueDate_Label.Text = "Due Date: " + NimbleApp.main.getTask(task_LB.SelectedIndex).DueDate.ToString();
             }

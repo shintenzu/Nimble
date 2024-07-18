@@ -392,10 +392,6 @@
             team_Label.TabIndex = 1;
             team_Label.Text = "Team Members";
             // 
-            // taskBindingSource
-            // 
-            taskBindingSource.DataSource = typeof(Task);
-            // 
             // task_Panel
             // 
             task_Panel.Controls.Add(TaskDesc_RTB);
@@ -570,10 +566,6 @@
             task_Label.Size = new Size(51, 28);
             task_Label.TabIndex = 1;
             task_Label.Text = "Tasks";
-            // 
-            // taskBindingSource1
-            // 
-            taskBindingSource1.DataSource = typeof(Task);
             // 
             // Overview_UC
             // 

@@ -118,9 +118,18 @@ namespace Nimble
 
         private void editteam_Btn_Click(object sender, EventArgs e)
         {
-            EditTeam editTeam = new EditTeam();
-            editTeam.StartPosition = FormStartPosition.CenterScreen;
-            editTeam.Show();
+            if (NimbleApp.main.teamCounter == 0)
+            {
+                MessageBox.Show("You need at least 1 team member to edit!");
+                return;
+            }
+            else
+            {
+                EditTeam editTeam = new EditTeam();
+                editTeam.StartPosition = FormStartPosition.CenterScreen;
+                editTeam.Show();
+            }
+                        
         }
 
         private void editreq_Btn_Click(object sender, EventArgs e)
@@ -132,16 +141,31 @@ namespace Nimble
 
         private void addtask_Btn_Click(object sender, EventArgs e)
         {
-            AddTask addTask = new AddTask();
-            addTask.StartPosition = FormStartPosition.CenterScreen;
-            addTask.Show();
+            if (NimbleApp.main.teamCounter == 0)
+            {
+                MessageBox.Show("You need at least 1 team member to create a task!");
+                return;
+            }
+            else {
+                AddTask addTask = new AddTask();
+                addTask.StartPosition = FormStartPosition.CenterScreen;
+                addTask.Show();
+            }
         }
 
         private void edittasks_Btn_Click(object sender, EventArgs e)
         {
-            EditTask editTask = new EditTask();
-            editTask.StartPosition = FormStartPosition.CenterScreen;
-            editTask.Show();
+            if (NimbleApp.main.taskCounter == 0)
+            {
+                MessageBox.Show("You need at least 1 task to edit!");
+                return;
+            }
+            else
+            {
+                EditTask editTask = new EditTask();
+                editTask.StartPosition = FormStartPosition.CenterScreen;
+                editTask.Show();
+            }
         }
 
         private void overviewbody_Panel_Paint(object sender, PaintEventArgs e)
@@ -183,7 +207,7 @@ namespace Nimble
                 UserID_Label.Text = "ID: " + NimbleApp.main.getUser(user_LB.SelectedIndex).UserId;
                 TeamName_Label.Text = "Name: " + NimbleApp.main.getUser(user_LB.SelectedIndex).FullName;
                 uTaskCount_Label.Text = "Task Count: " + NimbleApp.main.getUser(user_LB.SelectedIndex).TaskCounter;
-                UserEffort_Label.Text = "User Effort: " + NimbleApp.main.getUser(user_LB.SelectedIndex).UserEffort;
+                UserEffort_Label.Text = "User Effort: " + NimbleApp.main.getUser(user_LB.SelectedIndex).UserEffort + " Person Hours";
 
                 if (NimbleApp.main.getUser(user_LB.SelectedIndex).taskCounter > 0)
                 {
@@ -208,7 +232,7 @@ namespace Nimble
                 TaskID_Label.Text = "Task ID: " + NimbleApp.main.getTask(task_LB.SelectedIndex).TaskId;
                 //TD_Label.Text = "Task Description: " + NimbleApp.main.getTask(task_LB.SelectedIndex).TaskDesc;
                 TaskDesc_RTB.Text = NimbleApp.main.getTask(task_LB.SelectedIndex).TaskDesc;
-                TaskEstEffort_Label.Text = "Task Estimated Effort: " + NimbleApp.main.getTask(task_LB.SelectedIndex).EstEffort;
+                TaskEstEffort_Label.Text = "Task Estimated Effort: " + NimbleApp.main.getTask(task_LB.SelectedIndex).EstEffort + " Person Hours";
                 StartDate_Label.Text = "Start Date: " + NimbleApp.main.getTask(task_LB.SelectedIndex).StartDate.ToString();
                 DueDate_Label.Text = "Due Date: " + NimbleApp.main.getTask(task_LB.SelectedIndex).DueDate.ToString();
             }

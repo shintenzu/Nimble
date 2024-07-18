@@ -44,7 +44,8 @@
             dashboard_Btn = new Button();
             logo_Box = new PictureBox();
             account_Panel = new Panel();
-            username_Btn = new Button();
+            PO_Label = new Label();
+            PM_Label = new Label();
             overview_uc1 = new Overview_UC();
             team_uc1 = new Team_UC();
             task_uc1 = new Task_UC();
@@ -328,33 +329,41 @@
             // 
             // account_Panel
             // 
-            account_Panel.Controls.Add(username_Btn);
+            account_Panel.Controls.Add(PO_Label);
+            account_Panel.Controls.Add(PM_Label);
             account_Panel.Dock = DockStyle.Top;
             account_Panel.Location = new Point(240, 30);
             account_Panel.Name = "account_Panel";
             account_Panel.Size = new Size(960, 30);
             account_Panel.TabIndex = 2;
             // 
-            // username_Btn
+            // PO_Label
             // 
-            username_Btn.Anchor = AnchorStyles.Right;
-            username_Btn.BackColor = Color.Transparent;
-            username_Btn.BackgroundImageLayout = ImageLayout.None;
-            username_Btn.FlatAppearance.BorderSize = 0;
-            username_Btn.FlatStyle = FlatStyle.Flat;
-            username_Btn.Font = new Font("Helvetica 2 BQ ", 15.7499981F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            username_Btn.ForeColor = Color.FromArgb(253, 248, 225);
-            username_Btn.Image = Properties.Resources.Empty_Icon;
-            username_Btn.ImageAlign = ContentAlignment.MiddleRight;
-            username_Btn.Location = new Point(720, 0);
-            username_Btn.Name = "username_Btn";
-            username_Btn.Padding = new Padding(0, 0, 20, 0);
-            username_Btn.Size = new Size(240, 30);
-            username_Btn.TabIndex = 2;
-            username_Btn.Text = "User Name";
-            username_Btn.TextAlign = ContentAlignment.MiddleRight;
-            username_Btn.TextImageRelation = TextImageRelation.ImageBeforeText;
-            username_Btn.UseVisualStyleBackColor = false;
+            PO_Label.AutoSize = true;
+            PO_Label.BackColor = Color.Transparent;
+            PO_Label.FlatStyle = FlatStyle.Flat;
+            PO_Label.Font = new Font("Helvetica 2 BQ ", 15.7499981F, FontStyle.Bold);
+            PO_Label.ForeColor = Color.FromArgb(253, 248, 225);
+            PO_Label.Location = new Point(0, 0);
+            PO_Label.Name = "PO_Label";
+            PO_Label.Padding = new Padding(20, 5, 0, 0);
+            PO_Label.Size = new Size(358, 30);
+            PO_Label.TabIndex = 9;
+            PO_Label.Text = "Project Owner: NA (Add A Project Owner)";
+            // 
+            // PM_Label
+            // 
+            PM_Label.AutoSize = true;
+            PM_Label.BackColor = Color.Transparent;
+            PM_Label.FlatStyle = FlatStyle.Flat;
+            PM_Label.Font = new Font("Helvetica 2 BQ ", 15.7499981F, FontStyle.Bold);
+            PM_Label.ForeColor = Color.FromArgb(253, 248, 225);
+            PM_Label.Location = new Point(504, 0);
+            PM_Label.Name = "PM_Label";
+            PM_Label.Padding = new Padding(20, 5, 0, 0);
+            PM_Label.Size = new Size(394, 30);
+            PM_Label.TabIndex = 8;
+            PM_Label.Text = "Project Manager: NA (Add A Project Manager)";
             // 
             // overview_uc1
             // 
@@ -419,6 +428,7 @@
             selectproject_Panel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)logo_Box).EndInit();
             account_Panel.ResumeLayout(false);
+            account_Panel.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -438,7 +448,6 @@
         private Button effort_Btn;
         private Button risk_Btn;
         private Button exit_Btn;
-        private Button username_Btn;
         private ComboBox projectselect_Cbox;
         private Button navclose_Btn;
         private Overview_UC overview_uc1;
@@ -446,5 +455,7 @@
         private Task_UC task_uc1;
         private Effort_UC effort_uc1;        
         private Risk_UC risk_uc1;
+        public Label PM_Label;
+        public Label PO_Label;
     }
 }

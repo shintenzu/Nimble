@@ -70,7 +70,7 @@ namespace Nimble
                 UserID_Label.Text = "ID: " + NimbleApp.main.getUser(user_LB.SelectedIndex).UserId;
                 TeamName_Label.Text = "Name: " + NimbleApp.main.getUser(user_LB.SelectedIndex).FullName;
                 uTaskCount_Label.Text = "Task Count: " + NimbleApp.main.getUser(user_LB.SelectedIndex).TaskCounter;
-                UserEffort_Label.Text = "User Effort: " + NimbleApp.main.getUser(user_LB.SelectedIndex).UserEffort;
+                UserEffort_Label.Text = "User Effort: " + NimbleApp.main.getUser(user_LB.SelectedIndex).UserEffort + " Person Hours";
 
                 if (NimbleApp.main.getUser(user_LB.SelectedIndex).taskCounter > 0)
                 {
@@ -91,6 +91,28 @@ namespace Nimble
             {
                 TaskID_Label.Text = "Task ID: " + NimbleApp.main.getUser(user_LB.SelectedIndex).getTask(UTL_LB.SelectedIndex).TaskId;
                 TD_Label.Text = "Task Description: " + NimbleApp.main.getUser(user_LB.SelectedIndex).getTask(UTL_LB.SelectedIndex).TaskDesc;
+            }
+        }
+
+        private void addteam_Btn_Click(object sender, EventArgs e)
+        {
+            AddTeam addTeam = new AddTeam();
+            addTeam.StartPosition = FormStartPosition.CenterScreen;
+            addTeam.Show();
+        }
+
+        private void editteam_Btn_Click(object sender, EventArgs e)
+        {
+            if (NimbleApp.main.teamCounter == 0)
+            {
+                MessageBox.Show("You need at least 1 team member to edit!");
+                return;
+            }
+            else
+            {
+                EditTeam editTeam = new EditTeam();
+                editTeam.StartPosition = FormStartPosition.CenterScreen;
+                editTeam.Show();
             }
         }
     }

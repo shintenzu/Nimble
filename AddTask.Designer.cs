@@ -38,7 +38,7 @@
             label3 = new Label();
             ED_RTB = new RichTextBox();
             label2 = new Label();
-            comboBox1 = new ComboBox();
+            category_CB = new ComboBox();
             label1 = new Label();
             assign_CB = new ComboBox();
             Role_Label = new Label();
@@ -75,7 +75,7 @@
             Main_Panel.Controls.Add(label3);
             Main_Panel.Controls.Add(ED_RTB);
             Main_Panel.Controls.Add(label2);
-            Main_Panel.Controls.Add(comboBox1);
+            Main_Panel.Controls.Add(category_CB);
             Main_Panel.Controls.Add(label1);
             Main_Panel.Controls.Add(assign_CB);
             Main_Panel.Controls.Add(Role_Label);
@@ -162,13 +162,15 @@
             label2.TabIndex = 9;
             label2.Text = "Task Description";
             // 
-            // comboBox1
+            // category_CB
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(133, 179);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(200, 23);
-            comboBox1.TabIndex = 8;
+            category_CB.FormattingEnabled = true;
+            category_CB.Items.AddRange(new object[] { "1: Requirements Analysis", "2: Designing", "3: Coding", "4: Testing", "5: Project Management" });
+            category_CB.Location = new Point(133, 179);
+            category_CB.Name = "category_CB";
+            category_CB.Size = new Size(200, 23);
+            category_CB.TabIndex = 8;
+            category_CB.Text = "(Choose your task category)";
             // 
             // label1
             // 
@@ -188,6 +190,7 @@
             assign_CB.Name = "assign_CB";
             assign_CB.Size = new Size(200, 23);
             assign_CB.TabIndex = 6;
+            assign_CB.Text = "(Assign your task to someone)";
             // 
             // Role_Label
             // 
@@ -303,7 +306,7 @@
         private Button Submit_Btn;
         private Panel ATNav_Panel;
         private Button ATNavClose_Btn;
-        private ComboBox comboBox1;
+        private ComboBox category_CB;
         private Label label1;
         private Label label2;
         private RichTextBox ED_RTB;

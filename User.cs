@@ -14,14 +14,14 @@ namespace Nimble
         private int roleId;
         //private int[] tasks;
         private Task[] tasks = new Task[100];
-        private int userEffort = 0;
+        private double userEffort = 0;
         public int taskCounter = 0;
 
         public User() { }
 
-        public User(int userID, string fullName, int roleId) 
+        public User(int userId, string fullName, int roleId) 
         { 
-            this.userId = userID;
+            this.userId = userId;
             this.fullName = fullName;
             this.roleId = roleId;
 
@@ -51,7 +51,7 @@ namespace Nimble
             set { this.roleId = value; }
         }
 
-        public int UserEffort
+        public double UserEffort
         {
             get { return userEffort; }
             set { this.userEffort = value; }

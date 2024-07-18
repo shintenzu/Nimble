@@ -12,15 +12,16 @@ namespace Nimble
         
         private int taskId;
         private string taskDesc;
-        private int projectID;
+        private int projectId;
         private int category;
-        private int assignmentID;
+        private int assignmentId;
+        private int userId;
         //private int[] userID = new int[10];
-        private int estEffort = 0;
-        private int actEffort= 0;
-        private DateTime? startDate;
-        private DateTime? endDate;
-        private DateTime? dueDate;
+        private double estEffort = 0;
+        private double actEffort = 0;
+        private DateTime startDate;
+        private DateTime endDate;
+        private DateTime dueDate;
 
         public Task() 
         {
@@ -30,7 +31,7 @@ namespace Nimble
         {
             this.taskId = taskId;
             this.taskDesc = taskDesc;
-            this.projectID = projectID;
+            this.projectId = projectID;
             this.category = category;
             //this.assignmentID = assignmentID;
             //this.userID = new int[10];            
@@ -43,7 +44,7 @@ namespace Nimble
 
             this.estEffort = effortHours;
             this.actEffort = 0;
-            this.endDate = null;
+            //this.endDate = null;
         }
 
         public Task(int taskId, string taskDesc, DateTime startDate, DateTime dueDate)
@@ -63,7 +64,7 @@ namespace Nimble
 
             this.estEffort = effortHours;
             this.actEffort = 0;
-            this.endDate = null;
+            //this.endDate = null;
         }
 
         public int TaskId
@@ -71,10 +72,17 @@ namespace Nimble
             get { return taskId; }
             set { this.taskId = value; }
         }
+
+        public int UserId
+        {
+            get { return userId; }
+            set { this.userId = value; }
+        }
+
         public int ProjectID
         {
-            get { return projectID; }
-            set { this.projectID = value; }
+            get { return projectId; }
+            set { this.projectId = value; }
         }
         public string TaskDesc
         {
@@ -89,34 +97,34 @@ namespace Nimble
 
         public int AssignmentID
         {
-            get { return assignmentID; }
-            set { this.assignmentID = value; }
+            get { return assignmentId; }
+            set { this.assignmentId = value; }
         }
 
-        public int EstEffort
+        public double EstEffort
         {
             get { return estEffort; }
             set { this.estEffort = value; }
         }
         
 
-        public int ActEffort
+        public double ActEffort
         {
             get { return actEffort; }
             set { this.actEffort = value; }
         }
 
-        public DateTime? StartDate
+        public DateTime StartDate
         {
             get { return startDate; }
             set { this.startDate = value; }
         }
-        public DateTime? EndDate
+        public DateTime EndDate
         {
             get { return endDate; }
             set { this.endDate = value; }
         }
-        public DateTime? DueDate
+        public DateTime DueDate
         {
             get { return dueDate; }
             set { this.dueDate = value; }

@@ -225,6 +225,7 @@
             editteam_Btn.TextAlign = ContentAlignment.MiddleLeft;
             editteam_Btn.TextImageRelation = TextImageRelation.ImageBeforeText;
             editteam_Btn.UseVisualStyleBackColor = false;
+            editteam_Btn.Click += editteam_Btn_Click;
             // 
             // addteam_Btn
             // 
@@ -245,6 +246,7 @@
             addteam_Btn.TextAlign = ContentAlignment.MiddleLeft;
             addteam_Btn.TextImageRelation = TextImageRelation.ImageBeforeText;
             addteam_Btn.UseVisualStyleBackColor = false;
+            addteam_Btn.Click += addteam_Btn_Click;
             // 
             // team_Label
             // 

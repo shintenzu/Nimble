@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.VisualBasic.ApplicationServices;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,7 +11,33 @@ namespace Nimble
     {
         private int stageId;
         private int projectID;
-        private int[] tasks;
-        private double Effort;
+        private Task[] tasks = new Task[100];
+        private double stageEffort = 0;
+        public int taskCounter = 0;
+
+        public int StageId
+        {
+            get { return stageId; }
+            set { this.stageId = value; }
+        }
+        public int ProjectID
+        {
+            get { return projectID; }
+            set { this.projectID = value; }
+        }
+         public double StageEffort
+        {
+            get { return stageEffort; }
+            set { this.stageEffort = value; }
+        }
+
+        public void addTask(int Index, Task newTask)
+        {
+            this.tasks[Index] = newTask;
+        }
+        public Task getTask(int Index)
+        {
+            return tasks[Index];
+        }
     }
 }
