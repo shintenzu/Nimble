@@ -92,9 +92,10 @@ namespace Nimble
 
         public void resetRBindings()
         {
+            clearR();
             if (NimbleApp.main.req.taskCounter > 0)
             {
-                clearR();
+                
                 for (int i = 0; i < NimbleApp.main.req.taskCounter; i++)
                 {
                     r.Add("T" + NimbleApp.main.req.getTask(i).TaskId.ToString());
@@ -109,9 +110,10 @@ namespace Nimble
 
         public void resetDBindings()
         {
+            clearD();
             if (NimbleApp.main.design.taskCounter > 0)
             {
-                clearD();
+                
                 for (int i = 0; i < NimbleApp.main.design.taskCounter; i++)
                 {
                     d.Add("T" + NimbleApp.main.design.getTask(i).TaskId.ToString());
@@ -124,9 +126,10 @@ namespace Nimble
         }
         public void resetCBindings()
         {
+            clearC();
             if (NimbleApp.main.code.taskCounter > 0)
             {
-                clearC();
+                
                 for (int i = 0; i < NimbleApp.main.code.taskCounter; i++)
                 {
                     c.Add("T" + NimbleApp.main.code.getTask(i).TaskId.ToString());
@@ -139,9 +142,10 @@ namespace Nimble
         }
         public void resetTBindings()
         {
+            clearT();
             if (NimbleApp.main.test.taskCounter > 0)
             {
-                clearT();
+                
                 for (int i = 0; i < NimbleApp.main.test.taskCounter; i++)
                 {
                     t.Add("T" + NimbleApp.main.test.getTask(i).TaskId.ToString());
@@ -154,9 +158,10 @@ namespace Nimble
         }
         public void resetPMBindings()
         {
+            clearPM();
             if (NimbleApp.main.pm.taskCounter > 0)
             {
-                clearPM();
+                
                 for (int i = 0; i < NimbleApp.main.pm.taskCounter; i++)
                 {
                     pm.Add("T" + NimbleApp.main.pm.getTask(i).TaskId.ToString());

@@ -39,5 +39,31 @@ namespace Nimble
         {
             return tasks[Index];
         }
+
+        public void removeTask(Task newTask)
+        {
+
+            Task[] temp = new Task[100];
+            int tempCounter = 0;
+            Task ttask = new Task();
+            ttask = newTask;
+            for (int i = 0; i < this.tasks.Length; i++)
+            {
+                if (this.tasks[i] != newTask)
+                {
+                    temp[tempCounter] = this.tasks[i];
+                    tempCounter++;
+                }
+            }
+
+            this.tasks = temp;
+            taskCounter--;
+            if (this.stageEffort > 0)
+            {
+                this.stageEffort -= newTask.EstEffort;
+            }
+
+
+        }
     }
 }

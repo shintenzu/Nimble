@@ -68,23 +68,23 @@ namespace Nimble
 
                 if (Role_CB.GetItemText(Role_CB.SelectedItem) == "1: Project Owner")
                 {
-                    user1.RoleId = 1;
+                    user1.RoleId = 0;
                     NimbleApp.instance.PO_Label.Text = "Project Owner: " +FullName_TB.Text;
                     NimbleApp.main.hasLeader = true;
                 }
                 else if (Role_CB.GetItemText(Role_CB.SelectedItem) == "2: Project Manager")
                 {
-                    user1.RoleId = 2;
+                    user1.RoleId = 1;
                     NimbleApp.instance.PM_Label.Text = "Project Manager: " + FullName_TB.Text;
                     NimbleApp.main.hasManager = true;
                 }
                 else if (Role_CB.GetItemText(Role_CB.SelectedItem) == "3: Designer")
                 {
-                    user1.RoleId = 3;                  
+                    user1.RoleId = 2;                  
                 }
                 else if (Role_CB.GetItemText(Role_CB.SelectedItem) == "4: Coder")
                 {
-                    user1.RoleId = 4;
+                    user1.RoleId = 3;
                 }
 
                 //1: Project Owner

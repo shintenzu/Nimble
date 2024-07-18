@@ -20,6 +20,7 @@ namespace Nimble
         {
             InitializeComponent();
             instance = this;
+            EditRisks_Btn.Hide();
         }
 
         public void resetRBindings()

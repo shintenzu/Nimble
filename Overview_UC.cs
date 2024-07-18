@@ -71,6 +71,25 @@ namespace Nimble
             namesBindingSource.ResetBindings(false);
         }
 
+        public void resetUsers()
+        {
+            names.Clear();
+
+            if (NimbleApp.main.teamCounter > 0)
+            {
+                for (int i = 0; i < NimbleApp.main.teamCounter; i++)
+                {
+                    names.Add(NimbleApp.main.getUser(i).FullName);
+                }
+            }
+
+            namesBindingSource.DataSource = names;
+            user_LB.DataSource = namesBindingSource;
+            namesBindingSource.ResetBindings(false);
+        }
+
+
+
 
         public void receiveUser(string newUser)
         {

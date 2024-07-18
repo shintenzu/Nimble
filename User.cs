@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace Nimble
 {
@@ -70,6 +72,31 @@ namespace Nimble
         public Task getTask(int Index)
         {
             return tasks[Index];
+        }
+
+        public void removeTask(Task newTask)
+        {
+            
+            Task[] temp = new Task[100];
+            int tempCounter = 0;
+            Task ttask = new Task();
+            ttask = newTask;
+            for (int i = 0; i < this.tasks.Length; i++) 
+            { if (this.tasks[i] != newTask)
+                {
+                    temp[tempCounter] = this.tasks[i];
+                    tempCounter++;
+                }
+            }
+
+            this.tasks = temp;
+            taskCounter--;
+            if (this.userEffort > 0) 
+            {
+                this.userEffort -= newTask.EstEffort;
+            }
+            
+
         }
 
 

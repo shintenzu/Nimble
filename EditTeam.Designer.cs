@@ -31,14 +31,12 @@
             Submit_Btn = new Button();
             EditTeam_Label = new Label();
             Main_Panel = new Panel();
-            comboBox1 = new ComboBox();
+            assign_CB = new ComboBox();
             label1 = new Label();
             Role_CB = new ComboBox();
             Role_Label = new Label();
-            LastName_Label = new Label();
-            LastName_TB = new TextBox();
             FirstName_Label = new Label();
-            FirstName_TB = new TextBox();
+            FullName_TB = new TextBox();
             Title_Panel = new Panel();
             SubmitButton_Panel = new Panel();
             Cancel_Btn = new Button();
@@ -64,6 +62,7 @@
             Submit_Btn.TabIndex = 0;
             Submit_Btn.Text = "Submit";
             Submit_Btn.UseVisualStyleBackColor = false;
+            Submit_Btn.Click += Submit_Btn_Click;
             // 
             // EditTeam_Label
             // 
@@ -78,26 +77,25 @@
             // 
             // Main_Panel
             // 
-            Main_Panel.Controls.Add(comboBox1);
+            Main_Panel.Controls.Add(assign_CB);
             Main_Panel.Controls.Add(label1);
             Main_Panel.Controls.Add(Role_CB);
             Main_Panel.Controls.Add(Role_Label);
-            Main_Panel.Controls.Add(LastName_Label);
-            Main_Panel.Controls.Add(LastName_TB);
             Main_Panel.Controls.Add(FirstName_Label);
-            Main_Panel.Controls.Add(FirstName_TB);
+            Main_Panel.Controls.Add(FullName_TB);
             Main_Panel.Location = new Point(21, 91);
             Main_Panel.Name = "Main_Panel";
             Main_Panel.Size = new Size(433, 256);
             Main_Panel.TabIndex = 12;
             // 
-            // comboBox1
+            // assign_CB
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(136, 7);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(192, 23);
-            comboBox1.TabIndex = 8;
+            assign_CB.FormattingEnabled = true;
+            assign_CB.Location = new Point(136, 7);
+            assign_CB.Name = "assign_CB";
+            assign_CB.Size = new Size(192, 23);
+            assign_CB.TabIndex = 8;
+            assign_CB.SelectedIndexChanged += assign_CB_SelectedIndexChanged;
             // 
             // label1
             // 
@@ -113,7 +111,8 @@
             // Role_CB
             // 
             Role_CB.FormattingEnabled = true;
-            Role_CB.Location = new Point(136, 120);
+            Role_CB.Items.AddRange(new object[] { "1: Project Owner", "2: Project Manager", "3: Designer", "4: Coder" });
+            Role_CB.Location = new Point(136, 81);
             Role_CB.Name = "Role_CB";
             Role_CB.Size = new Size(192, 23);
             Role_CB.TabIndex = 6;
@@ -123,29 +122,11 @@
             Role_Label.AutoSize = true;
             Role_Label.Font = new Font("Helvetica CE", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 238);
             Role_Label.ForeColor = Color.FromArgb(253, 248, 225);
-            Role_Label.Location = new Point(20, 120);
+            Role_Label.Location = new Point(20, 81);
             Role_Label.Name = "Role_Label";
             Role_Label.Size = new Size(33, 15);
             Role_Label.TabIndex = 5;
             Role_Label.Text = "Role";
-            // 
-            // LastName_Label
-            // 
-            LastName_Label.AutoSize = true;
-            LastName_Label.Font = new Font("Helvetica CE", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 238);
-            LastName_Label.ForeColor = Color.FromArgb(253, 248, 225);
-            LastName_Label.Location = new Point(20, 85);
-            LastName_Label.Name = "LastName_Label";
-            LastName_Label.Size = new Size(70, 15);
-            LastName_Label.TabIndex = 3;
-            LastName_Label.Text = "Last Name";
-            // 
-            // LastName_TB
-            // 
-            LastName_TB.Location = new Point(136, 82);
-            LastName_TB.Name = "LastName_TB";
-            LastName_TB.Size = new Size(297, 23);
-            LastName_TB.TabIndex = 2;
             // 
             // FirstName_Label
             // 
@@ -154,16 +135,16 @@
             FirstName_Label.ForeColor = Color.FromArgb(253, 248, 225);
             FirstName_Label.Location = new Point(20, 47);
             FirstName_Label.Name = "FirstName_Label";
-            FirstName_Label.Size = new Size(71, 15);
+            FirstName_Label.Size = new Size(66, 15);
             FirstName_Label.TabIndex = 1;
-            FirstName_Label.Text = "First Name";
+            FirstName_Label.Text = "Full Name";
             // 
-            // FirstName_TB
+            // FullName_TB
             // 
-            FirstName_TB.Location = new Point(136, 44);
-            FirstName_TB.Name = "FirstName_TB";
-            FirstName_TB.Size = new Size(297, 23);
-            FirstName_TB.TabIndex = 0;
+            FullName_TB.Location = new Point(136, 44);
+            FullName_TB.Name = "FullName_TB";
+            FullName_TB.Size = new Size(297, 23);
+            FullName_TB.TabIndex = 0;
             // 
             // Title_Panel
             // 
@@ -258,16 +239,14 @@
         private Panel Main_Panel;
         private ComboBox Role_CB;
         private Label Role_Label;
-        private Label LastName_Label;
-        private TextBox LastName_TB;
         private Label FirstName_Label;
-        private TextBox FirstName_TB;
+        private TextBox FullName_TB;
         private Panel Title_Panel;
         private Panel SubmitButton_Panel;
         private Panel Format_Panel;
         private Panel ATNav_Panel;
         private Button ATNavClose_Btn;
-        private ComboBox comboBox1;
+        private ComboBox assign_CB;
         private Label label1;
         private Button Cancel_Btn;
     }

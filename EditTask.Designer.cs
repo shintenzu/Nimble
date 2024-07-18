@@ -34,19 +34,19 @@
             SubmitButton_Panel = new Panel();
             Cancel_Btn = new Button();
             Submit_Btn = new Button();
-            dateTimePicker2 = new DateTimePicker();
-            dateTimePicker1 = new DateTimePicker();
+            DueDate = new DateTimePicker();
+            StartDate = new DateTimePicker();
             label5 = new Label();
             label4 = new Label();
             label3 = new Label();
             ED_RTB = new RichTextBox();
             label2 = new Label();
-            comboBox1 = new ComboBox();
+            category_CB = new ComboBox();
             label1 = new Label();
-            Role_CB = new ComboBox();
+            assign_CB = new ComboBox();
             Role_Label = new Label();
             Main_Panel = new Panel();
-            comboBox2 = new ComboBox();
+            task_CB = new ComboBox();
             ATNav_Panel = new Panel();
             Title_Panel.SuspendLayout();
             SubmitButton_Panel.SuspendLayout();
@@ -124,20 +124,21 @@
             Submit_Btn.TabIndex = 0;
             Submit_Btn.Text = "Submit";
             Submit_Btn.UseVisualStyleBackColor = false;
+            Submit_Btn.Click += Submit_Btn_Click;
             // 
-            // dateTimePicker2
+            // DueDate
             // 
-            dateTimePicker2.Location = new Point(133, 254);
-            dateTimePicker2.Name = "dateTimePicker2";
-            dateTimePicker2.Size = new Size(200, 23);
-            dateTimePicker2.TabIndex = 16;
+            DueDate.Location = new Point(133, 254);
+            DueDate.Name = "DueDate";
+            DueDate.Size = new Size(200, 23);
+            DueDate.TabIndex = 16;
             // 
-            // dateTimePicker1
+            // StartDate
             // 
-            dateTimePicker1.Location = new Point(133, 215);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(200, 23);
-            dateTimePicker1.TabIndex = 15;
+            StartDate.Location = new Point(133, 215);
+            StartDate.Name = "StartDate";
+            StartDate.Size = new Size(200, 23);
+            StartDate.TabIndex = 15;
             // 
             // label5
             // 
@@ -195,13 +196,14 @@
             label2.TabIndex = 9;
             label2.Text = "Task Description";
             // 
-            // comboBox1
+            // category_CB
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(133, 179);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(200, 23);
-            comboBox1.TabIndex = 8;
+            category_CB.FormattingEnabled = true;
+            category_CB.Items.AddRange(new object[] { "1: Requirements Analysis", "2: Designing", "3: Coding", "4: Testing", "5: Project Management" });
+            category_CB.Location = new Point(133, 179);
+            category_CB.Name = "category_CB";
+            category_CB.Size = new Size(200, 23);
+            category_CB.TabIndex = 8;
             // 
             // label1
             // 
@@ -214,13 +216,13 @@
             label1.TabIndex = 7;
             label1.Text = "Task Category";
             // 
-            // Role_CB
+            // assign_CB
             // 
-            Role_CB.FormattingEnabled = true;
-            Role_CB.Location = new Point(133, 143);
-            Role_CB.Name = "Role_CB";
-            Role_CB.Size = new Size(200, 23);
-            Role_CB.TabIndex = 6;
+            assign_CB.FormattingEnabled = true;
+            assign_CB.Location = new Point(133, 143);
+            assign_CB.Name = "assign_CB";
+            assign_CB.Size = new Size(200, 23);
+            assign_CB.TabIndex = 6;
             // 
             // Role_Label
             // 
@@ -235,30 +237,31 @@
             // 
             // Main_Panel
             // 
-            Main_Panel.Controls.Add(comboBox2);
-            Main_Panel.Controls.Add(dateTimePicker2);
+            Main_Panel.Controls.Add(task_CB);
+            Main_Panel.Controls.Add(DueDate);
             Main_Panel.Controls.Add(label3);
-            Main_Panel.Controls.Add(dateTimePicker1);
+            Main_Panel.Controls.Add(StartDate);
             Main_Panel.Controls.Add(label5);
             Main_Panel.Controls.Add(label4);
             Main_Panel.Controls.Add(ED_RTB);
             Main_Panel.Controls.Add(label2);
-            Main_Panel.Controls.Add(comboBox1);
+            Main_Panel.Controls.Add(category_CB);
             Main_Panel.Controls.Add(label1);
-            Main_Panel.Controls.Add(Role_CB);
+            Main_Panel.Controls.Add(assign_CB);
             Main_Panel.Controls.Add(Role_Label);
             Main_Panel.Location = new Point(21, 93);
             Main_Panel.Name = "Main_Panel";
             Main_Panel.Size = new Size(433, 295);
             Main_Panel.TabIndex = 17;
             // 
-            // comboBox2
+            // task_CB
             // 
-            comboBox2.FormattingEnabled = true;
-            comboBox2.Location = new Point(133, 0);
-            comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(200, 23);
-            comboBox2.TabIndex = 17;
+            task_CB.FormattingEnabled = true;
+            task_CB.Location = new Point(133, 0);
+            task_CB.Name = "task_CB";
+            task_CB.Size = new Size(200, 23);
+            task_CB.TabIndex = 17;
+            task_CB.SelectedIndexChanged += assign_CB_SelectedIndexChanged;
             // 
             // ATNav_Panel
             // 
@@ -299,20 +302,20 @@
         private Label AddTask_Label;
         private Panel SubmitButton_Panel;
         private Button Submit_Btn;
-        private DateTimePicker dateTimePicker2;
-        private DateTimePicker dateTimePicker1;
+        private DateTimePicker DueDate;
+        private DateTimePicker StartDate;
         private Label label5;
         private Label label4;
         private Label label3;
         private RichTextBox ED_RTB;
         private Label label2;
-        private ComboBox comboBox1;
+        private ComboBox category_CB;
         private Label label1;
-        private ComboBox Role_CB;
+        private ComboBox assign_CB;
         private Label Role_Label;
         private Panel Main_Panel;
         private Panel ATNav_Panel;
-        private ComboBox comboBox2;
+        private ComboBox task_CB;
         private Button Cancel_Btn;
     }
 }

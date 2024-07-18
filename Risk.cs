@@ -11,6 +11,7 @@ namespace Nimble
     {
         private int riskId;
         private string riskDesc;
+        private string mitigation;
         private int priority;
         private double prob;
         private double cost;
@@ -33,6 +34,12 @@ namespace Nimble
         {
             get { return riskDesc; }
             set { this.riskDesc = value; }
+        }
+
+        public string Mitigation
+        {
+            get { return mitigation; }
+            set { this.mitigation = value; }
         }
         public int Priority
         {
