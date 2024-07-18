@@ -39,7 +39,7 @@
             RidkID_Label = new Label();
             TD_Label = new Label();
             RiskProb_Label = new Label();
-            richTextBox1 = new RichTextBox();
+            RiskMit_RTB = new RichTextBox();
             RiskMit_Label = new Label();
             RiskCost_Label = new Label();
             RiskValue_Label = new Label();
@@ -210,17 +210,17 @@
             RiskProb_Label.TabIndex = 30;
             RiskProb_Label.Text = "Risk Probability: ";
             // 
-            // richTextBox1
+            // RiskMit_RTB
             // 
-            richTextBox1.BackColor = Color.FromArgb(254, 248, 235);
-            richTextBox1.BorderStyle = BorderStyle.None;
-            richTextBox1.Location = new Point(224, 290);
-            richTextBox1.Name = "richTextBox1";
-            richTextBox1.ReadOnly = true;
-            richTextBox1.ScrollBars = RichTextBoxScrollBars.Vertical;
-            richTextBox1.Size = new Size(664, 85);
-            richTextBox1.TabIndex = 32;
-            richTextBox1.Text = "";
+            RiskMit_RTB.BackColor = Color.FromArgb(254, 248, 235);
+            RiskMit_RTB.BorderStyle = BorderStyle.None;
+            RiskMit_RTB.Location = new Point(224, 290);
+            RiskMit_RTB.Name = "RiskMit_RTB";
+            RiskMit_RTB.ReadOnly = true;
+            RiskMit_RTB.ScrollBars = RichTextBoxScrollBars.Vertical;
+            RiskMit_RTB.Size = new Size(664, 85);
+            RiskMit_RTB.TabIndex = 32;
+            RiskMit_RTB.Text = "";
             // 
             // RiskMit_Label
             // 
@@ -274,7 +274,7 @@
             BackColor = Color.FromArgb(60, 90, 130);
             Controls.Add(RiskValue_Label);
             Controls.Add(RiskCost_Label);
-            Controls.Add(richTextBox1);
+            Controls.Add(RiskMit_RTB);
             Controls.Add(RiskMit_Label);
             Controls.Add(RiskProb_Label);
             Controls.Add(risk_LB);
@@ -307,7 +307,7 @@
         private Label RidkID_Label;
         private Label TD_Label;
         private Label RiskProb_Label;
-        private RichTextBox richTextBox1;
+        private RichTextBox RiskMit_RTB;
         private Label RiskMit_Label;
         private Label RiskCost_Label;
         private Label RiskValue_Label;

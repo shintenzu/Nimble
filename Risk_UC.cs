@@ -61,6 +61,7 @@ namespace Nimble
                 RidkID_Label.Text = "Risk ID: " + NimbleApp.main.getRisk(risk_LB.SelectedIndex).RiskId;
                 //TD_Label.Text = "Task Description: " + NimbleApp.main.getTask(task_LB.SelectedIndex).TaskDesc;
                 RiskDesc_RTB.Text = NimbleApp.main.getRisk(risk_LB.SelectedIndex).RiskDesc;
+                RiskMit_RTB.Text = NimbleApp.main.getRisk(risk_LB.SelectedIndex).Mitigation;
                 RiskPri_Label.Text = "Risk Priority: " + NimbleApp.main.getRisk(risk_LB.SelectedIndex).Priority;
                 RiskProb_Label.Text = "Risk Probability: " + NimbleApp.main.getRisk(risk_LB.SelectedIndex).Prob;
                 RiskCost_Label.Text = "Risk Cost: $" + NimbleApp.main.getRisk(risk_LB.SelectedIndex).Cost;

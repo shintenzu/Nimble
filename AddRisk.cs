@@ -67,6 +67,7 @@ namespace Nimble
 
                 risk1.RiskId = NimbleApp.main.riskCounter;
                 risk1.RiskDesc = RD_RTB.Text;
+                risk1.Mitigation = RM_RTB.Text;
                 if (Priority_CB.GetItemText(Priority_CB.SelectedItem) == "1: High")
                 {
                     risk1.Priority = 1;

@@ -42,12 +42,14 @@
             prob_Label = new Label();
             Role_Label = new Label();
             Main_Panel = new Panel();
+            label2 = new Label();
+            label1 = new Label();
             cost_TB = new TextBox();
             cost_Label = new Label();
             Priority_CB = new ComboBox();
             ATNav_Panel = new Panel();
-            label1 = new Label();
-            label2 = new Label();
+            RM_RTB = new RichTextBox();
+            RiskMit_Label = new Label();
             Title_Panel.SuspendLayout();
             SubmitButton_Panel.SuspendLayout();
             Main_Panel.SuspendLayout();
@@ -85,7 +87,7 @@
             // 
             // RiskID_TB
             // 
-            RiskID_TB.Location = new Point(133, 108);
+            RiskID_TB.Location = new Point(134, 155);
             RiskID_TB.Name = "RiskID_TB";
             RiskID_TB.ReadOnly = true;
             RiskID_TB.Size = new Size(73, 23);
@@ -96,7 +98,7 @@
             RiskID_Label.AutoSize = true;
             RiskID_Label.Font = new Font("Helvetica CE", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 238);
             RiskID_Label.ForeColor = Color.FromArgb(253, 248, 225);
-            RiskID_Label.Location = new Point(17, 112);
+            RiskID_Label.Location = new Point(18, 159);
             RiskID_Label.Name = "RiskID_Label";
             RiskID_Label.Size = new Size(89, 15);
             RiskID_Label.TabIndex = 11;
@@ -108,7 +110,7 @@
             RD_RTB.BorderStyle = BorderStyle.None;
             RD_RTB.Location = new Point(133, 8);
             RD_RTB.Name = "RD_RTB";
-            RD_RTB.Size = new Size(300, 87);
+            RD_RTB.Size = new Size(300, 60);
             RD_RTB.TabIndex = 10;
             RD_RTB.Text = "";
             // 
@@ -170,7 +172,7 @@
             // 
             Probability_CB.FormattingEnabled = true;
             Probability_CB.Items.AddRange(new object[] { "10%", "20%", "30%", "40%", "50%", "60%", "70%", "80%", "90%", "100%" });
-            Probability_CB.Location = new Point(133, 179);
+            Probability_CB.Location = new Point(134, 226);
             Probability_CB.Name = "Probability_CB";
             Probability_CB.Size = new Size(200, 23);
             Probability_CB.TabIndex = 8;
@@ -181,7 +183,7 @@
             prob_Label.AutoSize = true;
             prob_Label.Font = new Font("Helvetica CE", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 238);
             prob_Label.ForeColor = Color.FromArgb(253, 248, 225);
-            prob_Label.Location = new Point(17, 182);
+            prob_Label.Location = new Point(18, 229);
             prob_Label.Name = "prob_Label";
             prob_Label.Size = new Size(72, 15);
             prob_Label.TabIndex = 7;
@@ -192,7 +194,7 @@
             Role_Label.AutoSize = true;
             Role_Label.Font = new Font("Helvetica CE", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 238);
             Role_Label.ForeColor = Color.FromArgb(253, 248, 225);
-            Role_Label.Location = new Point(17, 151);
+            Role_Label.Location = new Point(18, 198);
             Role_Label.Name = "Role_Label";
             Role_Label.Size = new Size(52, 15);
             Role_Label.TabIndex = 5;
@@ -200,6 +202,8 @@
             // 
             // Main_Panel
             // 
+            Main_Panel.Controls.Add(RM_RTB);
+            Main_Panel.Controls.Add(RiskMit_Label);
             Main_Panel.Controls.Add(label2);
             Main_Panel.Controls.Add(label1);
             Main_Panel.Controls.Add(cost_TB);
@@ -217,9 +221,32 @@
             Main_Panel.Size = new Size(433, 295);
             Main_Panel.TabIndex = 17;
             // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Helvetica CE", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 238);
+            label2.ForeColor = Color.FromArgb(253, 248, 225);
+            label2.Location = new Point(236, 267);
+            label2.Name = "label2";
+            label2.Size = new Size(25, 15);
+            label2.TabIndex = 16;
+            label2.Text = ".00";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Helvetica CE", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 238);
+            label1.ForeColor = Color.FromArgb(253, 248, 225);
+            label1.Location = new Point(116, 267);
+            label1.Name = "label1";
+            label1.Size = new Size(14, 15);
+            label1.TabIndex = 15;
+            label1.Text = "$";
+            label1.TextAlign = ContentAlignment.MiddleRight;
+            // 
             // cost_TB
             // 
-            cost_TB.Location = new Point(133, 216);
+            cost_TB.Location = new Point(134, 263);
             cost_TB.Name = "cost_TB";
             cost_TB.Size = new Size(100, 23);
             cost_TB.TabIndex = 14;
@@ -230,7 +257,7 @@
             cost_Label.AutoSize = true;
             cost_Label.Font = new Font("Helvetica CE", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 238);
             cost_Label.ForeColor = Color.FromArgb(253, 248, 225);
-            cost_Label.Location = new Point(17, 219);
+            cost_Label.Location = new Point(18, 266);
             cost_Label.Name = "cost_Label";
             cost_Label.Size = new Size(38, 15);
             cost_Label.TabIndex = 13;
@@ -240,7 +267,7 @@
             // 
             Priority_CB.FormattingEnabled = true;
             Priority_CB.Items.AddRange(new object[] { "1: High", "2: Medium", "3: Low" });
-            Priority_CB.Location = new Point(133, 143);
+            Priority_CB.Location = new Point(134, 190);
             Priority_CB.Name = "Priority_CB";
             Priority_CB.Size = new Size(200, 23);
             Priority_CB.TabIndex = 6;
@@ -256,28 +283,26 @@
             ATNav_Panel.Size = new Size(475, 33);
             ATNav_Panel.TabIndex = 19;
             // 
-            // label1
+            // RM_RTB
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Helvetica CE", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 238);
-            label1.ForeColor = Color.FromArgb(253, 248, 225);
-            label1.Location = new Point(115, 220);
-            label1.Name = "label1";
-            label1.Size = new Size(14, 15);
-            label1.TabIndex = 15;
-            label1.Text = "$";
-            label1.TextAlign = ContentAlignment.MiddleRight;
+            RM_RTB.BackColor = Color.FromArgb(254, 248, 235);
+            RM_RTB.BorderStyle = BorderStyle.None;
+            RM_RTB.Location = new Point(133, 83);
+            RM_RTB.Name = "RM_RTB";
+            RM_RTB.Size = new Size(300, 60);
+            RM_RTB.TabIndex = 18;
+            RM_RTB.Text = "";
             // 
-            // label2
+            // RiskMit_Label
             // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Helvetica CE", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 238);
-            label2.ForeColor = Color.FromArgb(253, 248, 225);
-            label2.Location = new Point(235, 220);
-            label2.Name = "label2";
-            label2.Size = new Size(25, 15);
-            label2.TabIndex = 16;
-            label2.Text = ".00";
+            RiskMit_Label.AutoSize = true;
+            RiskMit_Label.Font = new Font("Helvetica CE", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 238);
+            RiskMit_Label.ForeColor = Color.FromArgb(253, 248, 225);
+            RiskMit_Label.Location = new Point(17, 89);
+            RiskMit_Label.Name = "RiskMit_Label";
+            RiskMit_Label.Size = new Size(93, 15);
+            RiskMit_Label.TabIndex = 17;
+            RiskMit_Label.Text = "Risk Mitigation";
             // 
             // AddRisk
             // 
@@ -329,5 +354,7 @@
         private TextBox cost_TB;
         private Label label2;
         private Label label1;
+        private RichTextBox RM_RTB;
+        private Label RiskMit_Label;
     }
 }

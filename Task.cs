@@ -130,6 +130,32 @@ namespace Nimble
             set { this.dueDate = value; }
         }
 
+        public String CatString()
+        {
+            string cat = string.Empty;
+            if (this.category == 0)
+            {
+                cat = "Requirements Analysis";
+            }
+            else if (this.category == 1)
+            {
+                cat = "Design";
+            }
+            else if (this.category == 2)
+            {
+                cat = "Coding";
+            }
+            else if (this.category == 3)
+            {
+                cat = "Testing";
+            }
+            else if (this.category == 4)
+            {
+                cat = "Project Management";
+            }
+            return cat;
+        }
+
         /*
         public int getTaskId() { return taskId; }
         public string getTaskDesc() { return taskDesc; }

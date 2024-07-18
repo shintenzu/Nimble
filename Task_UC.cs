@@ -81,6 +81,7 @@ namespace Nimble
                 TaskEstEffort_Label.Text = "Task Estimated Effort: " + NimbleApp.main.getTask(task_LB.SelectedIndex).EstEffort + " Person Hours";
                 StartDate_Label.Text = "Start Date: " + NimbleApp.main.getTask(task_LB.SelectedIndex).StartDate.ToString();
                 DueDate_Label.Text = "Due Date: " + NimbleApp.main.getTask(task_LB.SelectedIndex).DueDate.ToString();
+                taskCat_Label.Text = "Category: " + NimbleApp.main.getTask(task_LB.SelectedIndex).CatString();
             }
         }
     }

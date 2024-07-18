@@ -52,6 +52,7 @@
             team_Label = new Label();
             taskBindingSource = new BindingSource(components);
             task_Panel = new Panel();
+            taskCat_Label = new Label();
             TaskDesc_RTB = new RichTextBox();
             DueDate_Label = new Label();
             StartDate_Label = new Label();
@@ -394,6 +395,7 @@
             // 
             // task_Panel
             // 
+            task_Panel.Controls.Add(taskCat_Label);
             task_Panel.Controls.Add(TaskDesc_RTB);
             task_Panel.Controls.Add(DueDate_Label);
             task_Panel.Controls.Add(StartDate_Label);
@@ -411,11 +413,26 @@
             task_Panel.Size = new Size(523, 300);
             task_Panel.TabIndex = 5;
             // 
+            // taskCat_Label
+            // 
+            taskCat_Label.AutoSize = true;
+            taskCat_Label.BackColor = Color.Transparent;
+            taskCat_Label.FlatStyle = FlatStyle.Flat;
+            taskCat_Label.Font = new Font("Helvetica", 9.749999F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            taskCat_Label.ForeColor = Color.FromArgb(253, 248, 225);
+            taskCat_Label.Location = new Point(186, 191);
+            taskCat_Label.Margin = new Padding(3);
+            taskCat_Label.Name = "taskCat_Label";
+            taskCat_Label.Padding = new Padding(0, 0, 0, 5);
+            taskCat_Label.Size = new Size(72, 21);
+            taskCat_Label.TabIndex = 18;
+            taskCat_Label.Text = "Category: ";
+            // 
             // TaskDesc_RTB
             // 
             TaskDesc_RTB.BackColor = Color.FromArgb(254, 248, 235);
             TaskDesc_RTB.BorderStyle = BorderStyle.None;
-            TaskDesc_RTB.Location = new Point(195, 87);
+            TaskDesc_RTB.Location = new Point(195, 79);
             TaskDesc_RTB.Name = "TaskDesc_RTB";
             TaskDesc_RTB.ReadOnly = true;
             TaskDesc_RTB.ScrollBars = RichTextBoxScrollBars.Vertical;
@@ -430,7 +447,7 @@
             DueDate_Label.FlatStyle = FlatStyle.Flat;
             DueDate_Label.Font = new Font("Helvetica", 9.749999F, FontStyle.Bold, GraphicsUnit.Point, 0);
             DueDate_Label.ForeColor = Color.FromArgb(253, 248, 225);
-            DueDate_Label.Location = new Point(186, 232);
+            DueDate_Label.Location = new Point(187, 236);
             DueDate_Label.Margin = new Padding(3);
             DueDate_Label.Name = "DueDate_Label";
             DueDate_Label.Padding = new Padding(0, 0, 0, 5);
@@ -445,7 +462,7 @@
             StartDate_Label.FlatStyle = FlatStyle.Flat;
             StartDate_Label.Font = new Font("Helvetica", 9.749999F, FontStyle.Bold, GraphicsUnit.Point, 0);
             StartDate_Label.ForeColor = Color.FromArgb(253, 248, 225);
-            StartDate_Label.Location = new Point(186, 205);
+            StartDate_Label.Location = new Point(186, 214);
             StartDate_Label.Margin = new Padding(3);
             StartDate_Label.Name = "StartDate_Label";
             StartDate_Label.Padding = new Padding(0, 0, 0, 5);
@@ -460,7 +477,7 @@
             TaskEstEffort_Label.FlatStyle = FlatStyle.Flat;
             TaskEstEffort_Label.Font = new Font("Helvetica", 9.749999F, FontStyle.Bold, GraphicsUnit.Point, 0);
             TaskEstEffort_Label.ForeColor = Color.FromArgb(253, 248, 225);
-            TaskEstEffort_Label.Location = new Point(186, 178);
+            TaskEstEffort_Label.Location = new Point(186, 170);
             TaskEstEffort_Label.Margin = new Padding(3);
             TaskEstEffort_Label.Name = "TaskEstEffort_Label";
             TaskEstEffort_Label.Padding = new Padding(0, 0, 0, 5);
@@ -501,7 +518,7 @@
             TD_Label.FlatStyle = FlatStyle.Flat;
             TD_Label.Font = new Font("Helvetica", 9.749999F, FontStyle.Bold, GraphicsUnit.Point, 0);
             TD_Label.ForeColor = Color.FromArgb(253, 248, 225);
-            TD_Label.Location = new Point(186, 64);
+            TD_Label.Location = new Point(186, 56);
             TD_Label.Margin = new Padding(3);
             TD_Label.Name = "TD_Label";
             TD_Label.Padding = new Padding(0, 0, 0, 5);
@@ -630,5 +647,6 @@
         private Label DueDate_Label;
         private Label StartDate_Label;
         private RichTextBox TaskDesc_RTB;
+        private Label taskCat_Label;
     }
 }

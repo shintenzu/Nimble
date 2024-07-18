@@ -40,6 +40,7 @@
             DueDate_Label = new Label();
             StartDate_Label = new Label();
             TaskEstEffort_Label = new Label();
+            taskCat_Label = new Label();
             overviewtitle_Panel.SuspendLayout();
             SuspendLayout();
             // 
@@ -184,7 +185,7 @@
             DueDate_Label.FlatStyle = FlatStyle.Flat;
             DueDate_Label.Font = new Font("Helvetica", 9.749999F, FontStyle.Bold, GraphicsUnit.Point, 0);
             DueDate_Label.ForeColor = Color.FromArgb(253, 248, 225);
-            DueDate_Label.Location = new Point(208, 317);
+            DueDate_Label.Location = new Point(208, 342);
             DueDate_Label.Margin = new Padding(3);
             DueDate_Label.Name = "DueDate_Label";
             DueDate_Label.Padding = new Padding(0, 0, 0, 5);
@@ -199,7 +200,7 @@
             StartDate_Label.FlatStyle = FlatStyle.Flat;
             StartDate_Label.Font = new Font("Helvetica", 9.749999F, FontStyle.Bold, GraphicsUnit.Point, 0);
             StartDate_Label.ForeColor = Color.FromArgb(253, 248, 225);
-            StartDate_Label.Location = new Point(208, 290);
+            StartDate_Label.Location = new Point(208, 315);
             StartDate_Label.Margin = new Padding(3);
             StartDate_Label.Name = "StartDate_Label";
             StartDate_Label.Padding = new Padding(0, 0, 0, 5);
@@ -214,7 +215,7 @@
             TaskEstEffort_Label.FlatStyle = FlatStyle.Flat;
             TaskEstEffort_Label.Font = new Font("Helvetica", 9.749999F, FontStyle.Bold, GraphicsUnit.Point, 0);
             TaskEstEffort_Label.ForeColor = Color.FromArgb(253, 248, 225);
-            TaskEstEffort_Label.Location = new Point(208, 263);
+            TaskEstEffort_Label.Location = new Point(208, 288);
             TaskEstEffort_Label.Margin = new Padding(3);
             TaskEstEffort_Label.Name = "TaskEstEffort_Label";
             TaskEstEffort_Label.Padding = new Padding(0, 0, 0, 5);
@@ -222,11 +223,27 @@
             TaskEstEffort_Label.TabIndex = 18;
             TaskEstEffort_Label.Text = "Task Estimated Effort: ";
             // 
+            // taskCat_Label
+            // 
+            taskCat_Label.AutoSize = true;
+            taskCat_Label.BackColor = Color.Transparent;
+            taskCat_Label.FlatStyle = FlatStyle.Flat;
+            taskCat_Label.Font = new Font("Helvetica", 9.749999F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            taskCat_Label.ForeColor = Color.FromArgb(253, 248, 225);
+            taskCat_Label.Location = new Point(209, 261);
+            taskCat_Label.Margin = new Padding(3);
+            taskCat_Label.Name = "taskCat_Label";
+            taskCat_Label.Padding = new Padding(0, 0, 0, 5);
+            taskCat_Label.Size = new Size(72, 21);
+            taskCat_Label.TabIndex = 21;
+            taskCat_Label.Text = "Category: ";
+            // 
             // Task_UC
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(60, 90, 130);
+            Controls.Add(taskCat_Label);
             Controls.Add(DueDate_Label);
             Controls.Add(StartDate_Label);
             Controls.Add(TaskEstEffort_Label);
@@ -259,5 +276,6 @@
         private Label DueDate_Label;
         private Label StartDate_Label;
         private Label TaskEstEffort_Label;
+        private Label taskCat_Label;
     }
 }
