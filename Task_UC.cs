@@ -82,6 +82,7 @@ namespace Nimble
                 StartDate_Label.Text = "Start Date: " + NimbleApp.main.getTask(task_LB.SelectedIndex).StartDate.ToString();
                 DueDate_Label.Text = "Due Date: " + NimbleApp.main.getTask(task_LB.SelectedIndex).DueDate.ToString();
                 taskCat_Label.Text = "Category: " + NimbleApp.main.getTask(task_LB.SelectedIndex).CatString();
+                assignID_Label.Text = "Assigned to: " + NimbleApp.main.getUser(NimbleApp.main.getTask(task_LB.SelectedIndex).UserId).FullName;
             }
         }
     }

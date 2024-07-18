@@ -14,6 +14,12 @@ namespace Nimble
             projectCounter++;
             InitializeComponent();
             instance = this;
+            navclose_Btn.Hide();
+            selectproject_Btn.Hide();
+            projectselect_Cbox.Hide();
+            back_Btn.Hide();
+
+
         }
 
         private void Nimble_Load(object sender, EventArgs e)

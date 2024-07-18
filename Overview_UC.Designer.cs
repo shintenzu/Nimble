@@ -52,11 +52,12 @@
             team_Label = new Label();
             taskBindingSource = new BindingSource(components);
             task_Panel = new Panel();
+            TaskEstEffort_Label = new Label();
+            assignID_Label = new Label();
             taskCat_Label = new Label();
             TaskDesc_RTB = new RichTextBox();
             DueDate_Label = new Label();
             StartDate_Label = new Label();
-            TaskEstEffort_Label = new Label();
             TaskID_Label = new Label();
             task_LB = new ListBox();
             TD_Label = new Label();
@@ -395,11 +396,12 @@
             // 
             // task_Panel
             // 
+            task_Panel.Controls.Add(TaskEstEffort_Label);
+            task_Panel.Controls.Add(assignID_Label);
             task_Panel.Controls.Add(taskCat_Label);
             task_Panel.Controls.Add(TaskDesc_RTB);
             task_Panel.Controls.Add(DueDate_Label);
             task_Panel.Controls.Add(StartDate_Label);
-            task_Panel.Controls.Add(TaskEstEffort_Label);
             task_Panel.Controls.Add(TaskID_Label);
             task_Panel.Controls.Add(task_LB);
             task_Panel.Controls.Add(TD_Label);
@@ -412,6 +414,36 @@
             task_Panel.Padding = new Padding(5);
             task_Panel.Size = new Size(523, 300);
             task_Panel.TabIndex = 5;
+            // 
+            // TaskEstEffort_Label
+            // 
+            TaskEstEffort_Label.AutoSize = true;
+            TaskEstEffort_Label.BackColor = Color.Transparent;
+            TaskEstEffort_Label.FlatStyle = FlatStyle.Flat;
+            TaskEstEffort_Label.Font = new Font("Helvetica", 9.749999F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            TaskEstEffort_Label.ForeColor = Color.FromArgb(253, 248, 225);
+            TaskEstEffort_Label.Location = new Point(186, 170);
+            TaskEstEffort_Label.Margin = new Padding(3);
+            TaskEstEffort_Label.Name = "TaskEstEffort_Label";
+            TaskEstEffort_Label.Padding = new Padding(0, 0, 0, 5);
+            TaskEstEffort_Label.Size = new Size(146, 21);
+            TaskEstEffort_Label.TabIndex = 15;
+            TaskEstEffort_Label.Text = "Task Estimated Effort: ";
+            // 
+            // assignID_Label
+            // 
+            assignID_Label.AutoSize = true;
+            assignID_Label.BackColor = Color.Transparent;
+            assignID_Label.FlatStyle = FlatStyle.Flat;
+            assignID_Label.Font = new Font("Helvetica", 9.749999F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            assignID_Label.ForeColor = Color.FromArgb(253, 248, 225);
+            assignID_Label.Location = new Point(187, 150);
+            assignID_Label.Margin = new Padding(3);
+            assignID_Label.Name = "assignID_Label";
+            assignID_Label.Padding = new Padding(0, 0, 0, 5);
+            assignID_Label.Size = new Size(88, 21);
+            assignID_Label.TabIndex = 23;
+            assignID_Label.Text = "Assigned to: ";
             // 
             // taskCat_Label
             // 
@@ -436,7 +468,7 @@
             TaskDesc_RTB.Name = "TaskDesc_RTB";
             TaskDesc_RTB.ReadOnly = true;
             TaskDesc_RTB.ScrollBars = RichTextBoxScrollBars.Vertical;
-            TaskDesc_RTB.Size = new Size(320, 85);
+            TaskDesc_RTB.Size = new Size(320, 63);
             TaskDesc_RTB.TabIndex = 8;
             TaskDesc_RTB.Text = "";
             // 
@@ -469,21 +501,6 @@
             StartDate_Label.Size = new Size(78, 21);
             StartDate_Label.TabIndex = 16;
             StartDate_Label.Text = "Start Date: ";
-            // 
-            // TaskEstEffort_Label
-            // 
-            TaskEstEffort_Label.AutoSize = true;
-            TaskEstEffort_Label.BackColor = Color.Transparent;
-            TaskEstEffort_Label.FlatStyle = FlatStyle.Flat;
-            TaskEstEffort_Label.Font = new Font("Helvetica", 9.749999F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            TaskEstEffort_Label.ForeColor = Color.FromArgb(253, 248, 225);
-            TaskEstEffort_Label.Location = new Point(186, 170);
-            TaskEstEffort_Label.Margin = new Padding(3);
-            TaskEstEffort_Label.Name = "TaskEstEffort_Label";
-            TaskEstEffort_Label.Padding = new Padding(0, 0, 0, 5);
-            TaskEstEffort_Label.Size = new Size(146, 21);
-            TaskEstEffort_Label.TabIndex = 15;
-            TaskEstEffort_Label.Text = "Task Estimated Effort: ";
             // 
             // TaskID_Label
             // 
@@ -648,5 +665,6 @@
         private Label StartDate_Label;
         private RichTextBox TaskDesc_RTB;
         private Label taskCat_Label;
+        private Label assignID_Label;
     }
 }

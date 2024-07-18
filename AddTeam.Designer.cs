@@ -75,7 +75,7 @@
             // 
             // userID_TB
             // 
-            userID_TB.Location = new Point(133, 89);
+            userID_TB.Location = new Point(133, 13);
             userID_TB.Name = "userID_TB";
             userID_TB.ReadOnly = true;
             userID_TB.Size = new Size(73, 23);
@@ -86,7 +86,7 @@
             UserId_Label.AutoSize = true;
             UserId_Label.Font = new Font("Helvetica CE", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 238);
             UserId_Label.ForeColor = Color.FromArgb(253, 248, 225);
-            UserId_Label.Location = new Point(17, 93);
+            UserId_Label.Location = new Point(17, 17);
             UserId_Label.Name = "UserId_Label";
             UserId_Label.Size = new Size(94, 15);
             UserId_Label.TabIndex = 13;
@@ -96,7 +96,7 @@
             // 
             Role_CB.FormattingEnabled = true;
             Role_CB.Items.AddRange(new object[] { "1: Project Owner", "2: Project Manager", "3: Designer", "4: Coder" });
-            Role_CB.Location = new Point(133, 51);
+            Role_CB.Location = new Point(133, 82);
             Role_CB.Name = "Role_CB";
             Role_CB.Size = new Size(192, 23);
             Role_CB.TabIndex = 6;
@@ -107,7 +107,7 @@
             Role_Label.AutoSize = true;
             Role_Label.Font = new Font("Helvetica CE", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 238);
             Role_Label.ForeColor = Color.FromArgb(253, 248, 225);
-            Role_Label.Location = new Point(17, 51);
+            Role_Label.Location = new Point(17, 82);
             Role_Label.Name = "Role_Label";
             Role_Label.Size = new Size(37, 15);
             Role_Label.TabIndex = 5;
@@ -118,7 +118,7 @@
             FirstName_Label.AutoSize = true;
             FirstName_Label.Font = new Font("Helvetica CE", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 238);
             FirstName_Label.ForeColor = Color.FromArgb(253, 248, 225);
-            FirstName_Label.Location = new Point(17, 20);
+            FirstName_Label.Location = new Point(17, 51);
             FirstName_Label.Name = "FirstName_Label";
             FirstName_Label.Size = new Size(70, 15);
             FirstName_Label.TabIndex = 1;
@@ -126,7 +126,7 @@
             // 
             // FullName_TB
             // 
-            FullName_TB.Location = new Point(133, 17);
+            FullName_TB.Location = new Point(133, 48);
             FullName_TB.Name = "FullName_TB";
             FullName_TB.Size = new Size(297, 23);
             FullName_TB.TabIndex = 0;

@@ -42,14 +42,14 @@
             prob_Label = new Label();
             Role_Label = new Label();
             Main_Panel = new Panel();
+            RM_RTB = new RichTextBox();
+            RiskMit_Label = new Label();
             label2 = new Label();
             label1 = new Label();
             cost_TB = new TextBox();
             cost_Label = new Label();
             Priority_CB = new ComboBox();
             ATNav_Panel = new Panel();
-            RM_RTB = new RichTextBox();
-            RiskMit_Label = new Label();
             Title_Panel.SuspendLayout();
             SubmitButton_Panel.SuspendLayout();
             Main_Panel.SuspendLayout();
@@ -87,7 +87,7 @@
             // 
             // RiskID_TB
             // 
-            RiskID_TB.Location = new Point(134, 155);
+            RiskID_TB.Location = new Point(135, 5);
             RiskID_TB.Name = "RiskID_TB";
             RiskID_TB.ReadOnly = true;
             RiskID_TB.Size = new Size(73, 23);
@@ -98,7 +98,7 @@
             RiskID_Label.AutoSize = true;
             RiskID_Label.Font = new Font("Helvetica CE", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 238);
             RiskID_Label.ForeColor = Color.FromArgb(253, 248, 225);
-            RiskID_Label.Location = new Point(18, 159);
+            RiskID_Label.Location = new Point(21, 9);
             RiskID_Label.Name = "RiskID_Label";
             RiskID_Label.Size = new Size(89, 15);
             RiskID_Label.TabIndex = 11;
@@ -108,7 +108,7 @@
             // 
             RD_RTB.BackColor = Color.FromArgb(254, 248, 235);
             RD_RTB.BorderStyle = BorderStyle.None;
-            RD_RTB.Location = new Point(133, 8);
+            RD_RTB.Location = new Point(135, 44);
             RD_RTB.Name = "RD_RTB";
             RD_RTB.Size = new Size(300, 60);
             RD_RTB.TabIndex = 10;
@@ -162,7 +162,7 @@
             RiskDesc_Label.AutoSize = true;
             RiskDesc_Label.Font = new Font("Helvetica CE", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 238);
             RiskDesc_Label.ForeColor = Color.FromArgb(253, 248, 225);
-            RiskDesc_Label.Location = new Point(17, 14);
+            RiskDesc_Label.Location = new Point(21, 50);
             RiskDesc_Label.Name = "RiskDesc_Label";
             RiskDesc_Label.Size = new Size(102, 15);
             RiskDesc_Label.TabIndex = 9;
@@ -220,6 +220,27 @@
             Main_Panel.Name = "Main_Panel";
             Main_Panel.Size = new Size(433, 295);
             Main_Panel.TabIndex = 17;
+            // 
+            // RM_RTB
+            // 
+            RM_RTB.BackColor = Color.FromArgb(254, 248, 235);
+            RM_RTB.BorderStyle = BorderStyle.None;
+            RM_RTB.Location = new Point(135, 119);
+            RM_RTB.Name = "RM_RTB";
+            RM_RTB.Size = new Size(300, 60);
+            RM_RTB.TabIndex = 18;
+            RM_RTB.Text = "";
+            // 
+            // RiskMit_Label
+            // 
+            RiskMit_Label.AutoSize = true;
+            RiskMit_Label.Font = new Font("Helvetica CE", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 238);
+            RiskMit_Label.ForeColor = Color.FromArgb(253, 248, 225);
+            RiskMit_Label.Location = new Point(21, 125);
+            RiskMit_Label.Name = "RiskMit_Label";
+            RiskMit_Label.Size = new Size(93, 15);
+            RiskMit_Label.TabIndex = 17;
+            RiskMit_Label.Text = "Risk Mitigation";
             // 
             // label2
             // 
@@ -282,27 +303,6 @@
             ATNav_Panel.Name = "ATNav_Panel";
             ATNav_Panel.Size = new Size(475, 33);
             ATNav_Panel.TabIndex = 19;
-            // 
-            // RM_RTB
-            // 
-            RM_RTB.BackColor = Color.FromArgb(254, 248, 235);
-            RM_RTB.BorderStyle = BorderStyle.None;
-            RM_RTB.Location = new Point(133, 83);
-            RM_RTB.Name = "RM_RTB";
-            RM_RTB.Size = new Size(300, 60);
-            RM_RTB.TabIndex = 18;
-            RM_RTB.Text = "";
-            // 
-            // RiskMit_Label
-            // 
-            RiskMit_Label.AutoSize = true;
-            RiskMit_Label.Font = new Font("Helvetica CE", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 238);
-            RiskMit_Label.ForeColor = Color.FromArgb(253, 248, 225);
-            RiskMit_Label.Location = new Point(17, 89);
-            RiskMit_Label.Name = "RiskMit_Label";
-            RiskMit_Label.Size = new Size(93, 15);
-            RiskMit_Label.TabIndex = 17;
-            RiskMit_Label.Text = "Risk Mitigation";
             // 
             // AddRisk
             // 

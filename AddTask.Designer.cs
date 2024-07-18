@@ -124,7 +124,7 @@
             // 
             // taskID
             // 
-            taskID.Location = new Point(133, 108);
+            taskID.Location = new Point(133, 10);
             taskID.Name = "taskID";
             taskID.ReadOnly = true;
             taskID.Size = new Size(73, 23);
@@ -135,7 +135,7 @@
             label3.AutoSize = true;
             label3.Font = new Font("Helvetica CE", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 238);
             label3.ForeColor = Color.FromArgb(253, 248, 225);
-            label3.Location = new Point(17, 112);
+            label3.Location = new Point(17, 14);
             label3.Name = "label3";
             label3.Size = new Size(92, 15);
             label3.TabIndex = 11;
@@ -145,7 +145,7 @@
             // 
             ED_RTB.BackColor = Color.FromArgb(254, 248, 235);
             ED_RTB.BorderStyle = BorderStyle.None;
-            ED_RTB.Location = new Point(133, 8);
+            ED_RTB.Location = new Point(133, 45);
             ED_RTB.Name = "ED_RTB";
             ED_RTB.Size = new Size(300, 87);
             ED_RTB.TabIndex = 10;
@@ -156,7 +156,7 @@
             label2.AutoSize = true;
             label2.Font = new Font("Helvetica CE", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 238);
             label2.ForeColor = Color.FromArgb(253, 248, 225);
-            label2.Location = new Point(17, 14);
+            label2.Location = new Point(17, 51);
             label2.Name = "label2";
             label2.Size = new Size(105, 15);
             label2.TabIndex = 9;

@@ -21,6 +21,7 @@ namespace Nimble
         {
             InitializeComponent();
             RiskID_TB.Text = NimbleApp.main.riskCounter.ToString();
+            //ATNavClose_Btn.Hide();
         }
 
         private void Cancel_Btn_Click(object sender, EventArgs e)

@@ -419,8 +419,9 @@
             Controls.Add(account_Panel);
             Controls.Add(side_Panel);
             Controls.Add(nav_Panel);
-            FormBorderStyle = FormBorderStyle.None;
+            FormBorderStyle = FormBorderStyle.FixedToolWindow;
             Name = "NimbleApp";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Nimble";
             Load += Nimble_Load;
             nav_Panel.ResumeLayout(false);
