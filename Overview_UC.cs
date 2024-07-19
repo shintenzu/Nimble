@@ -20,12 +20,33 @@ namespace Nimble
         BindingSource utasksBindingSource = new BindingSource();
         public static List<String> tasks = new List<String>();
         BindingSource tasksBindingSource = new BindingSource();
+        public static List<String> reqs = new List<String>();
+        BindingSource reqsBindingSource = new BindingSource();
 
         public Overview_UC()
         {
             InitializeComponent();
             instance = this;
-                        
+
+        }
+
+        public void resetRBindings()
+        {
+            reqsBindingSource.DataSource = reqs;
+            reqs_LB.DataSource = reqsBindingSource;
+            reqsBindingSource.ResetBindings(false);
+        }
+
+        public void clearReq()
+        {
+            reqs.Clear();
+            reqsBindingSource.DataSource = reqs;
+            reqs_LB.DataSource = reqsBindingSource;
+            reqsBindingSource.ResetBindings(false);
+        }
+        public void receiveReq(string newReq)
+        {
+            reqs.Add(newReq);
         }
 
         public void resetNBindings()
@@ -71,6 +92,8 @@ namespace Nimble
             namesBindingSource.ResetBindings(false);
         }
 
+
+
         public void resetUsers()
         {
             names.Clear();
@@ -113,12 +136,13 @@ namespace Nimble
         public string getDesc() { return Desc_RTB.Text; }
 
 
-
+        /*
         public void setReq(string input)
         {
             req_RTB.Text = input;
         }
         public string getReq() { return req_RTB.Text; }
+        */
 
         private void changedesc_Btn_Click(object sender, EventArgs e)
         {
@@ -148,7 +172,7 @@ namespace Nimble
                 editTeam.StartPosition = FormStartPosition.CenterScreen;
                 editTeam.Show();
             }
-                        
+
         }
 
         private void editreq_Btn_Click(object sender, EventArgs e)
@@ -165,7 +189,8 @@ namespace Nimble
                 MessageBox.Show("You need at least 1 team member to create a task!");
                 return;
             }
-            else {
+            else
+            {
                 AddTask addTask = new AddTask();
                 addTask.StartPosition = FormStartPosition.CenterScreen;
                 addTask.Show();
@@ -213,13 +238,13 @@ namespace Nimble
 
             resetNBindings();
             resetTBindings();
-            resetUTBindings();            
+            resetUTBindings();
 
         }
 
         private void user_LB_Click(object sender, EventArgs e)
         {
-                        
+
             if (NimbleApp.main.teamCounter > 0)
             {
                 clearUTasks();
@@ -227,7 +252,7 @@ namespace Nimble
                 TeamName_Label.Text = "Name: " + NimbleApp.main.getUser(user_LB.SelectedIndex).FullName;
                 uTaskCount_Label.Text = "Task Count: " + NimbleApp.main.getUser(user_LB.SelectedIndex).TaskCounter;
                 UserEffort_Label.Text = "User Effort: " + NimbleApp.main.getUser(user_LB.SelectedIndex).UserEffort + " Person Hours";
-                
+
 
                 if (NimbleApp.main.getUser(user_LB.SelectedIndex).taskCounter > 0)
                 {
@@ -238,9 +263,9 @@ namespace Nimble
                 }
 
                 resetUTBindings();
-                
+
             }
-            
+
         }
 
 
@@ -263,6 +288,24 @@ namespace Nimble
         private void user_LB_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void AddReq_Btn_Click(object sender, EventArgs e)
+        {
+            AddReq addReq = new AddReq();
+            addReq.StartPosition = FormStartPosition.CenterScreen;
+            addReq.Show();
+        }
+
+        private void reqs_LB_Click(object sender, EventArgs e)
+        {
+            if (NimbleApp.main.reqCounter > 0)
+            {
+                ReqID_Label.Text = "Requirements ID: " + NimbleApp.main.getReq(reqs_LB.SelectedIndex).ReqId;
+                ReqDesc_RTB.Text = NimbleApp.main.getReq(reqs_LB.SelectedIndex).ReqDesc;
+                ReqCat_Label.Text = "- " + NimbleApp.main.getReq(reqs_LB.SelectedIndex).getType();
+
+            }
         }
     }
 }

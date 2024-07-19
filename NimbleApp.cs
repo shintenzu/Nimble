@@ -15,7 +15,7 @@ namespace Nimble
             InitializeComponent();
             instance = this;
             navclose_Btn.Hide();
-            selectproject_Btn.Hide();
+            //req_Btn.Hide();
             projectselect_Cbox.Hide();
             back_Btn.Hide();
 
@@ -25,6 +25,7 @@ namespace Nimble
         private void Nimble_Load(object sender, EventArgs e)
         {
             task_uc1.Hide();
+            requirements_uc1.Hide();
             team_uc1.Hide();
             effort_uc1.Hide();
             risk_uc1.Hide();
@@ -47,6 +48,7 @@ namespace Nimble
         {
             task_uc1.Hide();
             team_uc1.Hide();
+            requirements_uc1.Hide();
             effort_uc1.Hide();
             risk_uc1.Hide();
             overview_uc1.Show();
@@ -56,6 +58,7 @@ namespace Nimble
 
         private void team_Btn_Click(object sender, EventArgs e)
         {
+            requirements_uc1.Hide();
             task_uc1.Hide();
             overview_uc1.Hide();
             effort_uc1.Hide();
@@ -67,6 +70,7 @@ namespace Nimble
 
         private void tasks_Btn_Click(object sender, EventArgs e)
         {
+            requirements_uc1.Hide();
             team_uc1.Hide();
             overview_uc1.Hide();
             effort_uc1.Hide();
@@ -78,6 +82,7 @@ namespace Nimble
 
         private void effort_Btn_Click(object sender, EventArgs e)
         {
+            requirements_uc1.Hide();
             team_uc1.Hide();
             overview_uc1.Hide();
             task_uc1.Hide();
@@ -94,6 +99,7 @@ namespace Nimble
 
         private void risk_Btn_Click(object sender, EventArgs e)
         {
+            requirements_uc1.Hide();
             team_uc1.Hide();
             overview_uc1.Hide();
             task_uc1.Hide();
@@ -101,6 +107,18 @@ namespace Nimble
             risk_uc1.Show();
             risk_uc1.BringToFront();
             risk_uc1.Dock = DockStyle.Fill;
+        }
+
+        private void req_Btn_Click(object sender, EventArgs e)
+        {
+            risk_uc1.Hide();
+            team_uc1.Hide();
+            overview_uc1.Hide();
+            task_uc1.Hide();
+            effort_uc1.Hide();
+            requirements_uc1.Show();
+            requirements_uc1.BringToFront();
+            requirements_uc1.Dock = DockStyle.Fill;
         }
     }
 }

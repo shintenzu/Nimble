@@ -35,7 +35,7 @@
             back_Btn = new Button();
             selectproject_Panel = new Panel();
             projectselect_Cbox = new ComboBox();
-            selectproject_Btn = new Button();
+            req_Btn = new Button();
             risk_Btn = new Button();
             effort_Btn = new Button();
             tasks_Btn = new Button();
@@ -51,6 +51,7 @@
             task_uc1 = new Task_UC();
             effort_uc1 = new Effort_UC();
             risk_uc1 = new Risk_UC();
+            requirements_uc1 = new Req_UC();
             nav_Panel.SuspendLayout();
             side_Panel.SuspendLayout();
             selectproject_Panel.SuspendLayout();
@@ -88,7 +89,7 @@
             side_Panel.Controls.Add(exit_Btn);
             side_Panel.Controls.Add(back_Btn);
             side_Panel.Controls.Add(selectproject_Panel);
-            side_Panel.Controls.Add(selectproject_Btn);
+            side_Panel.Controls.Add(req_Btn);
             side_Panel.Controls.Add(risk_Btn);
             side_Panel.Controls.Add(effort_Btn);
             side_Panel.Controls.Add(tasks_Btn);
@@ -165,26 +166,27 @@
             projectselect_Cbox.Size = new Size(146, 23);
             projectselect_Cbox.TabIndex = 0;
             // 
-            // selectproject_Btn
+            // req_Btn
             // 
-            selectproject_Btn.BackColor = Color.FromArgb(21, 35, 57);
-            selectproject_Btn.BackgroundImageLayout = ImageLayout.None;
-            selectproject_Btn.Dock = DockStyle.Top;
-            selectproject_Btn.FlatAppearance.BorderSize = 0;
-            selectproject_Btn.FlatStyle = FlatStyle.Flat;
-            selectproject_Btn.Font = new Font("Helvetica 2 BQ ", 15.7499981F, FontStyle.Bold);
-            selectproject_Btn.ForeColor = Color.FromArgb(253, 248, 225);
-            selectproject_Btn.Image = Properties.Resources.Empty_Icon;
-            selectproject_Btn.ImageAlign = ContentAlignment.MiddleLeft;
-            selectproject_Btn.Location = new Point(0, 330);
-            selectproject_Btn.Name = "selectproject_Btn";
-            selectproject_Btn.Padding = new Padding(10, 0, 0, 0);
-            selectproject_Btn.Size = new Size(240, 40);
-            selectproject_Btn.TabIndex = 6;
-            selectproject_Btn.Text = "Select Project";
-            selectproject_Btn.TextAlign = ContentAlignment.MiddleLeft;
-            selectproject_Btn.TextImageRelation = TextImageRelation.ImageBeforeText;
-            selectproject_Btn.UseVisualStyleBackColor = false;
+            req_Btn.BackColor = Color.FromArgb(21, 35, 57);
+            req_Btn.BackgroundImageLayout = ImageLayout.None;
+            req_Btn.Dock = DockStyle.Top;
+            req_Btn.FlatAppearance.BorderSize = 0;
+            req_Btn.FlatStyle = FlatStyle.Flat;
+            req_Btn.Font = new Font("Helvetica 2 BQ ", 14.2499981F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            req_Btn.ForeColor = Color.FromArgb(253, 248, 225);
+            req_Btn.Image = Properties.Resources.Empty_Icon;
+            req_Btn.ImageAlign = ContentAlignment.MiddleLeft;
+            req_Btn.Location = new Point(0, 330);
+            req_Btn.Name = "req_Btn";
+            req_Btn.Padding = new Padding(40, 0, 0, 0);
+            req_Btn.Size = new Size(240, 40);
+            req_Btn.TabIndex = 6;
+            req_Btn.Text = "Requirements";
+            req_Btn.TextAlign = ContentAlignment.MiddleLeft;
+            req_Btn.TextImageRelation = TextImageRelation.ImageBeforeText;
+            req_Btn.UseVisualStyleBackColor = false;
+            req_Btn.Click += req_Btn_Click;
             // 
             // risk_Btn
             // 
@@ -405,12 +407,21 @@
             risk_uc1.Size = new Size(960, 615);
             risk_uc1.TabIndex = 7;
             // 
+            // requirements_uc1
+            // 
+            requirements_uc1.BackColor = Color.FromArgb(60, 90, 130);
+            requirements_uc1.Location = new Point(240, 246);
+            requirements_uc1.Name = "requirements_uc1";
+            requirements_uc1.Size = new Size(960, 615);
+            requirements_uc1.TabIndex = 10;
+            // 
             // NimbleApp
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(60, 90, 130);
             ClientSize = new Size(1200, 675);
+            Controls.Add(requirements_uc1);
             Controls.Add(risk_uc1);
             Controls.Add(effort_uc1);
             Controls.Add(task_uc1);
@@ -445,7 +456,7 @@
         private Button team_Btn;
         private Button back_Btn;
         private Panel selectproject_Panel;
-        private Button selectproject_Btn;
+        private Button req_Btn;
         private Button effort_Btn;
         private Button risk_Btn;
         private Button exit_Btn;
@@ -458,5 +469,6 @@
         private Risk_UC risk_uc1;
         public Label PM_Label;
         public Label PO_Label;
+        private Req_UC requirements_uc1;
     }
 }

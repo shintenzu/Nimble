@@ -36,9 +36,14 @@
             changedesc_Btn = new Button();
             projectdesc_Label = new Label();
             req_Panel = new Panel();
-            req_RTB = new RichTextBox();
-            editreq_Btn = new Button();
+            label1 = new Label();
+            ReqCat_Label = new Label();
+            reqs_LB = new ListBox();
+            AddReq_Btn = new Button();
+            ReqDesc_RTB = new RichTextBox();
+            ReqID_Label = new Label();
             projectreq_Label = new Label();
+            RD_Label = new Label();
             team_Panel = new Panel();
             UserEffort_Label = new Label();
             uTaskCount_Label = new Label();
@@ -161,9 +166,14 @@
             // 
             // req_Panel
             // 
-            req_Panel.Controls.Add(req_RTB);
-            req_Panel.Controls.Add(editreq_Btn);
+            req_Panel.Controls.Add(label1);
+            req_Panel.Controls.Add(ReqCat_Label);
+            req_Panel.Controls.Add(reqs_LB);
+            req_Panel.Controls.Add(AddReq_Btn);
+            req_Panel.Controls.Add(ReqDesc_RTB);
+            req_Panel.Controls.Add(ReqID_Label);
             req_Panel.Controls.Add(projectreq_Label);
+            req_Panel.Controls.Add(RD_Label);
             req_Panel.Location = new Point(25, 296);
             req_Panel.Margin = new Padding(10);
             req_Panel.Name = "req_Panel";
@@ -171,38 +181,94 @@
             req_Panel.Size = new Size(349, 300);
             req_Panel.TabIndex = 4;
             // 
-            // req_RTB
+            // label1
             // 
-            req_RTB.BackColor = Color.FromArgb(254, 248, 235);
-            req_RTB.BorderStyle = BorderStyle.None;
-            req_RTB.Location = new Point(5, 39);
-            req_RTB.Name = "req_RTB";
-            req_RTB.ReadOnly = true;
-            req_RTB.ScrollBars = RichTextBoxScrollBars.Vertical;
-            req_RTB.Size = new Size(339, 214);
-            req_RTB.TabIndex = 8;
-            req_RTB.Text = "";
+            label1.AutoSize = true;
+            label1.BackColor = Color.Transparent;
+            label1.FlatStyle = FlatStyle.Flat;
+            label1.Font = new Font("Helvetica", 9.749999F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.ForeColor = Color.FromArgb(253, 248, 225);
+            label1.Location = new Point(118, 191);
+            label1.Margin = new Padding(3);
+            label1.Name = "label1";
+            label1.Padding = new Padding(0, 0, 0, 5);
+            label1.Size = new Size(137, 21);
+            label1.TabIndex = 50;
+            label1.Text = "Requirements Type: ";
             // 
-            // editreq_Btn
+            // ReqCat_Label
             // 
-            editreq_Btn.AutoSize = true;
-            editreq_Btn.BackColor = Color.FromArgb(21, 35, 57);
-            editreq_Btn.BackgroundImageLayout = ImageLayout.None;
-            editreq_Btn.FlatAppearance.BorderSize = 0;
-            editreq_Btn.FlatStyle = FlatStyle.Flat;
-            editreq_Btn.Font = new Font("Helvetica 2 BQ ", 9.749999F);
-            editreq_Btn.ForeColor = Color.FromArgb(253, 248, 225);
-            editreq_Btn.ImageAlign = ContentAlignment.MiddleLeft;
-            editreq_Btn.Location = new Point(5, 271);
-            editreq_Btn.Margin = new Padding(10, 50, 10, 10);
-            editreq_Btn.Name = "editreq_Btn";
-            editreq_Btn.Size = new Size(146, 25);
-            editreq_Btn.TabIndex = 3;
-            editreq_Btn.Text = "Edit Requirements";
-            editreq_Btn.TextAlign = ContentAlignment.MiddleLeft;
-            editreq_Btn.TextImageRelation = TextImageRelation.ImageBeforeText;
-            editreq_Btn.UseVisualStyleBackColor = false;
-            editreq_Btn.Click += editreq_Btn_Click;
+            ReqCat_Label.AutoSize = true;
+            ReqCat_Label.BackColor = Color.Transparent;
+            ReqCat_Label.FlatStyle = FlatStyle.Flat;
+            ReqCat_Label.Font = new Font("Helvetica", 9.749999F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            ReqCat_Label.ForeColor = Color.FromArgb(253, 248, 225);
+            ReqCat_Label.Location = new Point(124, 214);
+            ReqCat_Label.Margin = new Padding(3);
+            ReqCat_Label.Name = "ReqCat_Label";
+            ReqCat_Label.Padding = new Padding(0, 0, 0, 5);
+            ReqCat_Label.Size = new Size(11, 21);
+            ReqCat_Label.TabIndex = 49;
+            ReqCat_Label.Text = "-";
+            // 
+            // reqs_LB
+            // 
+            reqs_LB.BackColor = Color.FromArgb(254, 248, 235);
+            reqs_LB.FormattingEnabled = true;
+            reqs_LB.ItemHeight = 15;
+            reqs_LB.Location = new Point(8, 39);
+            reqs_LB.Name = "reqs_LB";
+            reqs_LB.Size = new Size(104, 214);
+            reqs_LB.TabIndex = 41;
+            reqs_LB.Click += reqs_LB_Click;
+            // 
+            // AddReq_Btn
+            // 
+            AddReq_Btn.AutoSize = true;
+            AddReq_Btn.BackColor = Color.FromArgb(21, 35, 57);
+            AddReq_Btn.BackgroundImageLayout = ImageLayout.None;
+            AddReq_Btn.FlatAppearance.BorderSize = 0;
+            AddReq_Btn.FlatStyle = FlatStyle.Flat;
+            AddReq_Btn.Font = new Font("Helvetica 2 BQ ", 9.749999F);
+            AddReq_Btn.ForeColor = Color.FromArgb(253, 248, 225);
+            AddReq_Btn.ImageAlign = ContentAlignment.MiddleLeft;
+            AddReq_Btn.Location = new Point(5, 263);
+            AddReq_Btn.Margin = new Padding(10, 50, 10, 10);
+            AddReq_Btn.Name = "AddReq_Btn";
+            AddReq_Btn.Size = new Size(146, 25);
+            AddReq_Btn.TabIndex = 40;
+            AddReq_Btn.Text = "Add Requirement";
+            AddReq_Btn.TextAlign = ContentAlignment.MiddleLeft;
+            AddReq_Btn.TextImageRelation = TextImageRelation.ImageBeforeText;
+            AddReq_Btn.UseVisualStyleBackColor = false;
+            AddReq_Btn.Click += AddReq_Btn_Click;
+            // 
+            // ReqDesc_RTB
+            // 
+            ReqDesc_RTB.BackColor = Color.FromArgb(254, 248, 235);
+            ReqDesc_RTB.BorderStyle = BorderStyle.None;
+            ReqDesc_RTB.Location = new Point(133, 94);
+            ReqDesc_RTB.Name = "ReqDesc_RTB";
+            ReqDesc_RTB.ReadOnly = true;
+            ReqDesc_RTB.ScrollBars = RichTextBoxScrollBars.Vertical;
+            ReqDesc_RTB.Size = new Size(195, 85);
+            ReqDesc_RTB.TabIndex = 48;
+            ReqDesc_RTB.Text = "";
+            // 
+            // ReqID_Label
+            // 
+            ReqID_Label.AutoSize = true;
+            ReqID_Label.BackColor = Color.Transparent;
+            ReqID_Label.FlatStyle = FlatStyle.Flat;
+            ReqID_Label.Font = new Font("Helvetica", 9.749999F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            ReqID_Label.ForeColor = Color.FromArgb(253, 248, 225);
+            ReqID_Label.Location = new Point(118, 40);
+            ReqID_Label.Margin = new Padding(3);
+            ReqID_Label.Name = "ReqID_Label";
+            ReqID_Label.Padding = new Padding(0, 0, 0, 5);
+            ReqID_Label.Size = new Size(116, 21);
+            ReqID_Label.TabIndex = 47;
+            ReqID_Label.Text = "Requirements ID:";
             // 
             // projectreq_Label
             // 
@@ -219,6 +285,21 @@
             projectreq_Label.Size = new Size(164, 28);
             projectreq_Label.TabIndex = 1;
             projectreq_Label.Text = "Project Requirements";
+            // 
+            // RD_Label
+            // 
+            RD_Label.AutoSize = true;
+            RD_Label.BackColor = Color.Transparent;
+            RD_Label.FlatStyle = FlatStyle.Flat;
+            RD_Label.Font = new Font("Helvetica", 9.749999F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            RD_Label.ForeColor = Color.FromArgb(253, 248, 225);
+            RD_Label.Location = new Point(118, 67);
+            RD_Label.Margin = new Padding(3);
+            RD_Label.Name = "RD_Label";
+            RD_Label.Padding = new Padding(0, 0, 0, 5);
+            RD_Label.Size = new Size(178, 21);
+            RD_Label.TabIndex = 46;
+            RD_Label.Text = "Requirements Description: ";
             // 
             // team_Panel
             // 
@@ -637,8 +718,6 @@
         private Button changedesc_Btn;
         private Label projectdesc_Label;
         private Panel req_Panel;
-        private RichTextBox req_RTB;
-        private Button editreq_Btn;
         private Label projectreq_Label;
         private Panel team_Panel;
         private Button editteam_Btn;
@@ -666,5 +745,12 @@
         private RichTextBox TaskDesc_RTB;
         private Label taskCat_Label;
         private Label assignID_Label;
+        private ListBox reqs_LB;
+        private Button AddReq_Btn;
+        private Label ReqCat_Label;
+        private RichTextBox ReqDesc_RTB;
+        private Label ReqID_Label;
+        private Label RD_Label;
+        private Label label1;
     }
 }

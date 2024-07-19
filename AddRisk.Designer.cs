@@ -183,7 +183,7 @@
             prob_Label.AutoSize = true;
             prob_Label.Font = new Font("Helvetica CE", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 238);
             prob_Label.ForeColor = Color.FromArgb(253, 248, 225);
-            prob_Label.Location = new Point(18, 229);
+            prob_Label.Location = new Point(21, 229);
             prob_Label.Name = "prob_Label";
             prob_Label.Size = new Size(72, 15);
             prob_Label.TabIndex = 7;
@@ -194,7 +194,7 @@
             Role_Label.AutoSize = true;
             Role_Label.Font = new Font("Helvetica CE", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 238);
             Role_Label.ForeColor = Color.FromArgb(253, 248, 225);
-            Role_Label.Location = new Point(18, 198);
+            Role_Label.Location = new Point(21, 198);
             Role_Label.Name = "Role_Label";
             Role_Label.Size = new Size(52, 15);
             Role_Label.TabIndex = 5;
@@ -278,7 +278,7 @@
             cost_Label.AutoSize = true;
             cost_Label.Font = new Font("Helvetica CE", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 238);
             cost_Label.ForeColor = Color.FromArgb(253, 248, 225);
-            cost_Label.Location = new Point(18, 266);
+            cost_Label.Location = new Point(21, 266);
             cost_Label.Name = "cost_Label";
             cost_Label.Size = new Size(38, 15);
             cost_Label.TabIndex = 13;

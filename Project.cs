@@ -13,11 +13,13 @@ namespace Nimble
         private Task[] tasks = new Task[200];
         private User[] users = new User[200];
         private Risk[] risks = new Risk[200];
+        private Req[] reqs = new Req[200];
         private string description = string.Empty;
         private string requirements = string.Empty;
         public int teamCounter = 0;
         public int taskCounter = 0;
         public int riskCounter = 0;
+        public int reqCounter = 0;
         public bool hasLeader = false;
         public bool hasManager = false;
         //public int req = 0;
@@ -79,6 +81,14 @@ namespace Nimble
         public Risk getRisk(int Index)
         {
             return risks[Index];
+        }
+        public void addReq(int Index, Req newReq)
+        {
+            this.reqs[Index] = newReq;
+        }
+        public Req getReq(int Index)
+        {
+            return reqs[Index];
         }
 
 

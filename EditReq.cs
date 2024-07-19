@@ -33,7 +33,7 @@ namespace Nimble
 
         private void Submit_Btn_Click(object sender, EventArgs e)
         {
-            Overview_UC.instance.setReq(RTB.Text);
+            //Overview_UC.instance.setReq(RTB.Text);
             NimbleApp.main.Requirements = RTB.Text;
             this.Close();
         }
