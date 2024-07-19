@@ -9,7 +9,7 @@ namespace Nimble
 {
     public class Task
     {
-        
+
         private int taskId;
         private string taskDesc;
         private int projectId;
@@ -22,11 +22,13 @@ namespace Nimble
         private DateTime startDate;
         private DateTime endDate;
         private DateTime dueDate;
+        private int status = 0;
+
         //startDate.CustomFormat = "MM/dd/yyyy";
 
-        public Task() 
+        public Task()
         {
-            
+
         }
         public Task(int taskId, string taskDesc, int projectID, int category, int userID, DateTime startDate, DateTime dueDate)
         {
@@ -96,6 +98,11 @@ namespace Nimble
             set { this.category = value; }
         }
 
+        public int Status{
+            get { return status; }
+            set { this.status = value; }
+        }
+
         public int AssignmentID
         {
             get { return assignmentId; }
@@ -162,6 +169,32 @@ namespace Nimble
             int eff = 0;
 
             return eff;
+        }
+
+        public String getStatus()
+        {
+            string cat = string.Empty;
+            if (this.status == 0)
+            {
+                cat = "Incomplete";
+            }
+            else if (this.status == 1)
+            {
+                cat = "Complete";
+            }
+            else if (this.status == 2)
+            {
+                cat = "Pending";
+            }
+            else if (this.status == 3)
+            {
+                cat = "Removed";
+            }
+            else if (this.status == 4)
+            {
+                cat = "Archived";
+            }
+            return cat;
         }
 
         /*

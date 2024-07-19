@@ -48,7 +48,11 @@ namespace Nimble
 
         private void Submit_Btn_Click(object sender, EventArgs e)
         {
-            
+            if (assign_CB.SelectedIndex == -1)
+            {
+                MessageBox.Show("Please select a user to edit!");
+                return;
+            }
             selectedUser = NimbleApp.main.getUser(assign_CB.SelectedIndex);
             int oldRole = selectedUser.RoleId;
             int newRole = Role_CB.SelectedIndex;

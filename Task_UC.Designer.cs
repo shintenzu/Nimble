@@ -43,6 +43,7 @@
             taskCat_Label = new Label();
             assignID_Label = new Label();
             label1 = new Label();
+            TaskStatus_Label = new Label();
             overviewtitle_Panel.SuspendLayout();
             SuspendLayout();
             // 
@@ -160,7 +161,7 @@
             TD_Label.FlatStyle = FlatStyle.Flat;
             TD_Label.Font = new Font("Helvetica", 9.749999F, FontStyle.Bold, GraphicsUnit.Point, 0);
             TD_Label.ForeColor = Color.FromArgb(253, 248, 225);
-            TD_Label.Location = new Point(218, 132);
+            TD_Label.Location = new Point(218, 156);
             TD_Label.Margin = new Padding(3);
             TD_Label.Name = "TD_Label";
             TD_Label.Padding = new Padding(0, 0, 0, 5);
@@ -172,7 +173,7 @@
             // 
             TaskDesc_RTB.BackColor = Color.FromArgb(254, 248, 235);
             TaskDesc_RTB.BorderStyle = BorderStyle.None;
-            TaskDesc_RTB.Location = new Point(223, 159);
+            TaskDesc_RTB.Location = new Point(223, 183);
             TaskDesc_RTB.Name = "TaskDesc_RTB";
             TaskDesc_RTB.ReadOnly = true;
             TaskDesc_RTB.ScrollBars = RichTextBoxScrollBars.Vertical;
@@ -187,7 +188,7 @@
             DueDate_Label.FlatStyle = FlatStyle.Flat;
             DueDate_Label.Font = new Font("Helvetica", 9.749999F, FontStyle.Bold, GraphicsUnit.Point, 0);
             DueDate_Label.ForeColor = Color.FromArgb(253, 248, 225);
-            DueDate_Label.Location = new Point(218, 373);
+            DueDate_Label.Location = new Point(218, 397);
             DueDate_Label.Margin = new Padding(3);
             DueDate_Label.Name = "DueDate_Label";
             DueDate_Label.Padding = new Padding(0, 0, 0, 5);
@@ -202,7 +203,7 @@
             StartDate_Label.FlatStyle = FlatStyle.Flat;
             StartDate_Label.Font = new Font("Helvetica", 9.749999F, FontStyle.Bold, GraphicsUnit.Point, 0);
             StartDate_Label.ForeColor = Color.FromArgb(253, 248, 225);
-            StartDate_Label.Location = new Point(218, 346);
+            StartDate_Label.Location = new Point(218, 370);
             StartDate_Label.Margin = new Padding(3);
             StartDate_Label.Name = "StartDate_Label";
             StartDate_Label.Padding = new Padding(0, 0, 0, 5);
@@ -217,7 +218,7 @@
             TaskEstEffort_Label.FlatStyle = FlatStyle.Flat;
             TaskEstEffort_Label.Font = new Font("Helvetica", 9.749999F, FontStyle.Bold, GraphicsUnit.Point, 0);
             TaskEstEffort_Label.ForeColor = Color.FromArgb(253, 248, 225);
-            TaskEstEffort_Label.Location = new Point(218, 319);
+            TaskEstEffort_Label.Location = new Point(218, 343);
             TaskEstEffort_Label.Margin = new Padding(3);
             TaskEstEffort_Label.Name = "TaskEstEffort_Label";
             TaskEstEffort_Label.Padding = new Padding(0, 0, 0, 5);
@@ -232,7 +233,7 @@
             taskCat_Label.FlatStyle = FlatStyle.Flat;
             taskCat_Label.Font = new Font("Helvetica", 9.749999F, FontStyle.Bold, GraphicsUnit.Point, 0);
             taskCat_Label.ForeColor = Color.FromArgb(253, 248, 225);
-            taskCat_Label.Location = new Point(219, 292);
+            taskCat_Label.Location = new Point(219, 316);
             taskCat_Label.Margin = new Padding(3);
             taskCat_Label.Name = "taskCat_Label";
             taskCat_Label.Padding = new Padding(0, 0, 0, 5);
@@ -247,7 +248,7 @@
             assignID_Label.FlatStyle = FlatStyle.Flat;
             assignID_Label.Font = new Font("Helvetica", 9.749999F, FontStyle.Bold, GraphicsUnit.Point, 0);
             assignID_Label.ForeColor = Color.FromArgb(253, 248, 225);
-            assignID_Label.Location = new Point(219, 265);
+            assignID_Label.Location = new Point(219, 289);
             assignID_Label.Margin = new Padding(3);
             assignID_Label.Name = "assignID_Label";
             assignID_Label.Padding = new Padding(0, 0, 0, 5);
@@ -263,11 +264,27 @@
             label1.Size = new Size(2, 429);
             label1.TabIndex = 36;
             // 
+            // TaskStatus_Label
+            // 
+            TaskStatus_Label.AutoSize = true;
+            TaskStatus_Label.BackColor = Color.Transparent;
+            TaskStatus_Label.FlatStyle = FlatStyle.Flat;
+            TaskStatus_Label.Font = new Font("Helvetica", 9.749999F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            TaskStatus_Label.ForeColor = Color.FromArgb(253, 248, 225);
+            TaskStatus_Label.Location = new Point(218, 132);
+            TaskStatus_Label.Margin = new Padding(3);
+            TaskStatus_Label.Name = "TaskStatus_Label";
+            TaskStatus_Label.Padding = new Padding(0, 0, 0, 5);
+            TaskStatus_Label.Size = new Size(82, 21);
+            TaskStatus_Label.TabIndex = 37;
+            TaskStatus_Label.Text = "Task Status:";
+            // 
             // Task_UC
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(60, 90, 130);
+            Controls.Add(TaskStatus_Label);
             Controls.Add(label1);
             Controls.Add(assignID_Label);
             Controls.Add(taskCat_Label);
@@ -306,5 +323,6 @@
         private Label taskCat_Label;
         private Label assignID_Label;
         private Label label1;
+        private Label TaskStatus_Label;
     }
 }

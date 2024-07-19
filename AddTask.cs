@@ -32,6 +32,7 @@ namespace Nimble
             //DueDate.ShowUpDown = true;
             DueDate.Format = DateTimePickerFormat.Custom;
             DueDate.CustomFormat = "MM/dd/yyyy";
+            status_CB.SelectedIndex = 0;
 
 
             taskID.Text = NimbleApp.main.taskCounter.ToString();
@@ -73,6 +74,12 @@ namespace Nimble
                 MessageBox.Show("Please give your task a category!");
                 return;
             }
+
+            else if (status_CB.SelectedIndex == -1)
+            {
+                MessageBox.Show("Please give your task a status!");
+                return;
+            }
             else if (StartDate.Value > DueDate.Value)
             {
                 MessageBox.Show("Give your team member at least one day to complete their task!");
@@ -93,6 +100,7 @@ namespace Nimble
 
                 task1.TaskId = NimbleApp.main.taskCounter;
                 task1.TaskDesc = ED_RTB.Text;
+                task1.Status = status_CB.SelectedIndex;
 
                 NimbleApp.main.addTask(NimbleApp.main.taskCounter, task1);
                 Overview_UC.instance.receiveTask("T" + NimbleApp.main.taskCounter.ToString());

@@ -66,7 +66,8 @@ namespace Nimble
             category_CB.SelectedIndex = selectedTask.Category;
             StartDate.Value = selectedTask.StartDate;
             DueDate.Value = selectedTask.DueDate;
-            
+            status_CB.SelectedIndex = selectedTask.Status;
+
             /*
             if (NimbleApp.main.getTask(task_CB.SelectedIndex).Category == 1)
             {
@@ -94,6 +95,11 @@ namespace Nimble
 
         private void Submit_Btn_Click(object sender, EventArgs e)
         {
+            if (task_CB.SelectedIndex == -1)
+            {
+                MessageBox.Show("Please select a task to edit!");
+                return;
+            }
 
             selectedTask = NimbleApp.main.getTask(task_CB.SelectedIndex);
             oldUser = NimbleApp.main.getUser(selectedTask.UserId);
@@ -109,8 +115,19 @@ namespace Nimble
 
             selectedTask.TaskDesc = ED_RTB.Text;
             selectedTask.UserId = assign_CB.SelectedIndex;
-
             
+
+            if (oldUser == newUser)
+            {
+                int uIndex = newUser.TaskCounter;
+
+
+                selectedTask.StartDate = StartDate.Value;
+                selectedTask.DueDate = DueDate.Value;
+                selectedTask.EstEffort = ((selectedTask.DueDate - selectedTask.StartDate).Days + 1) * 5;
+                selectedTask.Status = status_CB.SelectedIndex;
+
+            }
 
             if (oldUser != newUser)
             {

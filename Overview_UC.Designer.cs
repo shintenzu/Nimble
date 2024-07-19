@@ -57,6 +57,8 @@
             team_Label = new Label();
             taskBindingSource = new BindingSource(components);
             task_Panel = new Panel();
+            label3 = new Label();
+            TaskStatus_Label = new Label();
             TaskEstEffort_Label = new Label();
             assignID_Label = new Label();
             taskCat_Label = new Label();
@@ -480,6 +482,8 @@
             // 
             // task_Panel
             // 
+            task_Panel.Controls.Add(label3);
+            task_Panel.Controls.Add(TaskStatus_Label);
             task_Panel.Controls.Add(TaskEstEffort_Label);
             task_Panel.Controls.Add(assignID_Label);
             task_Panel.Controls.Add(taskCat_Label);
@@ -498,6 +502,29 @@
             task_Panel.Padding = new Padding(5);
             task_Panel.Size = new Size(538, 300);
             task_Panel.TabIndex = 5;
+            // 
+            // label3
+            // 
+            label3.BackColor = Color.FromArgb(21, 35, 57);
+            label3.Location = new Point(358, 27);
+            label3.Name = "label3";
+            label3.Size = new Size(2, 15);
+            label3.TabIndex = 52;
+            // 
+            // TaskStatus_Label
+            // 
+            TaskStatus_Label.AutoSize = true;
+            TaskStatus_Label.BackColor = Color.Transparent;
+            TaskStatus_Label.FlatStyle = FlatStyle.Flat;
+            TaskStatus_Label.Font = new Font("Helvetica", 9.749999F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            TaskStatus_Label.ForeColor = Color.FromArgb(253, 248, 225);
+            TaskStatus_Label.Location = new Point(366, 26);
+            TaskStatus_Label.Margin = new Padding(3);
+            TaskStatus_Label.Name = "TaskStatus_Label";
+            TaskStatus_Label.Padding = new Padding(0, 0, 0, 5);
+            TaskStatus_Label.Size = new Size(82, 21);
+            TaskStatus_Label.TabIndex = 24;
+            TaskStatus_Label.Text = "Task Status:";
             // 
             // TaskEstEffort_Label
             // 
@@ -785,5 +812,7 @@
         private Label label2;
         private Label label1;
         private Label UserRole_Label;
+        private Label TaskStatus_Label;
+        private Label label3;
     }
 }

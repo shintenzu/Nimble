@@ -30,6 +30,8 @@
         {
             AddTask_Label = new Label();
             Main_Panel = new Panel();
+            status_CB = new ComboBox();
+            label6 = new Label();
             DueDate = new DateTimePicker();
             StartDate = new DateTimePicker();
             label5 = new Label();
@@ -67,6 +69,8 @@
             // 
             // Main_Panel
             // 
+            Main_Panel.Controls.Add(status_CB);
+            Main_Panel.Controls.Add(label6);
             Main_Panel.Controls.Add(DueDate);
             Main_Panel.Controls.Add(StartDate);
             Main_Panel.Controls.Add(label5);
@@ -84,16 +88,37 @@
             Main_Panel.Size = new Size(433, 295);
             Main_Panel.TabIndex = 12;
             // 
+            // status_CB
+            // 
+            status_CB.FormattingEnabled = true;
+            status_CB.Items.AddRange(new object[] { "1: Incomplete", "2: Complete", "3: Pending", "4: Removed", "5: Archived" });
+            status_CB.Location = new Point(133, 247);
+            status_CB.Name = "status_CB";
+            status_CB.Size = new Size(200, 23);
+            status_CB.TabIndex = 18;
+            status_CB.Text = "(Choose your task status)";
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Font = new Font("Helvetica CE", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 238);
+            label6.ForeColor = Color.FromArgb(253, 248, 225);
+            label6.Location = new Point(17, 250);
+            label6.Name = "label6";
+            label6.Size = new Size(78, 15);
+            label6.TabIndex = 17;
+            label6.Text = "Task Status";
+            // 
             // DueDate
             // 
-            DueDate.Location = new Point(133, 254);
+            DueDate.Location = new Point(133, 215);
             DueDate.Name = "DueDate";
             DueDate.Size = new Size(200, 23);
             DueDate.TabIndex = 16;
             // 
             // StartDate
             // 
-            StartDate.Location = new Point(133, 215);
+            StartDate.Location = new Point(133, 184);
             StartDate.Name = "StartDate";
             StartDate.Size = new Size(200, 23);
             StartDate.TabIndex = 15;
@@ -104,7 +129,7 @@
             label5.Font = new Font("Helvetica CE", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 238);
             label5.ForeColor = Color.FromArgb(253, 248, 225);
             label5.ImageAlign = ContentAlignment.BottomCenter;
-            label5.Location = new Point(17, 260);
+            label5.Location = new Point(17, 221);
             label5.Name = "label5";
             label5.Size = new Size(61, 15);
             label5.TabIndex = 14;
@@ -116,7 +141,7 @@
             label4.Font = new Font("Helvetica CE", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 238);
             label4.ForeColor = Color.FromArgb(253, 248, 225);
             label4.ImageAlign = ContentAlignment.BottomCenter;
-            label4.Location = new Point(17, 221);
+            label4.Location = new Point(17, 190);
             label4.Name = "label4";
             label4.Size = new Size(66, 15);
             label4.TabIndex = 13;
@@ -147,7 +172,7 @@
             ED_RTB.BorderStyle = BorderStyle.None;
             ED_RTB.Location = new Point(133, 45);
             ED_RTB.Name = "ED_RTB";
-            ED_RTB.Size = new Size(300, 87);
+            ED_RTB.Size = new Size(300, 68);
             ED_RTB.TabIndex = 10;
             ED_RTB.Text = "";
             // 
@@ -166,7 +191,7 @@
             // 
             category_CB.FormattingEnabled = true;
             category_CB.Items.AddRange(new object[] { "1: Requirements Analysis", "2: Designing", "3: Coding", "4: Testing", "5: Project Management" });
-            category_CB.Location = new Point(133, 179);
+            category_CB.Location = new Point(133, 153);
             category_CB.Name = "category_CB";
             category_CB.Size = new Size(200, 23);
             category_CB.TabIndex = 8;
@@ -177,7 +202,7 @@
             label1.AutoSize = true;
             label1.Font = new Font("Helvetica CE", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 238);
             label1.ForeColor = Color.FromArgb(253, 248, 225);
-            label1.Location = new Point(17, 182);
+            label1.Location = new Point(17, 156);
             label1.Name = "label1";
             label1.Size = new Size(92, 15);
             label1.TabIndex = 7;
@@ -186,7 +211,7 @@
             // assign_CB
             // 
             assign_CB.FormattingEnabled = true;
-            assign_CB.Location = new Point(133, 143);
+            assign_CB.Location = new Point(133, 121);
             assign_CB.Name = "assign_CB";
             assign_CB.Size = new Size(200, 23);
             assign_CB.TabIndex = 6;
@@ -197,7 +222,7 @@
             Role_Label.AutoSize = true;
             Role_Label.Font = new Font("Helvetica CE", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 238);
             Role_Label.ForeColor = Color.FromArgb(253, 248, 225);
-            Role_Label.Location = new Point(17, 151);
+            Role_Label.Location = new Point(17, 129);
             Role_Label.Name = "Role_Label";
             Role_Label.Size = new Size(66, 15);
             Role_Label.TabIndex = 5;
@@ -317,5 +342,7 @@
         private DateTimePicker StartDate;
         private Label label5;
         private Button Cancel_Btn;
+        private ComboBox status_CB;
+        private Label label6;
     }
 }
