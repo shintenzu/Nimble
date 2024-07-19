@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.Design;
 using System.Data;
+using System.Diagnostics.Metrics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -82,15 +83,20 @@ namespace Nimble
                 {
                     user1.RoleId = 2;                  
                 }
-                else if (Role_CB.GetItemText(Role_CB.SelectedItem) == "4: Coder")
+                else if (Role_CB.GetItemText(Role_CB.SelectedItem) == "4: Programmer")
                 {
                     user1.RoleId = 3;
+                }
+                else if (Role_CB.GetItemText(Role_CB.SelectedItem) == "5: Tester")
+                {
+                    user1.RoleId = 4;
                 }
 
                 //1: Project Owner
                 //2: Project Manager
                 //3: Designer
-                //4: Coder
+                //4: Programmer
+                //5: Tester
 
 
                 NimbleApp.main.addUser(NimbleApp.main.teamCounter, user1);

@@ -43,6 +43,7 @@
             RiskMit_Label = new Label();
             RiskCost_Label = new Label();
             RiskValue_Label = new Label();
+            label1 = new Label();
             overviewtitle_Panel.SuspendLayout();
             SuspendLayout();
             // 
@@ -53,7 +54,7 @@
             risk_LB.ItemHeight = 15;
             risk_LB.Location = new Point(31, 105);
             risk_LB.Name = "risk_LB";
-            risk_LB.Size = new Size(120, 439);
+            risk_LB.Size = new Size(120, 424);
             risk_LB.TabIndex = 25;
             risk_LB.Click += risk_LB_Click;
             // 
@@ -134,9 +135,9 @@
             task_Label.Margin = new Padding(3);
             task_Label.Name = "task_Label";
             task_Label.Padding = new Padding(0, 0, 0, 5);
-            task_Label.Size = new Size(49, 28);
+            task_Label.Size = new Size(71, 28);
             task_Label.TabIndex = 21;
-            task_Label.Text = "Risks";
+            task_Label.Text = "Risk List";
             // 
             // RiskPri_Label
             // 
@@ -145,7 +146,7 @@
             RiskPri_Label.FlatStyle = FlatStyle.Flat;
             RiskPri_Label.Font = new Font("Helvetica", 9.749999F, FontStyle.Bold, GraphicsUnit.Point, 0);
             RiskPri_Label.ForeColor = Color.FromArgb(253, 248, 225);
-            RiskPri_Label.Location = new Point(209, 415);
+            RiskPri_Label.Location = new Point(227, 415);
             RiskPri_Label.Margin = new Padding(3);
             RiskPri_Label.Name = "RiskPri_Label";
             RiskPri_Label.Padding = new Padding(0, 0, 0, 5);
@@ -157,7 +158,7 @@
             // 
             RiskDesc_RTB.BackColor = Color.FromArgb(254, 248, 235);
             RiskDesc_RTB.BorderStyle = BorderStyle.None;
-            RiskDesc_RTB.Location = new Point(224, 159);
+            RiskDesc_RTB.Location = new Point(230, 159);
             RiskDesc_RTB.Name = "RiskDesc_RTB";
             RiskDesc_RTB.ReadOnly = true;
             RiskDesc_RTB.ScrollBars = RichTextBoxScrollBars.Vertical;
@@ -172,7 +173,7 @@
             RidkID_Label.FlatStyle = FlatStyle.Flat;
             RidkID_Label.Font = new Font("Helvetica", 9.749999F, FontStyle.Bold, GraphicsUnit.Point, 0);
             RidkID_Label.ForeColor = Color.FromArgb(253, 248, 225);
-            RidkID_Label.Location = new Point(209, 105);
+            RidkID_Label.Location = new Point(227, 105);
             RidkID_Label.Margin = new Padding(3);
             RidkID_Label.Name = "RidkID_Label";
             RidkID_Label.Padding = new Padding(0, 0, 0, 5);
@@ -187,7 +188,7 @@
             TD_Label.FlatStyle = FlatStyle.Flat;
             TD_Label.Font = new Font("Helvetica", 9.749999F, FontStyle.Bold, GraphicsUnit.Point, 0);
             TD_Label.ForeColor = Color.FromArgb(253, 248, 225);
-            TD_Label.Location = new Point(209, 132);
+            TD_Label.Location = new Point(227, 132);
             TD_Label.Margin = new Padding(3);
             TD_Label.Name = "TD_Label";
             TD_Label.Padding = new Padding(0, 0, 0, 5);
@@ -202,7 +203,7 @@
             RiskProb_Label.FlatStyle = FlatStyle.Flat;
             RiskProb_Label.Font = new Font("Helvetica", 9.749999F, FontStyle.Bold, GraphicsUnit.Point, 0);
             RiskProb_Label.ForeColor = Color.FromArgb(253, 248, 225);
-            RiskProb_Label.Location = new Point(209, 442);
+            RiskProb_Label.Location = new Point(227, 442);
             RiskProb_Label.Margin = new Padding(3);
             RiskProb_Label.Name = "RiskProb_Label";
             RiskProb_Label.Padding = new Padding(0, 0, 0, 5);
@@ -214,7 +215,7 @@
             // 
             RiskMit_RTB.BackColor = Color.FromArgb(254, 248, 235);
             RiskMit_RTB.BorderStyle = BorderStyle.None;
-            RiskMit_RTB.Location = new Point(224, 290);
+            RiskMit_RTB.Location = new Point(230, 290);
             RiskMit_RTB.Name = "RiskMit_RTB";
             RiskMit_RTB.ReadOnly = true;
             RiskMit_RTB.ScrollBars = RichTextBoxScrollBars.Vertical;
@@ -229,7 +230,7 @@
             RiskMit_Label.FlatStyle = FlatStyle.Flat;
             RiskMit_Label.Font = new Font("Helvetica", 9.749999F, FontStyle.Bold, GraphicsUnit.Point, 0);
             RiskMit_Label.ForeColor = Color.FromArgb(253, 248, 225);
-            RiskMit_Label.Location = new Point(209, 263);
+            RiskMit_Label.Location = new Point(227, 263);
             RiskMit_Label.Margin = new Padding(3);
             RiskMit_Label.Name = "RiskMit_Label";
             RiskMit_Label.Padding = new Padding(0, 0, 0, 5);
@@ -244,7 +245,7 @@
             RiskCost_Label.FlatStyle = FlatStyle.Flat;
             RiskCost_Label.Font = new Font("Helvetica", 9.749999F, FontStyle.Bold, GraphicsUnit.Point, 0);
             RiskCost_Label.ForeColor = Color.FromArgb(253, 248, 225);
-            RiskCost_Label.Location = new Point(209, 469);
+            RiskCost_Label.Location = new Point(227, 469);
             RiskCost_Label.Margin = new Padding(3);
             RiskCost_Label.Name = "RiskCost_Label";
             RiskCost_Label.Padding = new Padding(0, 0, 0, 5);
@@ -259,7 +260,7 @@
             RiskValue_Label.FlatStyle = FlatStyle.Flat;
             RiskValue_Label.Font = new Font("Helvetica", 9.749999F, FontStyle.Bold, GraphicsUnit.Point, 0);
             RiskValue_Label.ForeColor = Color.FromArgb(253, 248, 225);
-            RiskValue_Label.Location = new Point(209, 496);
+            RiskValue_Label.Location = new Point(227, 496);
             RiskValue_Label.Margin = new Padding(3);
             RiskValue_Label.Name = "RiskValue_Label";
             RiskValue_Label.Padding = new Padding(0, 0, 0, 5);
@@ -267,11 +268,20 @@
             RiskValue_Label.TabIndex = 34;
             RiskValue_Label.Text = "Risk Value: ";
             // 
+            // label1
+            // 
+            label1.BackColor = Color.FromArgb(245, 215, 140);
+            label1.Location = new Point(188, 102);
+            label1.Name = "label1";
+            label1.Size = new Size(2, 429);
+            label1.TabIndex = 35;
+            // 
             // Risk_UC
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(60, 90, 130);
+            Controls.Add(label1);
             Controls.Add(RiskValue_Label);
             Controls.Add(RiskCost_Label);
             Controls.Add(RiskMit_RTB);
@@ -311,5 +321,6 @@
         private Label RiskMit_Label;
         private Label RiskCost_Label;
         private Label RiskValue_Label;
+        private Label label1;
     }
 }

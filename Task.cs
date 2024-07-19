@@ -22,6 +22,7 @@ namespace Nimble
         private DateTime startDate;
         private DateTime endDate;
         private DateTime dueDate;
+        //startDate.CustomFormat = "MM/dd/yyyy";
 
         public Task() 
         {
@@ -154,6 +155,13 @@ namespace Nimble
                 cat = "Project Management";
             }
             return cat;
+        }
+
+        public int calcEffort()
+        {
+            int eff = 0;
+
+            return eff;
         }
 
         /*

@@ -79,6 +79,7 @@ namespace Nimble
                     
                 }
 
+
                 if (newRole == 1 && NimbleApp.main.hasManager == true)
                 {
                     MessageBox.Show("You already have a project manager");
@@ -101,6 +102,19 @@ namespace Nimble
                         NimbleApp.instance.PM_Label.Text = "Project Manager: " + FullName_TB.Text;
                     }
 
+                }
+                else if (oldRole == 0 && newRole != 1)
+                {
+                    selectedUser.RoleId = Role_CB.SelectedIndex;
+                    NimbleApp.main.hasLeader = false;
+                    NimbleApp.instance.PO_Label.Text = "Project Owner: NA (Add A Project Owner)";
+                }
+
+                else if (oldRole == 1 && newRole != 0)
+                {
+                    selectedUser.RoleId = Role_CB.SelectedIndex;
+                    NimbleApp.main.hasManager = false;
+                    NimbleApp.instance.PM_Label.Text = "Project Manager: NA (Add A Project Manager)";
                 }
             }
 

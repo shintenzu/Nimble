@@ -252,6 +252,7 @@ namespace Nimble
                 TeamName_Label.Text = "Name: " + NimbleApp.main.getUser(user_LB.SelectedIndex).FullName;
                 uTaskCount_Label.Text = "Task Count: " + NimbleApp.main.getUser(user_LB.SelectedIndex).TaskCounter;
                 UserEffort_Label.Text = "User Effort: " + NimbleApp.main.getUser(user_LB.SelectedIndex).UserEffort + " Person Hours";
+                UserRole_Label.Text = "User Role: " + NimbleApp.main.getUser(user_LB.SelectedIndex).getRole();
 
 
                 if (NimbleApp.main.getUser(user_LB.SelectedIndex).taskCounter > 0)
@@ -278,8 +279,8 @@ namespace Nimble
                 //TD_Label.Text = "Task Description: " + NimbleApp.main.getTask(task_LB.SelectedIndex).TaskDesc;
                 TaskDesc_RTB.Text = NimbleApp.main.getTask(task_LB.SelectedIndex).TaskDesc;
                 TaskEstEffort_Label.Text = "Task Estimated Effort: " + NimbleApp.main.getTask(task_LB.SelectedIndex).EstEffort + " Person Hours";
-                StartDate_Label.Text = "Start Date: " + NimbleApp.main.getTask(task_LB.SelectedIndex).StartDate.ToString();
-                DueDate_Label.Text = "Due Date: " + NimbleApp.main.getTask(task_LB.SelectedIndex).DueDate.ToString();
+                StartDate_Label.Text = "Start Date: " + NimbleApp.main.getTask(task_LB.SelectedIndex).StartDate.ToString("MM/dd/yyyy");
+                DueDate_Label.Text = "Due Date: " + NimbleApp.main.getTask(task_LB.SelectedIndex).DueDate.ToString("MM/dd/yyyy");
                 taskCat_Label.Text = "Category: " + NimbleApp.main.getTask(task_LB.SelectedIndex).CatString();
                 assignID_Label.Text = "Assigned to: " + NimbleApp.main.getUser(NimbleApp.main.getTask(task_LB.SelectedIndex).UserId).FullName;
             }
@@ -303,7 +304,7 @@ namespace Nimble
             {
                 ReqID_Label.Text = "Requirements ID: " + NimbleApp.main.getReq(reqs_LB.SelectedIndex).ReqId;
                 ReqDesc_RTB.Text = NimbleApp.main.getReq(reqs_LB.SelectedIndex).ReqDesc;
-                ReqCat_Label.Text = "- " + NimbleApp.main.getReq(reqs_LB.SelectedIndex).getType();
+                ReqCat_Label.Text = "Type: " + NimbleApp.main.getReq(reqs_LB.SelectedIndex).getType();
 
             }
         }

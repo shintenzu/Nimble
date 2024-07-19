@@ -24,6 +24,16 @@ namespace Nimble
         {
             InitializeComponent();
             instance = this;
+
+            //StartDate.ShowUpDown = true;
+            StartDate.Format = DateTimePickerFormat.Custom;
+            //StartDate.CustomFormat = "MM/dd/yyyy hh:mm:ss";
+            StartDate.CustomFormat = "MM/dd/yyyy";
+            //DueDate.ShowUpDown = true;
+            DueDate.Format = DateTimePickerFormat.Custom;
+            DueDate.CustomFormat = "MM/dd/yyyy";
+
+
             taskID.Text = NimbleApp.main.taskCounter.ToString();
             if (NimbleApp.main.teamCounter > 0)
             {
@@ -65,7 +75,7 @@ namespace Nimble
             }
             else if (StartDate.Value > DueDate.Value)
             {
-                MessageBox.Show("Your due date is earlier than your start date!");
+                MessageBox.Show("Give your team member at least one day to complete their task!");
                 return;
             }
 

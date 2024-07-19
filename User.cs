@@ -99,6 +99,34 @@ namespace Nimble
 
         }
 
+        public string getRole()
+        {
+            if (this.roleId == 0)
+            {
+                return "Project Owner";
+            }
+            else if (this.roleId == 1)
+            {
+                return "Project Manager";
+            }
+            else if (this.roleId == 2)
+            {
+                return "Designer";
+            }
+            else if (this.roleId == 3)
+            {
+                return "Programmer";
+            }
+            else if (this.roleId == 4)
+            {
+                return "Tester";
+            }
+            else
+            {
+                return "";
+            }
+        }
+
 
         /*
         public int getUserId() { return userId; }

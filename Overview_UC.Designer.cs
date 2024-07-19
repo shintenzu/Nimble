@@ -36,7 +36,6 @@
             changedesc_Btn = new Button();
             projectdesc_Label = new Label();
             req_Panel = new Panel();
-            label1 = new Label();
             ReqCat_Label = new Label();
             reqs_LB = new ListBox();
             AddReq_Btn = new Button();
@@ -45,6 +44,7 @@
             projectreq_Label = new Label();
             RD_Label = new Label();
             team_Panel = new Panel();
+            UserRole_Label = new Label();
             UserEffort_Label = new Label();
             uTaskCount_Label = new Label();
             UserTask_Label = new Label();
@@ -70,6 +70,9 @@
             addtask_Btn = new Button();
             task_Label = new Label();
             taskBindingSource1 = new BindingSource(components);
+            label7 = new Label();
+            label2 = new Label();
+            label1 = new Label();
             overviewtitle_Panel.SuspendLayout();
             projectdesc_Panel.SuspendLayout();
             req_Panel.SuspendLayout();
@@ -112,7 +115,7 @@
             projectdesc_Panel.Margin = new Padding(10);
             projectdesc_Panel.Name = "projectdesc_Panel";
             projectdesc_Panel.Padding = new Padding(5);
-            projectdesc_Panel.Size = new Size(349, 219);
+            projectdesc_Panel.Size = new Size(367, 219);
             projectdesc_Panel.TabIndex = 0;
             // 
             // Desc_RTB
@@ -166,7 +169,6 @@
             // 
             // req_Panel
             // 
-            req_Panel.Controls.Add(label1);
             req_Panel.Controls.Add(ReqCat_Label);
             req_Panel.Controls.Add(reqs_LB);
             req_Panel.Controls.Add(AddReq_Btn);
@@ -178,23 +180,8 @@
             req_Panel.Margin = new Padding(10);
             req_Panel.Name = "req_Panel";
             req_Panel.Padding = new Padding(5);
-            req_Panel.Size = new Size(349, 300);
+            req_Panel.Size = new Size(367, 300);
             req_Panel.TabIndex = 4;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.BackColor = Color.Transparent;
-            label1.FlatStyle = FlatStyle.Flat;
-            label1.Font = new Font("Helvetica", 9.749999F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.ForeColor = Color.FromArgb(253, 248, 225);
-            label1.Location = new Point(118, 191);
-            label1.Margin = new Padding(3);
-            label1.Name = "label1";
-            label1.Padding = new Padding(0, 0, 0, 5);
-            label1.Size = new Size(137, 21);
-            label1.TabIndex = 50;
-            label1.Text = "Requirements Type: ";
             // 
             // ReqCat_Label
             // 
@@ -203,13 +190,13 @@
             ReqCat_Label.FlatStyle = FlatStyle.Flat;
             ReqCat_Label.Font = new Font("Helvetica", 9.749999F, FontStyle.Bold, GraphicsUnit.Point, 0);
             ReqCat_Label.ForeColor = Color.FromArgb(253, 248, 225);
-            ReqCat_Label.Location = new Point(124, 214);
+            ReqCat_Label.Location = new Point(129, 63);
             ReqCat_Label.Margin = new Padding(3);
             ReqCat_Label.Name = "ReqCat_Label";
             ReqCat_Label.Padding = new Padding(0, 0, 0, 5);
-            ReqCat_Label.Size = new Size(11, 21);
+            ReqCat_Label.Size = new Size(41, 21);
             ReqCat_Label.TabIndex = 49;
-            ReqCat_Label.Text = "-";
+            ReqCat_Label.Text = "Type:";
             // 
             // reqs_LB
             // 
@@ -247,11 +234,11 @@
             // 
             ReqDesc_RTB.BackColor = Color.FromArgb(254, 248, 235);
             ReqDesc_RTB.BorderStyle = BorderStyle.None;
-            ReqDesc_RTB.Location = new Point(133, 94);
+            ReqDesc_RTB.Location = new Point(134, 117);
             ReqDesc_RTB.Name = "ReqDesc_RTB";
             ReqDesc_RTB.ReadOnly = true;
             ReqDesc_RTB.ScrollBars = RichTextBoxScrollBars.Vertical;
-            ReqDesc_RTB.Size = new Size(195, 85);
+            ReqDesc_RTB.Size = new Size(210, 135);
             ReqDesc_RTB.TabIndex = 48;
             ReqDesc_RTB.Text = "";
             // 
@@ -262,7 +249,7 @@
             ReqID_Label.FlatStyle = FlatStyle.Flat;
             ReqID_Label.Font = new Font("Helvetica", 9.749999F, FontStyle.Bold, GraphicsUnit.Point, 0);
             ReqID_Label.ForeColor = Color.FromArgb(253, 248, 225);
-            ReqID_Label.Location = new Point(118, 40);
+            ReqID_Label.Location = new Point(129, 40);
             ReqID_Label.Margin = new Padding(3);
             ReqID_Label.Name = "ReqID_Label";
             ReqID_Label.Padding = new Padding(0, 0, 0, 5);
@@ -293,7 +280,7 @@
             RD_Label.FlatStyle = FlatStyle.Flat;
             RD_Label.Font = new Font("Helvetica", 9.749999F, FontStyle.Bold, GraphicsUnit.Point, 0);
             RD_Label.ForeColor = Color.FromArgb(253, 248, 225);
-            RD_Label.Location = new Point(118, 67);
+            RD_Label.Location = new Point(129, 90);
             RD_Label.Margin = new Padding(3);
             RD_Label.Name = "RD_Label";
             RD_Label.Padding = new Padding(0, 0, 0, 5);
@@ -303,6 +290,7 @@
             // 
             // team_Panel
             // 
+            team_Panel.Controls.Add(UserRole_Label);
             team_Panel.Controls.Add(UserEffort_Label);
             team_Panel.Controls.Add(uTaskCount_Label);
             team_Panel.Controls.Add(UserTask_Label);
@@ -317,8 +305,23 @@
             team_Panel.Margin = new Padding(10);
             team_Panel.Name = "team_Panel";
             team_Panel.Padding = new Padding(5);
-            team_Panel.Size = new Size(523, 219);
+            team_Panel.Size = new Size(538, 219);
             team_Panel.TabIndex = 4;
+            // 
+            // UserRole_Label
+            // 
+            UserRole_Label.AutoSize = true;
+            UserRole_Label.BackColor = Color.Transparent;
+            UserRole_Label.FlatStyle = FlatStyle.Flat;
+            UserRole_Label.Font = new Font("Helvetica", 9.749999F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            UserRole_Label.ForeColor = Color.FromArgb(253, 248, 225);
+            UserRole_Label.Location = new Point(186, 137);
+            UserRole_Label.Margin = new Padding(3);
+            UserRole_Label.Name = "UserRole_Label";
+            UserRole_Label.Padding = new Padding(0, 0, 0, 5);
+            UserRole_Label.Size = new Size(72, 21);
+            UserRole_Label.TabIndex = 15;
+            UserRole_Label.Text = "User Role:";
             // 
             // UserEffort_Label
             // 
@@ -493,7 +496,7 @@
             task_Panel.Margin = new Padding(10);
             task_Panel.Name = "task_Panel";
             task_Panel.Padding = new Padding(5);
-            task_Panel.Size = new Size(523, 300);
+            task_Panel.Size = new Size(538, 300);
             task_Panel.TabIndex = 5;
             // 
             // TaskEstEffort_Label
@@ -503,7 +506,7 @@
             TaskEstEffort_Label.FlatStyle = FlatStyle.Flat;
             TaskEstEffort_Label.Font = new Font("Helvetica", 9.749999F, FontStyle.Bold, GraphicsUnit.Point, 0);
             TaskEstEffort_Label.ForeColor = Color.FromArgb(253, 248, 225);
-            TaskEstEffort_Label.Location = new Point(186, 170);
+            TaskEstEffort_Label.Location = new Point(186, 71);
             TaskEstEffort_Label.Margin = new Padding(3);
             TaskEstEffort_Label.Name = "TaskEstEffort_Label";
             TaskEstEffort_Label.Padding = new Padding(0, 0, 0, 5);
@@ -518,7 +521,7 @@
             assignID_Label.FlatStyle = FlatStyle.Flat;
             assignID_Label.Font = new Font("Helvetica", 9.749999F, FontStyle.Bold, GraphicsUnit.Point, 0);
             assignID_Label.ForeColor = Color.FromArgb(253, 248, 225);
-            assignID_Label.Location = new Point(187, 150);
+            assignID_Label.Location = new Point(186, 47);
             assignID_Label.Margin = new Padding(3);
             assignID_Label.Name = "assignID_Label";
             assignID_Label.Padding = new Padding(0, 0, 0, 5);
@@ -533,7 +536,7 @@
             taskCat_Label.FlatStyle = FlatStyle.Flat;
             taskCat_Label.Font = new Font("Helvetica", 9.749999F, FontStyle.Bold, GraphicsUnit.Point, 0);
             taskCat_Label.ForeColor = Color.FromArgb(253, 248, 225);
-            taskCat_Label.Location = new Point(186, 191);
+            taskCat_Label.Location = new Point(186, 93);
             taskCat_Label.Margin = new Padding(3);
             taskCat_Label.Name = "taskCat_Label";
             taskCat_Label.Padding = new Padding(0, 0, 0, 5);
@@ -545,7 +548,7 @@
             // 
             TaskDesc_RTB.BackColor = Color.FromArgb(254, 248, 235);
             TaskDesc_RTB.BorderStyle = BorderStyle.None;
-            TaskDesc_RTB.Location = new Point(195, 79);
+            TaskDesc_RTB.Location = new Point(192, 189);
             TaskDesc_RTB.Name = "TaskDesc_RTB";
             TaskDesc_RTB.ReadOnly = true;
             TaskDesc_RTB.ScrollBars = RichTextBoxScrollBars.Vertical;
@@ -560,7 +563,7 @@
             DueDate_Label.FlatStyle = FlatStyle.Flat;
             DueDate_Label.Font = new Font("Helvetica", 9.749999F, FontStyle.Bold, GraphicsUnit.Point, 0);
             DueDate_Label.ForeColor = Color.FromArgb(253, 248, 225);
-            DueDate_Label.Location = new Point(187, 236);
+            DueDate_Label.Location = new Point(186, 141);
             DueDate_Label.Margin = new Padding(3);
             DueDate_Label.Name = "DueDate_Label";
             DueDate_Label.Padding = new Padding(0, 0, 0, 5);
@@ -575,7 +578,7 @@
             StartDate_Label.FlatStyle = FlatStyle.Flat;
             StartDate_Label.Font = new Font("Helvetica", 9.749999F, FontStyle.Bold, GraphicsUnit.Point, 0);
             StartDate_Label.ForeColor = Color.FromArgb(253, 248, 225);
-            StartDate_Label.Location = new Point(186, 214);
+            StartDate_Label.Location = new Point(184, 117);
             StartDate_Label.Margin = new Padding(3);
             StartDate_Label.Name = "StartDate_Label";
             StartDate_Label.Padding = new Padding(0, 0, 0, 5);
@@ -590,7 +593,7 @@
             TaskID_Label.FlatStyle = FlatStyle.Flat;
             TaskID_Label.Font = new Font("Helvetica", 9.749999F, FontStyle.Bold, GraphicsUnit.Point, 0);
             TaskID_Label.ForeColor = Color.FromArgb(253, 248, 225);
-            TaskID_Label.Location = new Point(186, 37);
+            TaskID_Label.Location = new Point(186, 26);
             TaskID_Label.Margin = new Padding(3);
             TaskID_Label.Name = "TaskID_Label";
             TaskID_Label.Padding = new Padding(0, 0, 0, 5);
@@ -616,7 +619,7 @@
             TD_Label.FlatStyle = FlatStyle.Flat;
             TD_Label.Font = new Font("Helvetica", 9.749999F, FontStyle.Bold, GraphicsUnit.Point, 0);
             TD_Label.ForeColor = Color.FromArgb(253, 248, 225);
-            TD_Label.Location = new Point(186, 56);
+            TD_Label.Location = new Point(186, 165);
             TD_Label.Margin = new Padding(3);
             TD_Label.Name = "TD_Label";
             TD_Label.Padding = new Padding(0, 0, 0, 5);
@@ -682,11 +685,38 @@
             task_Label.TabIndex = 1;
             task_Label.Text = "Tasks";
             // 
+            // label7
+            // 
+            label7.BackColor = Color.FromArgb(245, 215, 140);
+            label7.Location = new Point(396, 65);
+            label7.Name = "label7";
+            label7.Size = new Size(2, 530);
+            label7.TabIndex = 49;
+            // 
+            // label2
+            // 
+            label2.BackColor = Color.FromArgb(21, 35, 57);
+            label2.Location = new Point(29, 291);
+            label2.Name = "label2";
+            label2.Size = new Size(350, 2);
+            label2.TabIndex = 50;
+            // 
+            // label1
+            // 
+            label1.BackColor = Color.FromArgb(21, 35, 57);
+            label1.Location = new Point(417, 291);
+            label1.Name = "label1";
+            label1.Size = new Size(530, 2);
+            label1.TabIndex = 51;
+            // 
             // Overview_UC
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(60, 90, 130);
+            Controls.Add(label1);
+            Controls.Add(label2);
+            Controls.Add(label7);
             Controls.Add(task_Panel);
             Controls.Add(team_Panel);
             Controls.Add(overviewtitle_Panel);
@@ -751,6 +781,9 @@
         private RichTextBox ReqDesc_RTB;
         private Label ReqID_Label;
         private Label RD_Label;
+        private Label label7;
+        private Label label2;
         private Label label1;
+        private Label UserRole_Label;
     }
 }

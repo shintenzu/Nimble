@@ -30,6 +30,10 @@
         {
             overviewbody_Panel = new Panel();
             task_Panel = new Panel();
+            label13 = new Label();
+            label10 = new Label();
+            label7 = new Label();
+            label4 = new Label();
             label12 = new Label();
             PMEffort_Label = new Label();
             label14 = new Label();
@@ -69,6 +73,10 @@
             // 
             // task_Panel
             // 
+            task_Panel.Controls.Add(label13);
+            task_Panel.Controls.Add(label10);
+            task_Panel.Controls.Add(label7);
+            task_Panel.Controls.Add(label4);
             task_Panel.Controls.Add(label12);
             task_Panel.Controls.Add(PMEffort_Label);
             task_Panel.Controls.Add(label14);
@@ -97,6 +105,38 @@
             task_Panel.Size = new Size(926, 528);
             task_Panel.TabIndex = 5;
             // 
+            // label13
+            // 
+            label13.BackColor = Color.FromArgb(245, 215, 140);
+            label13.Location = new Point(745, 84);
+            label13.Name = "label13";
+            label13.Size = new Size(2, 429);
+            label13.TabIndex = 50;
+            // 
+            // label10
+            // 
+            label10.BackColor = Color.FromArgb(245, 215, 140);
+            label10.Location = new Point(546, 84);
+            label10.Name = "label10";
+            label10.Size = new Size(2, 429);
+            label10.TabIndex = 49;
+            // 
+            // label7
+            // 
+            label7.BackColor = Color.FromArgb(245, 215, 140);
+            label7.Location = new Point(350, 84);
+            label7.Name = "label7";
+            label7.Size = new Size(2, 429);
+            label7.TabIndex = 48;
+            // 
+            // label4
+            // 
+            label4.BackColor = Color.FromArgb(245, 215, 140);
+            label4.Location = new Point(157, 84);
+            label4.Name = "label4";
+            label4.Size = new Size(2, 429);
+            label4.TabIndex = 47;
+            // 
             // label12
             // 
             label12.AutoSize = true;
@@ -104,7 +144,7 @@
             label12.FlatStyle = FlatStyle.Flat;
             label12.Font = new Font("Helvetica", 9.749999F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label12.ForeColor = Color.FromArgb(253, 248, 225);
-            label12.Location = new Point(803, 188);
+            label12.Location = new Point(803, 136);
             label12.Margin = new Padding(3);
             label12.Name = "label12";
             label12.Padding = new Padding(0, 0, 0, 5);
@@ -119,7 +159,7 @@
             PMEffort_Label.FlatStyle = FlatStyle.Flat;
             PMEffort_Label.Font = new Font("Helvetica", 9.749999F, FontStyle.Bold, GraphicsUnit.Point, 0);
             PMEffort_Label.ForeColor = Color.FromArgb(253, 248, 225);
-            PMEffort_Label.Location = new Point(803, 161);
+            PMEffort_Label.Location = new Point(803, 109);
             PMEffort_Label.Margin = new Padding(3);
             PMEffort_Label.Name = "PMEffort_Label";
             PMEffort_Label.Padding = new Padding(0, 0, 0, 5);
@@ -134,7 +174,7 @@
             label14.FlatStyle = FlatStyle.Flat;
             label14.Font = new Font("Helvetica 2 BQ ", 14.2499981F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label14.ForeColor = Color.FromArgb(253, 248, 225);
-            label14.Location = new Point(800, 127);
+            label14.Location = new Point(800, 75);
             label14.Margin = new Padding(3);
             label14.Name = "label14";
             label14.Padding = new Padding(0, 0, 0, 5);
@@ -147,9 +187,9 @@
             PM_LB.BackColor = Color.FromArgb(254, 248, 235);
             PM_LB.FormattingEnabled = true;
             PM_LB.ItemHeight = 15;
-            PM_LB.Location = new Point(803, 215);
+            PM_LB.Location = new Point(803, 163);
             PM_LB.Name = "PM_LB";
-            PM_LB.Size = new Size(75, 259);
+            PM_LB.Size = new Size(75, 349);
             PM_LB.TabIndex = 42;
             // 
             // label9
@@ -159,7 +199,7 @@
             label9.FlatStyle = FlatStyle.Flat;
             label9.Font = new Font("Helvetica", 9.749999F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label9.ForeColor = Color.FromArgb(253, 248, 225);
-            label9.Location = new Point(608, 188);
+            label9.Location = new Point(608, 136);
             label9.Margin = new Padding(3);
             label9.Name = "label9";
             label9.Padding = new Padding(0, 0, 0, 5);
@@ -174,7 +214,7 @@
             TEffort_Label.FlatStyle = FlatStyle.Flat;
             TEffort_Label.Font = new Font("Helvetica", 9.749999F, FontStyle.Bold, GraphicsUnit.Point, 0);
             TEffort_Label.ForeColor = Color.FromArgb(253, 248, 225);
-            TEffort_Label.Location = new Point(608, 161);
+            TEffort_Label.Location = new Point(608, 109);
             TEffort_Label.Margin = new Padding(3);
             TEffort_Label.Name = "TEffort_Label";
             TEffort_Label.Padding = new Padding(0, 0, 0, 5);
@@ -189,7 +229,7 @@
             label11.FlatStyle = FlatStyle.Flat;
             label11.Font = new Font("Helvetica 2 BQ ", 14.2499981F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label11.ForeColor = Color.FromArgb(253, 248, 225);
-            label11.Location = new Point(605, 127);
+            label11.Location = new Point(605, 75);
             label11.Margin = new Padding(3);
             label11.Name = "label11";
             label11.Padding = new Padding(0, 0, 0, 5);
@@ -202,9 +242,9 @@
             T_LB.BackColor = Color.FromArgb(254, 248, 235);
             T_LB.FormattingEnabled = true;
             T_LB.ItemHeight = 15;
-            T_LB.Location = new Point(608, 215);
+            T_LB.Location = new Point(608, 163);
             T_LB.Name = "T_LB";
-            T_LB.Size = new Size(75, 259);
+            T_LB.Size = new Size(75, 349);
             T_LB.TabIndex = 38;
             // 
             // label6
@@ -214,7 +254,7 @@
             label6.FlatStyle = FlatStyle.Flat;
             label6.Font = new Font("Helvetica", 9.749999F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label6.ForeColor = Color.FromArgb(253, 248, 225);
-            label6.Location = new Point(415, 188);
+            label6.Location = new Point(415, 136);
             label6.Margin = new Padding(3);
             label6.Name = "label6";
             label6.Padding = new Padding(0, 0, 0, 5);
@@ -229,7 +269,7 @@
             CEffort_Label.FlatStyle = FlatStyle.Flat;
             CEffort_Label.Font = new Font("Helvetica", 9.749999F, FontStyle.Bold, GraphicsUnit.Point, 0);
             CEffort_Label.ForeColor = Color.FromArgb(253, 248, 225);
-            CEffort_Label.Location = new Point(415, 161);
+            CEffort_Label.Location = new Point(415, 109);
             CEffort_Label.Margin = new Padding(3);
             CEffort_Label.Name = "CEffort_Label";
             CEffort_Label.Padding = new Padding(0, 0, 0, 5);
@@ -244,7 +284,7 @@
             label8.FlatStyle = FlatStyle.Flat;
             label8.Font = new Font("Helvetica 2 BQ ", 14.2499981F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label8.ForeColor = Color.FromArgb(253, 248, 225);
-            label8.Location = new Point(412, 127);
+            label8.Location = new Point(412, 75);
             label8.Margin = new Padding(3);
             label8.Name = "label8";
             label8.Padding = new Padding(0, 0, 0, 5);
@@ -257,9 +297,9 @@
             C_LB.BackColor = Color.FromArgb(254, 248, 235);
             C_LB.FormattingEnabled = true;
             C_LB.ItemHeight = 15;
-            C_LB.Location = new Point(415, 215);
+            C_LB.Location = new Point(415, 163);
             C_LB.Name = "C_LB";
-            C_LB.Size = new Size(75, 259);
+            C_LB.Size = new Size(75, 349);
             C_LB.TabIndex = 34;
             // 
             // label3
@@ -269,7 +309,7 @@
             label3.FlatStyle = FlatStyle.Flat;
             label3.Font = new Font("Helvetica", 9.749999F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label3.ForeColor = Color.FromArgb(253, 248, 225);
-            label3.Location = new Point(216, 188);
+            label3.Location = new Point(216, 136);
             label3.Margin = new Padding(3);
             label3.Name = "label3";
             label3.Padding = new Padding(0, 0, 0, 5);
@@ -284,7 +324,7 @@
             DEffort_Label.FlatStyle = FlatStyle.Flat;
             DEffort_Label.Font = new Font("Helvetica", 9.749999F, FontStyle.Bold, GraphicsUnit.Point, 0);
             DEffort_Label.ForeColor = Color.FromArgb(253, 248, 225);
-            DEffort_Label.Location = new Point(216, 161);
+            DEffort_Label.Location = new Point(216, 109);
             DEffort_Label.Margin = new Padding(3);
             DEffort_Label.Name = "DEffort_Label";
             DEffort_Label.Padding = new Padding(0, 0, 0, 5);
@@ -299,7 +339,7 @@
             label5.FlatStyle = FlatStyle.Flat;
             label5.Font = new Font("Helvetica 2 BQ ", 14.2499981F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label5.ForeColor = Color.FromArgb(253, 248, 225);
-            label5.Location = new Point(213, 127);
+            label5.Location = new Point(213, 75);
             label5.Margin = new Padding(3);
             label5.Name = "label5";
             label5.Padding = new Padding(0, 0, 0, 5);
@@ -312,9 +352,9 @@
             D_LB.BackColor = Color.FromArgb(254, 248, 235);
             D_LB.FormattingEnabled = true;
             D_LB.ItemHeight = 15;
-            D_LB.Location = new Point(216, 215);
+            D_LB.Location = new Point(216, 163);
             D_LB.Name = "D_LB";
-            D_LB.Size = new Size(75, 259);
+            D_LB.Size = new Size(75, 349);
             D_LB.TabIndex = 30;
             // 
             // label2
@@ -324,7 +364,7 @@
             label2.FlatStyle = FlatStyle.Flat;
             label2.Font = new Font("Helvetica", 9.749999F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.FromArgb(253, 248, 225);
-            label2.Location = new Point(22, 188);
+            label2.Location = new Point(22, 136);
             label2.Margin = new Padding(3);
             label2.Name = "label2";
             label2.Padding = new Padding(0, 0, 0, 5);
@@ -339,7 +379,7 @@
             REffort_Label.FlatStyle = FlatStyle.Flat;
             REffort_Label.Font = new Font("Helvetica", 9.749999F, FontStyle.Bold, GraphicsUnit.Point, 0);
             REffort_Label.ForeColor = Color.FromArgb(253, 248, 225);
-            REffort_Label.Location = new Point(22, 161);
+            REffort_Label.Location = new Point(22, 109);
             REffort_Label.Margin = new Padding(3);
             REffort_Label.Name = "REffort_Label";
             REffort_Label.Padding = new Padding(0, 0, 0, 5);
@@ -354,7 +394,7 @@
             label1.FlatStyle = FlatStyle.Flat;
             label1.Font = new Font("Helvetica 2 BQ ", 14.2499981F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.FromArgb(253, 248, 225);
-            label1.Location = new Point(19, 127);
+            label1.Location = new Point(19, 75);
             label1.Margin = new Padding(3);
             label1.Name = "label1";
             label1.Padding = new Padding(0, 0, 0, 5);
@@ -383,9 +423,9 @@
             R_LB.BackColor = Color.FromArgb(254, 248, 235);
             R_LB.FormattingEnabled = true;
             R_LB.ItemHeight = 15;
-            R_LB.Location = new Point(22, 215);
+            R_LB.Location = new Point(22, 163);
             R_LB.Name = "R_LB";
-            R_LB.Size = new Size(75, 259);
+            R_LB.Size = new Size(75, 349);
             R_LB.TabIndex = 23;
             // 
             // overviewtitle_Panel
@@ -458,5 +498,9 @@
         private Label DEffort_Label;
         private Label label5;
         private ListBox D_LB;
+        private Label label13;
+        private Label label10;
+        private Label label7;
+        private Label label4;
     }
 }

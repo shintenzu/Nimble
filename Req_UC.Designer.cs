@@ -38,6 +38,7 @@
             ReqDesc_RTB = new RichTextBox();
             ReqID_Label = new Label();
             RD_Label = new Label();
+            label1 = new Label();
             overviewtitle_Panel.SuspendLayout();
             SuspendLayout();
             // 
@@ -46,9 +47,9 @@
             reqs_LB.BackColor = Color.FromArgb(254, 248, 235);
             reqs_LB.FormattingEnabled = true;
             reqs_LB.ItemHeight = 15;
-            reqs_LB.Location = new Point(31, 123);
+            reqs_LB.Location = new Point(32, 128);
             reqs_LB.Name = "reqs_LB";
-            reqs_LB.Size = new Size(120, 439);
+            reqs_LB.Size = new Size(120, 424);
             reqs_LB.TabIndex = 39;
             reqs_LB.Click += reqs_LB_Click;
             // 
@@ -104,7 +105,7 @@
             ReqCat_Label.FlatStyle = FlatStyle.Flat;
             ReqCat_Label.Font = new Font("Helvetica", 9.749999F, FontStyle.Bold, GraphicsUnit.Point, 0);
             ReqCat_Label.ForeColor = Color.FromArgb(253, 248, 225);
-            ReqCat_Label.Location = new Point(209, 281);
+            ReqCat_Label.Location = new Point(219, 152);
             ReqCat_Label.Margin = new Padding(3);
             ReqCat_Label.Name = "ReqCat_Label";
             ReqCat_Label.Padding = new Padding(0, 0, 0, 5);
@@ -152,7 +153,7 @@
             // 
             ReqDesc_RTB.BackColor = Color.FromArgb(254, 248, 235);
             ReqDesc_RTB.BorderStyle = BorderStyle.None;
-            ReqDesc_RTB.Location = new Point(224, 177);
+            ReqDesc_RTB.Location = new Point(223, 206);
             ReqDesc_RTB.Name = "ReqDesc_RTB";
             ReqDesc_RTB.ReadOnly = true;
             ReqDesc_RTB.ScrollBars = RichTextBoxScrollBars.Vertical;
@@ -167,7 +168,7 @@
             ReqID_Label.FlatStyle = FlatStyle.Flat;
             ReqID_Label.Font = new Font("Helvetica", 9.749999F, FontStyle.Bold, GraphicsUnit.Point, 0);
             ReqID_Label.ForeColor = Color.FromArgb(253, 248, 225);
-            ReqID_Label.Location = new Point(209, 123);
+            ReqID_Label.Location = new Point(219, 124);
             ReqID_Label.Margin = new Padding(3);
             ReqID_Label.Name = "ReqID_Label";
             ReqID_Label.Padding = new Padding(0, 0, 0, 5);
@@ -182,7 +183,7 @@
             RD_Label.FlatStyle = FlatStyle.Flat;
             RD_Label.Font = new Font("Helvetica", 9.749999F, FontStyle.Bold, GraphicsUnit.Point, 0);
             RD_Label.ForeColor = Color.FromArgb(253, 248, 225);
-            RD_Label.Location = new Point(209, 150);
+            RD_Label.Location = new Point(219, 179);
             RD_Label.Margin = new Padding(3);
             RD_Label.Name = "RD_Label";
             RD_Label.Padding = new Padding(0, 0, 0, 5);
@@ -190,11 +191,20 @@
             RD_Label.TabIndex = 40;
             RD_Label.Text = "Requirements Description: ";
             // 
+            // label1
+            // 
+            label1.BackColor = Color.FromArgb(245, 215, 140);
+            label1.Location = new Point(191, 125);
+            label1.Name = "label1";
+            label1.Size = new Size(2, 429);
+            label1.TabIndex = 46;
+            // 
             // Req_UC
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(60, 90, 130);
+            Controls.Add(label1);
             Controls.Add(reqs_LB);
             Controls.Add(EditReq_Btn);
             Controls.Add(overviewtitle_Panel);
@@ -224,5 +234,6 @@
         private RichTextBox ReqDesc_RTB;
         private Label ReqID_Label;
         private Label RD_Label;
+        private Label label1;
     }
 }

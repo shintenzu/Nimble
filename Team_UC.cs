@@ -89,6 +89,7 @@ namespace Nimble
                 TeamName_Label.Text = "Name: " + NimbleApp.main.getUser(user_LB.SelectedIndex).FullName;
                 uTaskCount_Label.Text = "Task Count: " + NimbleApp.main.getUser(user_LB.SelectedIndex).TaskCounter;
                 UserEffort_Label.Text = "User Effort: " + NimbleApp.main.getUser(user_LB.SelectedIndex).UserEffort + " Person Hours";
+                UserRole_Label.Text = "User Role: " + NimbleApp.main.getUser(user_LB.SelectedIndex).getRole();
 
                 if (NimbleApp.main.getUser(user_LB.SelectedIndex).taskCounter > 0)
                 {

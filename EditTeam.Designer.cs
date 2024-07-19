@@ -111,7 +111,7 @@
             // Role_CB
             // 
             Role_CB.FormattingEnabled = true;
-            Role_CB.Items.AddRange(new object[] { "1: Project Owner", "2: Project Manager", "3: Designer", "4: Coder" });
+            Role_CB.Items.AddRange(new object[] { "1: Project Owner", "2: Project Manager", "3: Designer", "4: Programmer", "5: Tester" });
             Role_CB.Location = new Point(136, 81);
             Role_CB.Name = "Role_CB";
             Role_CB.Size = new Size(192, 23);

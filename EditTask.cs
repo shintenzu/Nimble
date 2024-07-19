@@ -23,6 +23,14 @@ namespace Nimble
             InitializeComponent();
             instance = this;
 
+            //StartDate.ShowUpDown = true;
+            StartDate.Format = DateTimePickerFormat.Custom;
+            //StartDate.CustomFormat = "MM/dd/yyyy hh:mm:ss";
+            StartDate.CustomFormat = "MM/dd/yyyy";
+            //DueDate.ShowUpDown = true;
+            DueDate.Format = DateTimePickerFormat.Custom;
+            DueDate.CustomFormat = "MM/dd/yyyy";
+
 
             if (NimbleApp.main.taskCounter > 0)
             {
@@ -86,25 +94,42 @@ namespace Nimble
 
         private void Submit_Btn_Click(object sender, EventArgs e)
         {
+
             selectedTask = NimbleApp.main.getTask(task_CB.SelectedIndex);
             oldUser = NimbleApp.main.getUser(selectedTask.UserId);
             newUser = NimbleApp.main.getUser(assign_CB.SelectedIndex);
             oldCat = selectedTask.Category;
             newCat = category_CB.SelectedIndex;
 
+            if (StartDate.Value > DueDate.Value)
+            {
+                MessageBox.Show("Give your team member at least one day to complete their task!");
+                return;
+            }
 
             selectedTask.TaskDesc = ED_RTB.Text;
             selectedTask.UserId = assign_CB.SelectedIndex;
+
             
 
             if (oldUser != newUser)
             {
+
                 int uIndex = newUser.TaskCounter;
+
+                
+
+                oldUser.removeTask(selectedTask);
+
+                selectedTask.StartDate = StartDate.Value;
+                selectedTask.DueDate = DueDate.Value;
+                selectedTask.EstEffort = ((selectedTask.DueDate - selectedTask.StartDate).Days + 1) * 5;
+
                 newUser.addTask(uIndex, selectedTask);
                 newUser.taskCounter++;
                 newUser.UserEffort += selectedTask.EstEffort;
                 selectedTask.UserId = newUser.UserId;
-                oldUser.removeTask(selectedTask);
+                
                 //oldUser.UserEffort -= selectedTask.EstEffort;
                 //oldUser.taskCounter--;
 

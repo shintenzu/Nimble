@@ -42,6 +42,7 @@
             TaskEstEffort_Label = new Label();
             taskCat_Label = new Label();
             assignID_Label = new Label();
+            label1 = new Label();
             overviewtitle_Panel.SuspendLayout();
             SuspendLayout();
             // 
@@ -52,7 +53,7 @@
             task_LB.ItemHeight = 15;
             task_LB.Location = new Point(30, 105);
             task_LB.Name = "task_LB";
-            task_LB.Size = new Size(120, 439);
+            task_LB.Size = new Size(120, 424);
             task_LB.TabIndex = 9;
             task_LB.Click += task_LB_Click;
             // 
@@ -109,9 +110,9 @@
             task_Label.Margin = new Padding(3);
             task_Label.Name = "task_Label";
             task_Label.Padding = new Padding(0, 0, 0, 5);
-            task_Label.Size = new Size(51, 28);
+            task_Label.Size = new Size(73, 28);
             task_Label.TabIndex = 1;
-            task_Label.Text = "Tasks";
+            task_Label.Text = "Task List";
             // 
             // overviewtitle_Panel
             // 
@@ -254,11 +255,20 @@
             assignID_Label.TabIndex = 22;
             assignID_Label.Text = "Assigned to: ";
             // 
+            // label1
+            // 
+            label1.BackColor = Color.FromArgb(245, 215, 140);
+            label1.Location = new Point(186, 101);
+            label1.Name = "label1";
+            label1.Size = new Size(2, 429);
+            label1.TabIndex = 36;
+            // 
             // Task_UC
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(60, 90, 130);
+            Controls.Add(label1);
             Controls.Add(assignID_Label);
             Controls.Add(taskCat_Label);
             Controls.Add(DueDate_Label);
@@ -295,5 +305,6 @@
         private Label TaskEstEffort_Label;
         private Label taskCat_Label;
         private Label assignID_Label;
+        private Label label1;
     }
 }
