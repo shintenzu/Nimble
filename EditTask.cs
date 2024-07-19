@@ -174,21 +174,21 @@ namespace Nimble
                     //task1.Category = 2;
                     Stages currentStage = NimbleApp.main.code;
                     currentStage.removeTask(selectedTask);
-                    Effort_UC.instance.resetDBindings();
+                    Effort_UC.instance.resetCBindings();
                 }
                 else if (oldCat == 3)
                 {
                     //task1.Category = 3;
                     Stages currentStage = NimbleApp.main.test;
                     currentStage.removeTask(selectedTask);
-                    Effort_UC.instance.resetDBindings();
+                    Effort_UC.instance.resetTBindings();
                 }
                 else if (oldCat == 4)
                 {
                     //task1.Category = 4;
                     Stages currentStage = NimbleApp.main.pm;
                     currentStage.removeTask(selectedTask);
-                    Effort_UC.instance.resetDBindings();
+                    Effort_UC.instance.resetPMBindings();
                 }
                 
                 if (category_CB.GetItemText(category_CB.SelectedItem) == "1: Requirements Analysis")
